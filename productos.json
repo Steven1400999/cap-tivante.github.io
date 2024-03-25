@@ -1,0 +1,73 @@
+[
+    {
+      "nombre": "Gorra negra ajustable",
+      "tipo": "gorra",
+      "imagen": "producto1.jpg",
+      "precio": "$15.99",
+      "descripcion": "Gorra negra clásica ajustable para protección solar."
+    },
+    {
+      "nombre": "Sombrero de paja con cinta",
+      "tipo": "sombrero",
+      "imagen": "producto2.jpg",
+      "precio": "$25.49",
+      "descripcion": "Sombrero de paja ligero y transpirable con cinta decorativa."
+    },
+    {
+      "nombre": "Visera deportiva blanca",
+      "tipo": "visera",
+      "imagen": "producto3.jpg",
+      "precio": "$12.99",
+      "descripcion": "Visera deportiva blanca ajustable con diseño aerodinámico."
+    },
+    {
+      "nombre": "Gorro de lana gris",
+      "tipo": "gorro",
+      "imagen": "producto4.jpg",
+      "precio": "$18.99",
+      "descripcion": "Gorro de lana suave y cálido en color gris."
+    },
+    {
+      "nombre": "Gorra de béisbol azul marino",
+      "tipo": "gorra",
+      "imagen": "gorra_azul.jpg",
+      "precio": "$14.99",
+      "descripcion": "Gorra de béisbol clásica en color azul marino."
+    },
+    {
+      "nombre": "Sombrero de fieltro marrón",
+      "tipo": "sombrero",
+      "imagen": "sombrero_marron.jpg",
+      "precio": "$30.99",
+      "descripcion": "Sombrero de fieltro elegante en color marrón con banda."
+    },
+    {
+      "nombre": "Visera ajustable negra",
+      "tipo": "visera",
+      "imagen": "visera_negra.jpg",
+      "precio": "$11.49",
+      "descripcion": "Visera negra clásica ajustable para actividades al aire libre."
+    },
+    {
+      "nombre": "Gorro de punto rosa",
+      "tipo": "gorro",
+      "imagen": "gorro_rosa.jpg",
+      "precio": "$16.99",
+      "descripcion": "Gorro de punto suave en color rosa para el invierno."
+    },
+    {
+      "nombre": "Gorra de camuflaje verde",
+      "tipo": "gorra",
+      "imagen": "gorra_verde.jpg",
+      "precio": "$17.99",
+      "descripcion": "Gorra de camuflaje verde para actividades al aire libre."
+    },
+    {
+      "nombre": "Sombrero de playa blanco",
+      "tipo": "sombrero",
+      "imagen": "sombrero_playa.jpg",
+      "precio": "$22.99",
+      "descripcion": "Sombrero de playa blanco con ala ancha para mayor protección solar."
+    }
+  ]
+  

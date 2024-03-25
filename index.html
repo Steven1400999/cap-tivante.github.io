@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Productos</title>
+    <style>
+        /* Estilos CSS simples para la presentación */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        .products-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .product {
+            width: calc(25% - 20px); /* Ajusta el tamaño para mostrar 4 productos por fila */
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            cursor: pointer; /* Cambia el cursor al pasar sobre el producto */
+        }
+        .product img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        .product h2 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Tienda de Productos</h1>
+        <div class="products-container" id="products-container">
+            <!-- Aquí se cargarán todos los productos -->
+        </div>
+    </div>
+
+    <script>
+        // Función para cargar y mostrar todos los productos
+        fetch('productos.json')
+            .then(response => response.json())
+            .then(data => {
+                const productsContainer = document.getElementById('products-container');
+                data.forEach(product => {
+                    const productElement = document.createElement('div');
+                    productElement.classList.add('product');
+                    productElement.innerHTML = `
+                        <img src="${product.imagen}" alt="${product.nombre}">
+                        <h2>${product.nombre}</h2>
+                        <p><strong>Precio:</strong> ${product.precio}</p>
+                        <p><strong>Descripción:</strong> ${product.descripcion}</p>
+                    `;
+                    productElement.addEventListener('click', () => {
+                        // Redirigir a la página del producto al hacer clic en el primer producto
+                        if (product === data[0]) {
+                            window.location.href = `producto.html?nombre=${encodeURIComponent(product.nombre)}&imagen=${encodeURIComponent(product.imagen)}&precio=${encodeURIComponent(product.precio)}&descripcion=${encodeURIComponent(product.descripcion)}`;
+                        }
+                    });
+                    productsContainer.appendChild(productElement);
+                });
+            })
+            .catch(error => console.error('Error al cargar los datos de los productos:', error));
+    </script>
+</body>
+</html>

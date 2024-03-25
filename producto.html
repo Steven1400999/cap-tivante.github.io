@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles del Producto</title>
+    <style>
+        /* Estilos CSS simples para la presentación */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        .product-details {
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .product-details img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        .product-details h2 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Detalles del Producto</h1>
+        <div class="product-details">
+            <!-- Aquí se cargarán los detalles del producto -->
+        </div>
+    </div>
+
+    <script>
+        // Función para obtener los parámetros de la URL
+        function getUrlParameter(name) {
+            name = name.replace(/[[]/, '\\[').replace(/[\]]/, '\\]');
+            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            var results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        };
+
+        // Obtener los parámetros de la URL
+        const nombre = getUrlParameter('nombre');
+        const imagen = getUrlParameter('imagen');
+        const precio = getUrlParameter('precio');
+        const descripcion = getUrlParameter('descripcion');
+
+        // Mostrar los detalles del producto
+        const productDetailsContainer = document.querySelector('.product-details');
+        productDetailsContainer.innerHTML = `
+            <img src="${imagen}" alt="${nombre}">
+            <h2>${nombre}</h2>
+            <p><strong>Precio:</strong> ${precio}</p>
+            <p><strong>Descripción:</strong> ${descripcion}</p>
+        `;
+    </script>
+</body>
+</html>
