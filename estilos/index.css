@@ -1,0 +1,129 @@
+/* Estilos CSS para la presentación */
+
+/* Reset de estilos */
+body, h1, h2, p, ul, li, img, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8; /* Color de fondo neutro */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Estilos para el navbar */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffff; /* Color de fondo blanco */
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.logo img {
+    max-width: 100px;
+}
+
+.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.menu li:last-child {
+    margin-right: 0;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #333333; /* Color del texto neutro */
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.menu li a:hover {
+    color: #666666; /* Cambio de color al pasar el mouse, un tono más oscuro */
+}
+
+.store-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.products-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.product {
+    width: calc(33.33% - 20px); /* Ajusta el tamaño para mostrar 3 productos por fila */
+    margin-bottom: 40px;
+    background-color: #ffffff; /* Color de fondo blanco */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.product:hover {
+    transform: translateY(-5px);
+}
+
+.product-image {
+    padding: 20px;
+    text-align: center;
+}
+
+.product-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.product-info {
+    padding: 20px;
+}
+
+.product-info h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-weight: bold;
+    color: #008000; /* Color verde para el precio */
+    margin-bottom: 10px;
+}
+
+.description {
+    color: #555555; /* Color del texto neutro */
+    margin-bottom: 20px;
+}
+
+.buy-button {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    background-color: #ff4500; /* Color naranja para el botón de compra */
+    color: #ffffff; /* Color del texto en blanco */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.buy-button:hover {
+    background-color: #ff5f2e; /* Cambio de color al pasar el mouse, un tono más claro */
+}
