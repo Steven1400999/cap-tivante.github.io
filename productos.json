@@ -1,31 +1,31 @@
 [
     {
-      "nombre": "Gorra negra ajustable",
+      "nombre": "New Era Gorra Oficial de Juego Los Angeles Dodgers",
       "tipo": "gorra",
       "imagen": "imagenes/producto1.jpg",
-      "precio": "$15.99",
-      "descripcion": "Gorra negra clásica ajustable para protección solar."
+      "precio": "$669.12",
+      "descripcion": "Authentic Collection MLB"
     },
     {
-      "nombre": "Sombrero de paja con cinta",
-      "tipo": "sombrero",
+      "nombre": "New Era Gorra York Yankees Blackout Basic MLB 59Fifty Negra",
+      "tipo": "gorra",
       "imagen": "imagenes/producto2.jpg",
-      "precio": "$25.49",
-      "descripcion": "Sombrero de paja ligero y transpirable con cinta decorativa."
+      "precio": "$789.75",
+      "descripcion": "New Era New York Yankees 59Fifty - Gorra ajustada para hombre, color azul marino/blanco"
     },
     {
-      "nombre": "Visera deportiva blanca",
-      "tipo": "visera",
+      "nombre": "Queue Essentials Western Style - Sombrero de Paja de Lona con popote Frontal",
+      "tipo": "sombrero",
       "imagen": "imagenes/producto3.jpg",
-      "precio": "$12.99",
-      "descripcion": "Visera deportiva blanca ajustable con diseño aerodinámico."
+      "precio": "$1022.84",
+      "descripcion": "Si vas a dar un paseo por el campo o por esa carretera del casco antiguo, nuestros sombreros de vaquero son una pieza esencial de tu atuendo peinando nuestros sombreros de gran aspecto con tus atuendos, estarÃ¡s seguro de recibir cumplidos"
     },
     {
-      "nombre": "Gorro de lana gris",
-      "tipo": "gorro",
+      "nombre": "GENFIEN VISERA PARA MUJER PROTECCIÓN SOLAR PARA EL AIRE LIBRE",
+      "tipo": "visera",
       "imagen": "imagenes/producto4.jpg",
-      "precio": "$18.99",
-      "descripcion": "Gorro de lana suave y cálido en color gris."
+      "precio": "$395.00",
+      "descripcion": "Confeccionado con una tela liviana que no daña la piel, este sombrero para el sol tiene una banda para el sudor gruesa y cómoda en el interior que respira y absorbe el sudor, manteniéndote cómodo cuando sudas en verano y brindándote una mejor experiencia de entrenamiento."
     },
     {
       "nombre": "Gorra de béisbol azul marino",
