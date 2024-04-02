@@ -3,70 +3,70 @@
       "nombre": "New Era Gorra Oficial de Juego Los Angeles Dodgers",
       "tipo": "gorra",
       "imagen": "imagenes/producto1.jpg",
-      "precio": "$669.12",
+      "precio": "669.12",
       "descripcion": "Authentic Collection MLB"
     },
     {
       "nombre": "New Era Gorra York Yankees Blackout Basic MLB 59Fifty Negra",
       "tipo": "gorra",
       "imagen": "imagenes/producto2.jpg",
-      "precio": "$789.75",
+      "precio": "789.75",
       "descripcion": "New Era New York Yankees 59Fifty - Gorra ajustada para hombre, color azul marino/blanco"
     },
     {
       "nombre": "Queue Essentials Western Style - Sombrero de Paja de Lona con popote Frontal",
       "tipo": "sombrero",
       "imagen": "imagenes/producto3.jpg",
-      "precio": "$1022.84",
+      "precio": "1022.84",
       "descripcion": "Si vas a dar un paseo por el campo o por esa carretera del casco antiguo, nuestros sombreros de vaquero son una pieza esencial de tu atuendo peinando nuestros sombreros de gran aspecto con tus atuendos, estarÃ¡s seguro de recibir cumplidos"
     },
     {
-      "nombre": "GENFIEN VISERA PARA MUJER PROTECCIÓN SOLAR PARA EL AIRE LIBRE",
+      "nombre": "GENFIEN VISERA PARA MUJER PROTECCIÓN SOLAR ",
       "tipo": "visera",
       "imagen": "imagenes/producto4.jpg",
-      "precio": "$395.00",
+      "precio": "395.00",
       "descripcion": "Confeccionado con una tela liviana que no daña la piel, este sombrero para el sol tiene una banda para el sudor gruesa y cómoda en el interior que respira y absorbe el sudor, manteniéndote cómodo cuando sudas en verano y brindándote una mejor experiencia de entrenamiento."
     },
     {
       "nombre": "Gorra de béisbol azul marino",
       "tipo": "gorra",
-      "imagen": "imagenes/gorra_azul.jpg",
-      "precio": "$14.99",
+      "imagen": "imagenes/producto5.jpg",
+      "precio": "14.99",
       "descripcion": "Gorra de béisbol clásica en color azul marino."
     },
     {
       "nombre": "Sombrero de fieltro marrón",
       "tipo": "sombrero",
-      "imagen": "imagenes/sombrero_marron.jpg",
-      "precio": "$30.99",
+      "imagen": "imagenes/producto6.jpg",
+      "precio": "30.99",
       "descripcion": "Sombrero de fieltro elegante en color marrón con banda."
     },
     {
       "nombre": "Visera ajustable negra",
       "tipo": "visera",
-      "imagen": "visera_negra.jpg",
-      "precio": "$11.49",
+      "imagen": "imagenes/producto7.jpg",
+      "precio": "11.49",
       "descripcion": "Visera negra clásica ajustable para actividades al aire libre."
     },
     {
       "nombre": "Gorro de punto rosa",
       "tipo": "gorro",
-      "imagen": "gorro_rosa.jpg",
-      "precio": "$16.99",
+      "imagen": "imagenes/producto8.jpg",
+      "precio": "16.99",
       "descripcion": "Gorro de punto suave en color rosa para el invierno."
     },
     {
       "nombre": "Gorra de camuflaje verde",
       "tipo": "gorra",
-      "imagen": "gorra_verde.jpg",
-      "precio": "$17.99",
+      "imagen": "imagenes/producto9.jpg",
+      "precio": "17.99",
       "descripcion": "Gorra de camuflaje verde para actividades al aire libre."
     },
     {
       "nombre": "Sombrero de playa blanco",
       "tipo": "sombrero",
-      "imagen": "sombrero_playa.jpg",
-      "precio": "$22.99",
+      "imagen": "imagenes/producto10.jpg",
+      "precio": "22.99",
       "descripcion": "Sombrero de playa blanco con ala ancha para mayor protección solar."
     }
   ]

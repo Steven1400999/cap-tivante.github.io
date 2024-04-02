@@ -53,6 +53,10 @@
             .then(data => {
                 const productsContainer = document.getElementById('products-container');
                 data.forEach(product => {
+
+                    const productWrapper = document.createElement('div');
+                    productWrapper.classList.add('product-wrapper');
+
                     const productElement = document.createElement('a');
                     productElement.classList.add('product');
                     productElement.href = `producto.html?nombre=${encodeURIComponent(product.nombre)}&imagen=${encodeURIComponent(product.imagen)}&precio=${encodeURIComponent(product.precio)}&descripcion=${encodeURIComponent(product.descripcion)}`;
@@ -62,12 +66,12 @@
                         </div>
                         <div class="product-info">
                             <h2>${product.nombre}</h2>
-                            <p class="price">${product.precio}</p>
-                            <p class="description">${product.descripcion}</p>
-                            <button class="buy-button">Comprar</button>
+                            <p class="price"> $${product.precio}</p>
+                            <button class="buy-button">Ver producto</button>
                         </div>
                     `;
                     productsContainer.appendChild(productElement);
+                    
                 });
             })
             .catch(error => console.error('Error al cargar los datos de los productos:', error));
