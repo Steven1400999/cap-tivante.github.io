@@ -1,12 +1,15 @@
 /* Estilos CSS para la presentación */
 
 /* Reset de estilos */
-body, h1, h2, p, ul, li, img, button {
+body, h1, h2, p, ul, img, button {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
 }
-
+li, title {
+    margin-left: 20px;
+}
 body {
     font-family: Arial, sans-serif;
     background-color: #f8f8f8; /* Color de fondo neutro */
@@ -16,10 +19,13 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
+    
 }
 
 /* Estilos para el navbar */
+
 .navbar {
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -31,6 +37,31 @@ body {
 .logo img {
     max-width: 100px;
 }
+
+form {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+  }
+
+.logo img {
+    margin-right: 30px;
+    max-width: 150px;
+}
+input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: ;
+    border-radius: 5px;
+  }
+
+  button {
+    padding: 10px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+  }
 
 .menu {
     list-style-type: none;
@@ -66,21 +97,34 @@ body {
 .products-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 20px;
     
 }
 
-
-
 .product {
-    width: calc(33.33% - 20px); /* Ajusta el tamaño para mostrar 3 productos por fila */
+    width: 270px;
+    height: 480px; /* Establecer una altura fija para todos los productos */
     margin-bottom: 40px;
-    background-color: #ffffff; /* Color de fondo blanco */
-    border-radius: 10px;
+    background-color: #ffffff; 
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
     text-decoration: none;
-    
+    display: flex; /* Para que los hijos se alineen correctamente */
+    flex-direction: column; /* Apilar elementos verticalmente */
+}
+
+.product-info {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1; /* Para que ocupe todo el espacio disponible */
+}
+
+.buy-button {
+    width: 100%; /* Hacer que los botones ocupen todo el ancho */
+    height: 50px; /* Establecer una altura fija para los botones */
+    background-color: #1cc5ef;
 }
 
 .product:hover {
@@ -88,7 +132,7 @@ body {
 }
 
 .product-image {
-    padding: 20px;
+    padding: 40px;
     text-align: center;
     
     
@@ -96,25 +140,23 @@ body {
 
 .product-image img {
     max-width: 100%;
-    height: 250px;
+    height: 130px;
 }
 
-.product-info {
-    padding: 20px;
-    display: flex; /* Added flexbox for child elements */
-  flex-direction: column; /* Stack elements vertically */
-  justify-content: space-between;
-}
+
 
 .product-info h2 {
     font-size: 1.2rem;
     margin-bottom: 10px;
+    text-align: center;
+    color: #969090;
 }
 
 .price {
     font-weight: bold;
-    color: #009b00; /* Color verde para el precio */
     margin-bottom: 10px;
+    text-align: center;
+    color: black;
     font-size: larger;
 }
 
@@ -123,20 +165,7 @@ body {
     margin-bottom: 20px;
 }
 
-.buy-button {
-    display: block;
-    width: 100%;
-    padding: 10px 0;
-    background-color: #ff4500; /* Color naranja para el botón de compra */
-    color: #ffffff; /* Color del texto en blanco */
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: auto;
-
-}
 
 .buy-button:hover {
-    background-color: #ff5f2e; /* Cambio de color al pasar el mouse, un tono más claro */
+    background-color: #a5a4a4; /* Cambio de color al pasar el mouse, un tono más claro */
 }
