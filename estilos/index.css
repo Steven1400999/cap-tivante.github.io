@@ -89,6 +89,7 @@ input {
     color: #666666; /* Cambio de color al pasar el mouse, un tono más oscuro */
 }
 
+
 .store-title {
     text-align: center;
     margin-bottom: 30px;
@@ -169,3 +170,27 @@ input {
 .buy-button:hover {
     background-color: #a5a4a4; /* Cambio de color al pasar el mouse, un tono más claro */
 }
+.facebook-btn {
+    display: inline-block;
+    background-color: #ffffff; /* Color de fondo de Facebook */
+    color: #fff; /* Color del texto */
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    height: 20px;
+    width: 20px;
+}
+
+.facebook-btn img {
+    vertical-align: middle;
+    height: 25px;
+    width: 25px;
+}
+
+.facebook-btn:hover {
+    background-color: #dadada; /* Color de fondo más oscuro al pasar el mouse */
+}
+
