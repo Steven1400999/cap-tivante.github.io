@@ -15,73 +15,38 @@
     <title>Detalles del Producto</title>
     <style>
         /* Estilos CSS simples para la presentación */
-       
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            
         }
-        h1{
-            margin-left:20px ;
-            
-        }
-
         .container {
-            margin-left: 150px;
-            
-        }
-        .product-details-container {
-            display: flex;
-            align-items: center;
-            width: 900px;
-            height: 400px;
-        }
-        .product-image img {
-        max-width: 400px; /* Establecer el ancho máximo de la imagen */
-        max-height: 400px;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
         }
         .product-details {
             border: 1px solid #ccc;
             padding: 20px;
             border-radius: 5px;
-            margin-left: 60px;
+        }
+        .product-details img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
         }
         .product-details h2 {
             margin-top: 0;
         }
-        button{
-            margin-left: 470px;
-            background-color: #1cc5ef;
-            border: none;
-            color: aliceblue;
-            width: 250px;
-            height: 50px; /* Establecer una altura fija para los botones */
-        }
-        button:hover {
-    background-color: #a5a4a4; /* Cambio de color al pasar el mouse, un tono más claro */
-}
-
-
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Detalles del Producto</h1>
-        <div class="product-details-container">
-            
-            <!-- Imagen del producto -->
-            <div class="product-image">
-                <!-- Aquí se cargará la imagen del producto -->
-            </div>
-            <!-- Contenedor de los detalles del producto -->
-            <div class="product-details">
-                <!-- Aquí se cargarán los detalles del producto -->
-            </div>
-        </div> 
-        <button>Agregar al carrito</button>
+        <div class="product-details">
+            <!-- Aquí se cargarán los detalles del producto -->
+        </div>
     </div>
-    
 
     <script>
         // Función para obtener los parámetros de la URL
@@ -99,13 +64,9 @@
         const descripcion = getUrlParameter('descripcion');
 
         // Mostrar los detalles del producto
-        const productImageContainer = document.querySelector('.product-image');
-        productImageContainer.innerHTML = `
-            <img src="${imagen}" alt="${nombre}">
-        `;
-
         const productDetailsContainer = document.querySelector('.product-details');
         productDetailsContainer.innerHTML = `
+            <img src="${imagen}" alt="${nombre}">
             <h2>${nombre}</h2>
             <p><strong>Precio:</strong> ${precio}</p>
             <p><strong>Descripción:</strong> ${descripcion}</p>
