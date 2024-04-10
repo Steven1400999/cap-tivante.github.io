@@ -4,7 +4,8 @@
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    
+    background-color: #f8f8f8; /* Color de fondo neutro */
+
 }
 h1{
     margin-left:20px ;
@@ -19,6 +20,7 @@ h1{
     align-items: center;
     width: 900px;
     height: 400px;
+
 }
 .product-image img {
 max-width: 400px; /* Establecer el ancho máximo de la imagen */
@@ -26,12 +28,16 @@ max-height: 400px;
 border: rgb(177, 176, 176) solid 2px;
 border-radius: 10px;
 padding: 20px;
+background-color: white; /* Color de fondo neutro */
+
 }
 .product-details {
     border: 1px solid #ccc;
     padding: 20px;
     border-radius: 5px;
     margin-left: 60px;
+    background-color: #f8f8f8; /* Color de fondo neutro */
+
 }
 .product-details h2 {
     margin-top: 0;
@@ -46,5 +52,114 @@ button{
 }
 button:hover {
 background-color: #a5a4a4; /* Cambio de color al pasar el mouse, un tono más claro */
+}
+
+.container2 {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    
+}
+body, h1, h2, p, ul, img, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+li, title {
+    margin-left: 20px;
+}
+
+
+/* Estilos para el navbar */
+
+.navbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffff; /* Color de fondo blanco */
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.logo img {
+    max-width: 100px;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+  }
+
+.logo img {
+    margin-right: 30px;
+    max-width: 150px;
+}
+input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .button2 {
+    padding: 10px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    width: 90px;
+    height: 40px;
+  }
+
+.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.menu li:last-child {
+    margin-right: 0;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #333333; /* Color del texto neutro */
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.menu li a:hover {
+    color: #666666; /* Cambio de color al pasar el mouse, un tono más oscuro */
+}
+
+.facebook-btn {
+    display: inline-block;
+    background-color: #ffffff; /* Color de fondo de Facebook */
+    color: #fff; /* Color del texto */
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    height: 20px;
+    width: 20px;
+}
+
+.facebook-btn img {
+    vertical-align: middle;
+    height: 25px;
+    width: 25px;
+}
+
+.facebook-btn:hover {
+    background-color: #dadada; /* Color de fondo más oscuro al pasar el mouse */
 }
 
