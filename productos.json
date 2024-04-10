@@ -30,7 +30,7 @@
     {
       "nombre": "New Era Gorra York Yankees Flower Graphic MLB 9Fifty Ajustable Unisex",
       "tipo": "gorra",
-      "imagen": "https://github.com/Steven1400999/cap-tivante.github.io/blob/7c31f7ee44c5e4d251b412bf48fb8a8d52822591/imagenes/Producto5.jpg",
+      "imagen": "../imagenes/Producto5.jpg",
       "precio": "949.12",
       "descripcion": "New Era Gorra New York Yankees Flower Graphic MLB 9Fifty Ajustable Unisex Adulto. La gorra Ajustable 9FIFTY cuenta con Visera Plana que puede curvarse a tu gusto. Se ajusta a tu medida con el Snapback por la parte trasera (De 54.9 cm a 61.5 cm)."
     },
