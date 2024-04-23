@@ -1,88 +1,99 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-205HXP6ZKV"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-205HXP6ZKV');
-</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-205HXP6ZKV"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-205HXP6ZKV');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalles del Producto</title>
     <link rel="stylesheet" href="estilos/producto.css">
 </head>
 <body>
-    <header>
-        <div class="container4">
-            <nav class="navbar">
-                <ul class="menu">
-                    <li><a href="index.html">Contacto</a></li>
-                    <li><a href="https://www.facebook.com/profile.php?id=61557315856153" target="_blank" class="facebook-btn"><img src="imagenes/facebook.png" alt="Facebook"></a></li>
-                </ul>
-            </nav>
-        </div>
-        <div class="container3">
-            <nav class="navbar">
-                <div class="logo">
-                    <img src="imagenes/logosombrero2.jpeg" alt="Logo de la tienda"> 
-                </div>
-                <ul class="menu">
-                    <li><a href="index.html">INICIO</a></li>
-                    <li><a href="#">GORRAS</a></li>
-                    <li><a href="#">SOMBREROS</a></li>
-                    <li><a href="#">VISERAS</a></li>
-                </ul>
-                <form action="/search">
-                    <input type="text" name="q" placeholder="Buscar">
-                    <button type="submit" class="button2">Buscar</button>
-                  </form>
-            </nav>
-        </div>
-    </header>
-
-    <div class="container2">
-        <h1>Detalles del Producto</h1>
-        <div class="product-details-container">
-            
-            <div class="product-image">
-
-            </div>
-            <div class="product-details">
-                
-            </div>
-        </div> 
-        <button>Agregar al carrito</button>
+<header>
+    <div class="container4">
+        <nav class="navbar">
+            <ul class="menu">
+                <li><a href="index.html">Contacto</a></li>
+                <li><a href="https://www.facebook.com/profile.php?id=61557315856153" target="_blank" class="facebook-btn"><img src="imagenes/facebook.png" alt="Facebook"></a></li>
+            </ul>
+        </nav>
     </div>
-    
+    <div class="container3">
+        <nav class="navbar">
+            <div class="logo">
+                <img src="imagenes/logosombrero2.jpeg" alt="Logo de la tienda"> 
+            </div>
+            <ul class="menu">
+                <li><a href="index.html">INICIO</a></li>
+                <li><a href="#">GORRAS</a></li>
+                <li><a href="#">SOMBREROS</a></li>
+                <li><a href="#">VISERAS</a></li>
+            </ul>
+            <form action="/search">
+                <input type="text" name="q" placeholder="Buscar">
+                <button type="submit" class="button2">Buscar</button>
+            </form>
+        </nav>
+    </div>
+</header>
 
-    <script>
-        function getUrlParameter(name) {
-            name = name.replace(/[[]/, '\\[').replace(/[\]]/, '\\]');
-            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
-            var results = regex.exec(location.search);
-            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
-        };
+<div class="container2">
+    <h1>Detalles del Producto</h1>
+    <div class="product-details-container">
+        <div class="product-image">
+            <!-- Aquí puedes incluir la imagen del producto -->
+        </div>
+        <div class="product-details">
+            <!-- Aquí puedes incluir los detalles del producto -->
+        </div>
+    </div> 
+</div>
 
-        const nombre = getUrlParameter('nombre');
-        const imagen = getUrlParameter('imagen');
-        const precio = getUrlParameter('precio');
-        const descripcion = getUrlParameter('descripcion');
+<div class="container2">
+    <div class="quantity-container">
+        <label for="quantity">Cantidad:</label>
+        <input type="number" id="quantity" name="quantity" min="1" value="1">
+    </div>
+    <button onclick="addToCart()">Agregar al carrito</button>
+</div>
 
-        const productImageContainer = document.querySelector('.product-image');
-        productImageContainer.innerHTML = `
-            <img src="${imagen}" alt="${nombre}">
-        `;
+<script>
+    function getUrlParameter(name) {
+        name = name.replace(/[[]/, '\\[').replace(/[\]]/, '\\]');
+        var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+        var results = regex.exec(location.search);
+        return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+    };
 
-        const productDetailsContainer = document.querySelector('.product-details');
-        productDetailsContainer.innerHTML = `
-            <h2>${nombre}</h2>
-            <p><strong>Precio:</strong> ${precio}</p>
-            <p><strong>Descripción:</strong> ${descripcion}</p>
-        `;
-    </script>
+    const nombre = getUrlParameter('nombre');
+    const imagen = getUrlParameter('imagen');
+    const precio = getUrlParameter('precio');
+    const descripcion = getUrlParameter('descripcion');
+
+    const productImageContainer = document.querySelector('.product-image');
+    productImageContainer.innerHTML = `
+        <img src="${imagen}" alt="${nombre}">
+    `;
+
+    const productDetailsContainer = document.querySelector('.product-details');
+    productDetailsContainer.innerHTML = `
+        <h2>${nombre}</h2>
+        <p><strong>Precio: ${precio}</strong></p>
+        <p><strong>Descripción:</strong> ${descripcion}</p>
+    `;
+
+    function addToCart() {
+        const quantity = document.getElementById('quantity').value;
+        // Aquí puedes agregar lógica para agregar el producto al carrito con la cantidad seleccionada
+        alert(`Agregado al carrito: ${quantity} ${nombre}(s)`);
+    }
+</script>
 </body>
 </html>
+
