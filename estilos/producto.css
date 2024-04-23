@@ -12,6 +12,7 @@ h1{
     
 }
 
+
 .container {
     margin-left: 150px;
 }
@@ -32,22 +33,24 @@ background-color: white; /* Color de fondo neutro */
 
 }
 .product-details {
-    border: 1px solid #ccc;
+    
     padding: 20px;
     border-radius: 5px;
     margin-left: 60px;
     background-color: #f8f8f8; /* Color de fondo neutro */
+    height: 300px; /* Ajusta este valor según sea necesario */
+}
+.product-details h2,
+.product-details p {
+    margin-bottom: 20px; /* Ajusta este valor según sea necesario */
+}
 
-}
-.product-details h2 {
-    margin-top: 0;
-}
 button{
     margin-left: 470px;
     background-color: #1cc5ef;
     border: none;
     color: aliceblue;
-    width: 250px;
+    width: 90%;
     height: 50px; /* Establecer una altura fija para los botones */
 }
 button:hover {
