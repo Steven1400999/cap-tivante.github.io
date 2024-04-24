@@ -11,29 +11,41 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalles del Producto</title>
+    <title>Detalles de producto, Cap-tivante la mejor tienda.</title>
     <link rel="stylesheet" href="estilos/producto.css">
+    <title>Cap-tivante Gorras, Sombreros y más...</title>
+    <meta name="description"
+      content="Gorras, sombreros, gorros perfectos para tener un estilo perfecto, para protegerte de los rayos del sol y para que sesas Cap-tivante.">
+    <meta name="keywords" content="sombreros, gorras, cachuchas, gorros" />
+    <meta name="author" content="Steven Quezada González, 
+    Kevin Iván Ramirez Chairez,
+    Diego Sebastian Medina Zarate,
+    Brayan Ariel Flores De Lira,
+    Leonardo Jesus Gutierrez Muñoz," />
+    <meta name="robots" content="index"/>
+
+
 </head>
 <body>
 <header>
     <div class="container4">
         <nav class="navbar">
             <ul class="menu">
-                <li><a href="index.html">Contacto</a></li>
-                <li><a href="https://www.facebook.com/profile.php?id=61557315856153" target="_blank" class="facebook-btn"><img src="imagenes/facebook.png" alt="Facebook"></a></li>
+                <li><a href="index.html" title="Producto">Contacto</a></li>
+                <li><a href="https://www.facebook.com/profile.php?id=61557315856153" target="_blank" class="facebook-btn" title="Facebook Cap-tivante"><img src="imagenes/facebook.png" alt="Facebook" title="Logo_facebook"></a></li>
             </ul>
         </nav>
     </div>
     <div class="container3">
         <nav class="navbar">
             <div class="logo">
-                <img src="imagenes/logosombrero2.jpeg" alt="Logo de la tienda"> 
+                <img src="imagenes/logosombrero2.jpeg" alt="Logo de la tienda" title="Logo tienda sombrero"> 
             </div>
             <ul class="menu">
-                <li><a href="index.html">INICIO</a></li>
-                <li><a href="#">GORRAS</a></li>
-                <li><a href="#">SOMBREROS</a></li>
-                <li><a href="#">VISERAS</a></li>
+                <li><a href="index.html" title="Inicio">INICIO</a></li>
+                <li><a href="#" title="Gorras Cap-tivante">GORRAS</a></li>
+                <li><a href="#" title="Sombreros Cap-tivante">SOMBREROS</a></li>
+                <li><a href="#" title="Viseras Cap-tivante">VISERAS</a></li>
             </ul>
             <form action="/search">
                 <input type="text" name="q" placeholder="Buscar">
@@ -78,7 +90,7 @@
 
     const productImageContainer = document.querySelector('.product-image');
     productImageContainer.innerHTML = `
-        <img src="${imagen}" alt="${nombre}">
+        <img src="${imagen}" alt="${nombre}" title="${nombre}">
     `;
 
     const productDetailsContainer = document.querySelector('.product-details');
