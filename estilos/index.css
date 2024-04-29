@@ -1,6 +1,4 @@
-/* Estilos CSS para la presentación */
 
-/* Reset de estilos */
 body, h1, h2, p, ul, img, button {
     margin: 0;
     padding: 0;
@@ -12,7 +10,7 @@ li, title {
 }
 body {
     font-family: Arial, sans-serif;
-    background-color: #f8f8f8; /* Color de fondo neutro */
+    background-color: #f8f8f8; 
 }
 
 .container {
@@ -23,17 +21,16 @@ body {
 }
 
 
-/* Estilos para el navbar */
 
 .container3 {
-    max-width: 100%;
+    max-width: 80%;
     margin: 0 auto;
     padding-left: 20px;
     padding-right: 20px;
     
 }
 .container4 {
-    max-width: 100%;
+    max-width: 80%;
     margin: 0 auto;
     padding-left: 20px;
     padding-right: 20px;
@@ -45,9 +42,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #ffffff; /* Color de fondo blanco */
+    background-color: #ffffff; 
     padding: 10px 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
 
 .logo img {
@@ -95,13 +92,13 @@ input {
 
 .menu li a {
     text-decoration: none;
-    color: #333333; /* Color del texto neutro */
+    color: #333333; 
     font-weight: bold;
     transition: color 0.3s;
 }
 
 .menu li a:hover {
-    color: #666666; /* Cambio de color al pasar el mouse, un tono más oscuro */
+    color: #666666; 
 }
 
 
@@ -120,13 +117,13 @@ input {
 
 .product {
     width: 270px;
-    height: 480px; /* Establecer una altura fija para todos los productos */
+    height: 480px; 
     margin-bottom: 40px;
     background-color: #ffffff; 
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-decoration: none;
-    display: flex; /* Para que los hijos se alineen correctamente */
-    flex-direction: column; /* Apilar elementos verticalmente */
+    display: flex; 
+    flex-direction: column; 
 }
 
 .product-info {
@@ -134,12 +131,12 @@ input {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    flex-grow: 1; /* Para que ocupe todo el espacio disponible */
+    flex-grow: 1; 
 }
 
 .buy-button {
-    width: 100%; /* Hacer que los botones ocupen todo el ancho */
-    height: 50px; /* Establecer una altura fija para los botones */
+    width: 100%; 
+    height: 50px; 
     background-color: #1cc5ef;
 }
 
@@ -177,18 +174,18 @@ input {
 }
 
 .description {
-    color: #555555; /* Color del texto neutro */
+    color: #555555; 
     margin-bottom: 20px;
 }
 
 
 .buy-button:hover {
-    background-color: #a5a4a4; /* Cambio de color al pasar el mouse, un tono más claro */
+    background-color: #a5a4a4; 
 }
 .facebook-btn {
     display: inline-block;
-    background-color: #ffffff; /* Color de fondo de Facebook */
-    color: #fff; /* Color del texto */
+    background-color: #ffffff;
+    color: #fff; 
     border: none;
     border-radius: 5px;
     text-decoration: none;
@@ -206,6 +203,6 @@ input {
 }
 
 .facebook-btn:hover {
-    background-color: #dadada; /* Color de fondo más oscuro al pasar el mouse */
+    background-color: #dadada; 
 }
 

@@ -59,10 +59,8 @@
     <h1>Detalles del Producto</h1>
     <div class="product-details-container">
         <div class="product-image">
-            <!-- Aquí puedes incluir la imagen del producto -->
         </div>
         <div class="product-details">
-            <!-- Aquí puedes incluir los detalles del producto -->
         </div>
     </div> 
 </div>
@@ -71,6 +69,8 @@
     <div class="quantity-container">
         <label for="quantity">Cantidad:</label>
         <input type="number" id="quantity" name="quantity" min="1" value="1">
+        <br>
+        <br>
     </div>
     <button onclick="addToCart()">Agregar al carrito</button>
 </div>
@@ -102,7 +102,6 @@
 
     function addToCart() {
         const quantity = document.getElementById('quantity').value;
-        // Aquí puedes agregar lógica para agregar el producto al carrito con la cantidad seleccionada
         alert(`Agregado al carrito: ${quantity} ${nombre}(s)`);
     }
 </script>
@@ -126,7 +125,7 @@
   </div>
   <div style="text-align: center; margin-top: 40px;">
     <h3>Síguenos en redes sociales</h3>
-    <a href="#" style="color: #a5a4a4; text-decoration: none; margin-right: 10px;">Facebook</a>
+    <a href="https://www.facebook.com/profile.php?id=61557315856153" target="_blank" style="color: #a5a4a4; text-decoration: none; margin-right: 10px;">Facebook</a>
     <a href="#" style="color: #a5a4a4; text-decoration: none; margin-right: 10px;">Instagram</a>
     <a href="#" style="color: #a5a4a4; text-decoration: none; margin-right: 10px;">Twitter</a>
   </div>
