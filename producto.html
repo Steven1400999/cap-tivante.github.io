@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-205HXP6ZKV"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+        function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
         gtag('config', 'G-205HXP6ZKV');
     </script>
@@ -15,124 +16,157 @@
     <link rel="stylesheet" href="estilos/producto.css">
     <title>Cap-tivante Gorras, Sombreros y más...</title>
     <meta name="description"
-      content="Gorras, sombreros, gorros perfectos para tener un estilo perfecto, para protegerte de los rayos del sol y para que sesas Cap-tivante.">
+        content="Gorras, sombreros, gorros perfectos para tener un estilo perfecto, para protegerte de los rayos del sol y para que sesas Cap-tivante.">
     <meta name="keywords" content="sombreros, gorras, cachuchas, gorros" />
     <meta name="author" content="Steven Quezada González, 
     Kevin Iván Ramirez Chairez,
     Diego Sebastian Medina Zarate,
     Brayan Ariel Flores De Lira,
     Leonardo Jesus Gutierrez Muñoz," />
-    <meta name="robots" content="index"/>
-
+    <meta name="robots" content="index" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
+
 <body>
-<header>
-    <div class="container4">
-        <nav class="navbar">
-            <ul class="menu">
-                <li><a href="index.html" title="Producto">Contacto</a></li>
-                <li><a href="https://www.facebook.com/profile.php?id=61557315856153" target="_blank" class="facebook-btn" title="Facebook Cap-tivante"><img src="imagenes/facebook.png" alt="Facebook" title="Logo_facebook"></a></li>
-            </ul>
-        </nav>
-    </div>
-    <div class="container3">
-        <nav class="navbar">
-            <div class="logo">
-                <img src="imagenes/logosombrero2.jpeg" alt="Logo de la tienda" title="Logo tienda sombrero"> 
+    <header>
+        <div class="container4">
+            <nav class="navbar">
+                <ul class="menu">
+                    <li><a href="index.html" title="Producto">Contacto</a></li>
+                    <li><a href="https://www.facebook.com/profile.php?id=61557315856153" target="_blank"
+                            class="facebook-btn" title="Facebook Cap-tivante"><img src="imagenes/facebook.png"
+                                alt="Facebook" title="Logo_facebook"></a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="container3">
+            <nav class="navbar">
+                <div class="logo">
+                    <img src="imagenes/logosombrero2.jpeg" alt="Logo de la tienda" title="Logo tienda sombrero">
+                </div>
+                <ul class="menu">
+                    <li><a href="index.html" title="Inicio">INICIO</a></li>
+                    <li><a href="#" title="Gorras Cap-tivante">GORRAS</a></li>
+                    <li><a href="#" title="Sombreros Cap-tivante">SOMBREROS</a></li>
+                    <li><a href="#" title="Viseras Cap-tivante">VISERAS</a></li>
+                </ul>
+                <form action="/search">
+                    <input type="text" name="q" placeholder="Buscar">
+                    <button type="submit" class="button2">Buscar</button>
+                </form>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container2">
+        <h1>Detalles del Producto</h1>
+        <div class="product-details-container">
+            <div class="product-image">
             </div>
-            <ul class="menu">
-                <li><a href="index.html" title="Inicio">INICIO</a></li>
-                <li><a href="#" title="Gorras Cap-tivante">GORRAS</a></li>
-                <li><a href="#" title="Sombreros Cap-tivante">SOMBREROS</a></li>
-                <li><a href="#" title="Viseras Cap-tivante">VISERAS</a></li>
-            </ul>
-            <form action="/search">
-                <input type="text" name="q" placeholder="Buscar">
-                <button type="submit" class="button2">Buscar</button>
-            </form>
-        </nav>
-    </div>
-</header>
-
-<div class="container2">
-    <h1>Detalles del Producto</h1>
-    <div class="product-details-container">
-        <div class="product-image">
+            <div class="product-details">
+            </div>
         </div>
-        <div class="product-details">
-        </div>
-    </div> 
-</div>
-
-<div class="container2">
-    <div class="quantity-container">
-        <label for="quantity">Cantidad:</label>
-        <input type="number" id="quantity" name="quantity" min="1" value="1">
-        <br>
-        <br>
     </div>
-    <button onclick="addToCart()">Agregar al carrito</button>
-</div>
 
-<script>
-    function getUrlParameter(name) {
-        name = name.replace(/[[]/, '\\[').replace(/[\]]/, '\\]');
-        var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
-        var results = regex.exec(location.search);
-        return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
-    };
+    <div class="container2" >
+        <div class="quantity-container">
+            <label for="quantity">Cantidad:</label>
+            <input type="number" id="quantity" name="quantity" min="1" value="1">
+            <br>
+            <div class="stars" onclick="rateProduct(event)">
+                <h3>Calificar</h3>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+            </div>
 
-    const nombre = getUrlParameter('nombre');
-    const imagen = getUrlParameter('imagen');
-    const precio = getUrlParameter('precio');
-    const descripcion = getUrlParameter('descripcion');
+            <br>
+            <br>
+        </div>
+        <button onclick="addToCart()">Agregar al carrito</button>
+    </div>
 
-    const productImageContainer = document.querySelector('.product-image');
-    productImageContainer.innerHTML = `
+    <script>
+        function getUrlParameter(name) {
+            name = name.replace(/[[]/, '\\[').replace(/[\]]/, '\\]');
+            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            var results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        };
+
+        const nombre = getUrlParameter('nombre');
+        const imagen = getUrlParameter('imagen');
+        const precio = getUrlParameter('precio');
+        const descripcion = getUrlParameter('descripcion');
+
+        const productImageContainer = document.querySelector('.product-image');
+        productImageContainer.innerHTML = `
         <img src="${imagen}" alt="${nombre}" title="${nombre}">
     `;
 
-    const productDetailsContainer = document.querySelector('.product-details');
-    productDetailsContainer.innerHTML = `
+        const productDetailsContainer = document.querySelector('.product-details');
+        productDetailsContainer.innerHTML = `
         <h2>${nombre}</h2>
         <p><strong>Precio: ${precio}</strong></p>
         <p><strong>Descripción:</strong> ${descripcion}</p>
     `;
 
-    function addToCart() {
-        const quantity = document.getElementById('quantity').value;
-        alert(`Agregado al carrito: ${quantity} ${nombre}(s)`);
-    }
-</script>
+        function addToCart() {
+            const quantity = document.getElementById('quantity').value;
+            alert(`Agregado al carrito: ${quantity} ${nombre}(s)`);
+        }
+
+        function rateProduct(event) {
+            const clickedStar = event.target;
+            const allStars = document.querySelectorAll('.fa-star');
+
+            const clickedIndex = Array.from(allStars).indexOf(clickedStar);
+
+            allStars.forEach((star, index) => {
+                if (index <= clickedIndex) {
+                    star.classList.add('checked');
+                } else {
+                    star.classList.remove('checked');
+                }
+            });
+        }
+
+
+
+    </script>
     <div class="container2">
-    <h2>🔒Política de seguridad</h2>
-    <p>En Cap-tivante, protegemos la privacidad de tus datos. Utilizamos medidas de seguridad para protger tus datos.</p>
+        <h2>🔒Política de seguridad</h2>
+        <p>En Cap-tivante, protegemos la privacidad de tus datos. Utilizamos medidas de seguridad para protger tus
+            datos.</p>
 
-    <h2>🚚Política de entrega</h2>
-    <p>Nos esforzamos por entregarte tus productos de manera segura y oportuna. Si tienes alguna pregunta.</p>
+        <h2>🚚Política de entrega</h2>
+        <p>Nos esforzamos por entregarte tus productos de manera segura y oportuna. Si tienes alguna pregunta.</p>
 
-    <h2>🫱Política de devoluciones</h2>
-    <p>Aceptamos devoluciones dentro de 3 días. Contáctanos para obtener instrucciones. Tu satisfacción.</p>
-</div>
+        <h2>🫱Política de devoluciones</h2>
+        <p>Aceptamos devoluciones dentro de 3 días. Contáctanos para obtener instrucciones. Tu satisfacción.</p>
+    </div>
 
-<footer style="background-color: #fff; color: #a5a4a4; padding: 60px;">
-  <div style="text-align: center;">
-    <h3>Contacto</h3>
-    <p>¡Estamos aquí para ayudarte! Contáctanos para cualquier consulta o inquietud.</p>
-    <p>Email: info@tu-tienda.com</p>
-    <p>Teléfono: +123456789</p>
-  </div>
-  <div style="text-align: center; margin-top: 40px;">
-    <h3>Síguenos en redes sociales</h3>
-    <a href="https://www.facebook.com/profile.php?id=61557315856153" target="_blank" style="color: #a5a4a4; text-decoration: none; margin-right: 10px;">Facebook</a>
-    <a href="#" style="color: #a5a4a4; text-decoration: none; margin-right: 10px;">Instagram</a>
-    <a href="#" style="color: #a5a4a4; text-decoration: none; margin-right: 10px;">Twitter</a>
-  </div>
-  <div style="text-align: center; margin-top: 40px;">
-    <p>&copy; 2024 Tu Tienda de Sombreros. Todos los derechos reservados.</p>
-  </div>
-</footer>
+    <footer style="background-color: #fff; color: #a5a4a4; padding: 60px;">
+        <div style="text-align: center;">
+            <h3>Contacto</h3>
+            <p>¡Estamos aquí para ayudarte! Contáctanos para cualquier consulta o inquietud.</p>
+            <p>Email: info@tu-tienda.com</p>
+            <p>Teléfono: +123456789</p>
+        </div>
+        <div style="text-align: center; margin-top: 40px;">
+            <h3>Síguenos en redes sociales</h3>
+            <a href="https://www.facebook.com/profile.php?id=61557315856153" target="_blank"
+                style="color: #a5a4a4; text-decoration: none; margin-right: 10px;">Facebook</a>
+            <a href="#" style="color: #a5a4a4; text-decoration: none; margin-right: 10px;">Instagram</a>
+            <a href="#" style="color: #a5a4a4; text-decoration: none; margin-right: 10px;">Twitter</a>
+        </div>
+        <div style="text-align: center; margin-top: 40px;">
+            <p>&copy; 2024 Tu Tienda de Sombreros. Todos los derechos reservados.</p>
+        </div>
+    </footer>
 </body>
-</html>
 
+</html>

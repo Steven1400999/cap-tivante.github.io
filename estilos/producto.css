@@ -180,3 +180,7 @@ input {
     padding-top: 20px;
     
 }
+
+.checked {
+    color: orange;
+  }
