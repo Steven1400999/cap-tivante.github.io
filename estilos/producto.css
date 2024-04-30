@@ -12,6 +12,10 @@ h1{
     
 }
 
+.product-container {
+height: 300px;
+
+}
 
 .container {
     margin-left: 150px;
@@ -21,6 +25,7 @@ h1{
     align-items: center;
     width: 900px;
     height: 400px;
+    
 
 }
 .product-image img {
@@ -52,6 +57,7 @@ button{
     color: aliceblue;
     width: 90%;
     height: 50px; 
+    
 }
 button:hover {
 background-color: #a5a4a4; 
@@ -166,14 +172,15 @@ input {
 }
 
 .container3 {
-    max-width: 80%;
+    max-width: 100%;
     margin: 0 auto;
     padding-left: 20px;
     padding-right: 20px;
     
+    
 }
 .container4 {
-    max-width: 80%;
+    max-width: 100%;
     margin: 0 auto;
     padding-left: 20px;
     padding-right: 20px;
@@ -184,3 +191,15 @@ input {
 .checked {
     color: orange;
   }
+  .quantity-container {
+    width: 650px;
+    margin-top: 90px;
+    display: flex;
+    align-items: center; /* Alinea los elementos verticalmente */
+    justify-content: space-between;
+}
+
+/* Estilos para los botones */
+.quantity-container button {
+    margin-right: 10px; /* Espacio entre los botones */
+}

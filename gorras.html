@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <link rel="stylesheet" href="estilos/index.css">
+    <link rel="stylesheet" href="gorras.css">
+    <!-- Encabezado aquí -->
+</head>
+
+<body>
+    <header>
+        <div class="container4">
+            <nav class="navbar">
+                <ul class="menu">
+                    <li><a href="index.html" title="Contacto Cap-tivante">Contacto</a></li>
+                    <li><a href="https://www.facebook.com/profile.php?id=61557315856153" target="_blank"
+                            class="facebook-btn" title="Facebook"><img src="imagenes/facebook.png" alt="Facebook"
+                                title="Icono_Facebook"></a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="container3">
+            <nav class="navbar">
+                <div class="logo">
+                    <img src="imagenes/logosombrero2.jpeg" alt="Logo de la tienda" title="Logo_sombrero">
+                </div>
+                <ul class="menu">
+                    <li><a href="index.html" title="Inicio Cap-tivante">INICIO</a></li>
+                    <li><a href="gorras.html" title="Gorras Cap-tivante">GORRAS</a></li>
+                    <li><a href="#" title="Sombreros Cap-tivante">SOMBREROS</a></li>
+                    <li><a href="#" title="Viseras Cap-tivante">VISERAS</a></li>
+                </ul>
+                <form action="/search">
+                    <input type="text" name="q" placeholder="Buscar">
+                    <button type="submit">Buscar</button>
+                </form>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="products-container" id="products-container">
+            <!-- Aquí se mostrarán las gorras -->
+        </div>
+    </div>
+
+    <footer style="background-color:  #fff; color:  #a5a4a4; padding: 60px;">
+        <div style="text-align: center;">
+            <h3>Contacto</h3>
+            <p>¡Estamos aquí para ayudarte! Contáctanos para cualquier consulta o inquietud.</p>
+            <p>Email: info@tu-tienda.com</p>
+            <p>Teléfono: +52 449 12345678</p>
+        </div>
+        <div style="text-align: center; margin-top: 40px;">
+            <h3>Síguenos en redes sociales</h3>
+            <a href="https://www.facebook.com/profile.php?id=61557315856153" target="_blank"
+                style="color: #a5a4a4; text-decoration: none; margin-right: 10px;">Facebook</a>
+            <a href="#" style="color:  #a5a4a4; text-decoration: none; margin-right: 10px;">Instagram</a>
+            <a href="#" style="color: #a5a4a4; text-decoration: none; margin-right: 10px;">Twitter</a>
+        </div>
+        <div style="text-align: center; margin-top: 40px;">
+            <p>&copy; 2024 Cap-tivante. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        fetch('productos.json')
+            .then(response => response.json())
+            .then(data => {
+                const productsContainer = document.getElementById('products-container');
+                const gorras = data.filter(product => product.tipo === 'gorra');
+                gorras.forEach(product => {
+                    const productElement = document.createElement('div');
+                    productElement.classList.add('product');
+                    productElement.innerHTML = `
+                        <div class="product-image">
+                            <img src="${product.imagen}" alt="${product.nombre}"  title="${product.nombre}">
+                        </div>
+                        <div class="product-info">
+                            <h2>${product.nombre}</h2>
+                            <p class="price"> $${product.precio}</p>
+                            <button class="buy-button" onclick="window.location.href='producto.html?nombre=${encodeURIComponent(product.nombre)}&imagen=${encodeURIComponent(product.imagen)}&precio=${encodeURIComponent(product.precio)}&descripcion=${encodeURIComponent(product.descripcion)}'">Ver producto</button>
+                        </div>
+                    `;
+                    productsContainer.appendChild(productElement);
+                });
+            })
+            .catch(error => console.error('Error al cargar los datos de los productos:', error));
+    </script>
+</body>
+
+</html>
