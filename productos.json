@@ -89,6 +89,27 @@
       "imagen": "imagenes/producto13.jpg",
       "precio": "299.16",
       "descripcion": "Material de alta calidad: fabricado con protección solar, ventilación, protección contra el viento y material parasol para máxima comodidad y protección."
+    },
+    {
+      "nombre": "Under Armour Casual Visera ",
+      "tipo": "visera",
+      "imagen": "imagenes/producto14.jpg",
+      "precio": "440.00",
+      "descripcion": "El revestimiento frontal UA Siro ofrece gran elasticidad y una sensación ultra suave."
+    },
+    {
+      "nombre": "Lacoste Visera Deportiva de piqué",
+      "tipo": "visera",
+      "imagen": "imagenes/producto15.jpg",
+      "precio": "973.00",
+      "descripcion": "Logotipo de cocodrilo verde con correa trasera ajustable, hecho 100% algodón."
+    },
+    {
+      "nombre": "adidas Superlite 2 Performance Visor ",
+      "tipo": "visera",
+      "imagen": "imagenes/producto16.jpg",
+      "precio": "678.00",
+      "descripcion": "El partido es la clásica visera abrazadera con un escudo bordado marca adidas en la parte delantera y encuadernación de contraste en la parte superior."
     }
   ]
   

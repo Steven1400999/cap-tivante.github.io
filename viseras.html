@@ -3,7 +3,7 @@
 
 <head>
     <link rel="stylesheet" href="estilos/index.css">
-    <link rel="stylesheet" href="gorras.css">
+    <link rel="stylesheet" href="viseras.css">
     <!-- Encabezado aquí -->
 </head>
 
@@ -28,7 +28,8 @@
                     <li><a href="index.html" title="Inicio Cap-tivante">INICIO</a></li>
                     <li><a href="gorras.html" title="Gorras Cap-tivante">GORRAS</a></li>
                     <li><a href="sombreros.html" title="Sombreros Cap-tivante">SOMBREROS</a></li>
-                    <li><a href="viseras.html" title="Viseras Cap-tivante">VISERAS</a></li>
+                    <li><a href="viseras.html" title="Gorras Cap-tivante">VISERAS</a></li>
+                    
                 </ul>
                 <form action="/search">
                     <input type="text" name="q" placeholder="Buscar">
@@ -40,7 +41,7 @@
 
     <div class="container">
         <div class="products-container" id="products-container">
-            <!-- Aquí se mostrarán las gorras -->
+            <!-- Aquí se mostrarán las viseras -->
         </div>
     </div>
 
@@ -68,8 +69,8 @@
             .then(response => response.json())
             .then(data => {
                 const productsContainer = document.getElementById('products-container');
-                const gorras = data.filter(product => product.tipo === 'gorra');
-                gorras.forEach(product => {
+                const viseras = data.filter(product => product.tipo === 'visera');
+                viseras.forEach(product => {
                     const productElement = document.createElement('div');
                     productElement.classList.add('product');
                     productElement.innerHTML = `
