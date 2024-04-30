@@ -36,14 +36,14 @@
     },
     {
       "nombre": "Lanzom - Sombreros de sol para mujer, de ala ancha, con paja, plegable, para playa, para verano, talla 6 8/7-7 1/4",
-      "tipo": "Sombrero",
+      "tipo": "sombrero",
       "imagen": "imagenes/Producto6.jpg",
       "precio": "501.15",
       "descripcion": "Authentic Collection MLB"
     },
     {
       "nombre": "Jogoi Sombrero para Sol Mujer Hombre Sombrero de Paja de ala Ancha Plegable con Cordón de Viento Gorros de Playa Verano",
-      "tipo": "Sombrero",
+      "tipo": "sombrero",
       "imagen": "imagenes/Producto7.jpg",
       "precio": "235.00",
       "descripcion": "Material transpirable: el sombrero para el sol está hecho de papiro, que es suave y transpirable. Te mantendrá fresco en esos días increíblemente calurosos de verano y mantendrá bien su forma"
@@ -68,6 +68,27 @@
       "imagen": "imagenes/Producto10.jpg",
       "precio": "436.51",
       "descripcion": "Ajuste relajado, Visera precurvada, Correa ajustable, Cinta de marca"
+    },
+    {
+      "nombre": "Besoogii Sombrero clásico de ala ancha",
+      "tipo": "sombrero",
+      "imagen": "imagenes/producto11.jpg",
+      "precio": "237.21",
+      "descripcion": "sombrero de Fedora con una hebilla de cinturón café ancha, la tela es muy similar a la lana. Adecuado para otoño e invierno primavera correa ajustable en el interior"
+    },
+    {
+      "nombre": "CCAKXCJJ - Sombrero de vaquero ",
+      "tipo": "sombrero",
+      "imagen": "imagenes/producto12.jpg",
+      "precio": "398",
+      "descripcion": "Tamaño: nuestros sombreros de vaquero de ante tienen circunferencia de capucha: 22.4 a 22.8 pulgadas, ancho del borde: 3.1 pulgadas, altura del sombrero: 4.7 pulgadas, adecuado para la mayoría"
+    },
+    {
+      "nombre": "Andy's Orchids Sombrero de paja",
+      "tipo": "sombrero",
+      "imagen": "imagenes/producto13.jpg",
+      "precio": "299.16",
+      "descripcion": "Material de alta calidad: fabricado con protección solar, ventilación, protección contra el viento y material parasol para máxima comodidad y protección."
     }
   ]
   
