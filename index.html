@@ -6,7 +6,10 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-205HXP6ZKV"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
     gtag('js', new Date());
 
     gtag('config', 'G-205HXP6ZKV');
@@ -20,8 +23,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cap-tivante Gorras, Sombreros y más...</title>
-  <meta name="description"
-    content="Gorras, sombreros, gorros perfectos para tener un estilo perfecto, para protegerte de los rayos del sol y para que sesas Cap-tivante.">
+  <meta name="description" content="Gorras, sombreros, gorros perfectos para tener un estilo perfecto, para protegerte de los rayos del sol y para que seas Cap-tivante.">
   <meta name="keywords" content="sombreros, gorras, cachuchas, gorros" />
   <meta name="author" content="Steven Quezada González, Kevin Iván Ramirez Chairez, Diego Sebastian Medina Zarate, Brayan Ariel Flores De Lira, Leonardo Jesus Gutierrez Muñoz," />
   <meta name="robots" content="index" />
@@ -35,8 +37,7 @@
       <nav class="navbar">
         <ul class="menu">
           <li><a href="index.html" title="Contacto Cap-tivante">Contacto</a></li>
-          <li><a href="https://www.facebook.com/profile.php?id=61557315856153" target="_blank" class="facebook-btn"
-              title="Facebook"><img src="imagenes/facebook.png" alt="Facebook" title="Icono_Facebook"></a></li>
+          <li><a href="https://www.facebook.com/profile.php?id=61557315856153" target="_blank" class="facebook-btn" title="Facebook"><img src="imagenes/facebook.png" alt="Facebook" title="Icono_Facebook"></a></li>
           <li><a href="login.html" title="Iniciar sesión">Iniciar sesión</a></li>
         </ul>
       </nav>
@@ -49,7 +50,7 @@
         <ul class="menu">
           <li><a href="index.html" title="Inicio Cap-tivante">INICIO</a></li>
           <li><a href="gorras.html" title="Gorras Cap-tivante">GORRAS</a></li>
-          <li><a href="sombreros.html" title="Sombreros Cap-tivante">SOMBREROS</a></li>
+          <li><a href="sombreros.html" title="SombrerosCap-tivante">SOMBREROS</a></li>
           <li><a href="viseras.html" title="Viseras Cap-tivante">VISERAS</a></li>
         </ul>
         <form id="search-form">
@@ -61,40 +62,45 @@
   </header>
 
   <div class="container">
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-      <ol class="carousel-indicators">
-        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-      </ol>
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="imagenes/banner1.jpeg" class="d-block w-100" alt="Banner new era" title="Banner new era">
-        </div>
-        <div class="carousel-item">
-          <img src="imagenes/banner2.1.jpg" class="d-block w-100" alt="Banner_sombrero" title="Banner de sombrero de paja">
-        </div>
-        <div class="carousel-item">
-          <img src="imagenes/banner3.1.jpeg" class="d-block w-100" alt="Banner_F1" title="Banner de carro de formula 1">
+    <div class="row">
+      <div class="col-md-12">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="imagenes/banner1.jpeg" class="d-block w-100" alt="Banner new era" title="Banner new era">
+            </div>
+            <div class="carousel-item">
+              <img src="imagenes/banner2.1.jpg" class="d-block w-100" alt="Banner_sombrero" title="Banner de sombrero de paja">
+            </div>
+            <div class="carousel-item">
+              <img src="imagenes/banner3.1.jpeg" class="d-block w-100" alt="Banner_F1" title="Banner de carro de formula 1">
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev" title="Previous">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next" title="Next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
         </div>
       </div>
-      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev" title="Previous">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next" title="Next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
     </div>
-  </div>
-
-  <div class="container">
+  
     <h1 class="store-title">Bienvenido a Cap-tivante</h1>
+    <button id="sort-name-button" style="display: none;">Ordenar A-Z</button>
+    <button id="sort-reverse-name-button" style="display: none;">Ordenar Z-A</button>
+    <button id="sort-price-button" style="display: none;">Ordenar Precio (Menor a Mayor)</button> <!-- Nuevo botón -->
+    <button id="sort-price-reverse-button" style="display: none;">Ordenar Precio (Mayor a Menor)</button> <!-- Nuevo botón -->
     <div class="products-container" id="products-container">
       <!-- Aquí se mostrarán los productos -->
     </div>
-  </div>
 
   <!-- Script para la funcionalidad de búsqueda -->
   <script>
@@ -102,6 +108,10 @@
     const searchForm = document.getElementById('search-form');
     const searchInput = document.getElementById('search-input');
     const productsContainer = document.getElementById('products-container');
+    const sortButton = document.getElementById('sort-name-button');
+    const reverseSortButton = document.getElementById('sort-reverse-name-button');
+    const priceSortButton = document.getElementById('sort-price-button'); // Nuevo botón
+    const priceSortReverseButton = document.getElementById('sort-price-reverse-button'); // Nuevo botón
 
     // Function to create a product element
     function createProductElement(product) {
@@ -160,10 +170,83 @@
           product.style.display = 'none';
         }
       });
+
+      // Show the sort buttons if there are search results
+      if (filteredProducts.length > 0) {
+        sortButton.style.display = 'inline-block';
+        reverseSortButton.style.display = 'inline-block';
+        priceSortButton.style.display = 'inline-block'; // Mostrar el nuevo botón
+        priceSortReverseButton.style.display = 'inline-block'; // Mostrar el nuevo botón
+      } else {
+        sortButton.style.display = 'none';
+        reverseSortButton.style.display = 'none';
+        priceSortButton.style.display = 'none'; // Ocultar el nuevo botón
+        priceSortReverseButton.style.display = 'none'; // Ocultar el nuevo botón
+      }
+    });
+
+    // Add event listener to the sort button
+    sortButton.addEventListener('click', function () {
+      const sortedProducts = Array.from(productsContainer.children)
+        .sort((a, b) => {
+          const nameA = a.querySelector('.product-info h2').textContent.toLowerCase();
+          const nameB = b.querySelector('.product-info h2').textContent.toLowerCase();
+          return nameA.localeCompare(nameB);
+        });
+
+      productsContainer.innerHTML = '';
+      sortedProducts.forEach(product => {
+        productsContainer.appendChild(product);
+      });
+    });
+
+    // Add event listener to the reverse sort button
+    reverseSortButton.addEventListener('click', function () {
+      const sortedProducts = Array.from(productsContainer.children)
+        .sort((a, b) => {
+          const nameA = a.querySelector('.product-info h2').textContent.toLowerCase();
+          const nameB = b.querySelector('.product-info h2').textContent.toLowerCase();
+          return nameB.localeCompare(nameA);
+        });
+
+      productsContainer.innerHTML = '';
+      sortedProducts.forEach(product => {
+        productsContainer.appendChild(product);
+      });
+    });
+
+    // Add event listener to the price sort button
+    priceSortButton.addEventListener('click', function () {
+      const sortedProducts = Array.from(productsContainer.children)
+        .sort((a, b) => {
+          const priceA = parseFloat(a.querySelector('.price').textContent.replace('$', ''));
+          const priceB = parseFloat(b.querySelector('.price').textContent.replace('$', ''));
+          return priceA - priceB;
+        });
+
+      productsContainer.innerHTML = '';
+      sortedProducts.forEach(product => {
+        productsContainer.appendChild(product);
+      });
+    });
+
+    // Add event listener to the price reverse sort button
+    priceSortReverseButton.addEventListener('click', function () {
+      const sortedProducts = Array.from(productsContainer.children)
+        .sort((a, b) => {
+          const priceA = parseFloat(a.querySelector('.price').textContent.replace('$', ''));
+          const priceB = parseFloat(b.querySelector('.price').textContent.replace('$', ''));
+          return priceB - priceA;
+        });
+
+      productsContainer.innerHTML = '';
+      sortedProducts.forEach(product => {
+        productsContainer.appendChild(product);
+      });
     });
   </script>
 
-  <footer style="background-color: #fff; color: #a5a4a4; padding: 60px;">
+  <footer style="background-color: #fff; color: #a5a4a4; padding: 60px; width: 100;">
     <div style="text-align: center;">
       <h3>Contacto</h3>
       <p>¡Estamos aquí para ayudarte! Contáctanos para cualquier consulta o inquietud.</p>
@@ -181,8 +264,7 @@
     </div>
   </footer>
 
-  <div class="modal fade" id="cookieModal" tabindex="-1" role="dialog" aria-labelledby="cookieModalLabel"
-    aria-hidden="true">
+  <div class="modal fade" id="cookieModal" tabindex="-1" role="dialog" aria-labelledby="cookieModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -193,22 +275,13 @@
         </div>
         <div class="modal-body">
           <h6><strong>Política de Cookies:</strong></h6>
-          <p>Este sitio web utiliza cookies para mejorar la experiencia del usuario y para fines estadísticos. Las
-            cookies son pequeños archivos de texto que se almacenan en tu dispositivo cuando visitas un sitio web. Son
-            ampliamente utilizadas para que los sitios web funcionen o funcionen de manera más eficiente, así como para
-            proporcionar información a los propietarios del sitio. Al utilizar este sitio web, aceptas el uso de cookies
-            de acuerdo con nuestra.</p>
+          <p>Este sitio web utiliza cookies para mejorar la experiencia del usuario y para fines estadísticos. Las cookies son pequeños archivos de texto que se almacenan en tu dispositivo cuando visitas un sitio web. Son ampliamente utilizadas para que los sitios web funcionen o funcionen de manera más eficiente, así como para proporcionar información a los propietarios del sitio. Al utilizar este sitio web, aceptas el uso de cookies de acuerdo con nuestra.</p>
           <hr>
           <h6><strong>Política de Privacidad:</strong></h6>
-          <p>Respetamos tu privacidad y estamos comprometidos a protegerla. Cualquier información personal que
-            proporciones a través de este sitio web será tratada de acuerdo con nuestra. No compartiremos tu información personal con terceros sin tu consentimiento, excepto
-            cuando sea necesario para proporcionar los servicios solicitados o cuando lo exija la ley.</p>
+          <p>Respetamos tu privacidad y estamos comprometidos a protegerla. Cualquier información personal que proporciones a través de este sitio web será tratada de acuerdo con nuestra. No compartiremos tu información personal con terceros sin tu consentimiento, excepto cuando sea necesario para proporcionar los servicios solicitados o cuando lo exija la ley.</p>
           <hr>
           <h6><strong>Seguridad de las Tarjetas de Crédito:</strong></h6>
-          <p>Tu seguridad es nuestra prioridad. Utilizamos tecnologías de cifrado y medidas de seguridad para proteger
-            tus datos, incluida la información de tu tarjeta de crédito, cuando realizas una compra a través de nuestro
-            sitio web. No almacenamos los detalles de tu tarjeta de crédito en nuestros servidores después de completar
-            la transacción.</p>
+          <p>Tu seguridad es nuestra prioridad. Utilizamos tecnologías de cifrado y medidas de seguridad para proteger tus datos, incluida la información de tu tarjeta de crédito, cuando realizas una compra a través de nuestro sitio web. No almacenamos los detalles de tu tarjeta de crédito en nuestros servidores después de completar la transacción.</p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Aceptar</button>
@@ -217,12 +290,12 @@
     </div>
   </div>
 
+  <script>
+    $(document).ready(function() {
+      $('#cookieModal').modal('show');
+    });
+  </script>
 
 </body>
-<script>
-  $(document).ready(function () {
-    $('#cookieModal').modal('show');
-  });
-</script>
 
 </html>
