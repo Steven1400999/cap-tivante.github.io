@@ -207,3 +207,22 @@ input {
     background-color: #dadada; 
 }
 
+.product-description-card {
+    background-color: #ffffff;
+    padding: 20px; /* Espaciado interno */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra */
+    width: 1100px;
+    height: 250px;
+}
+
+.product-description-card h2 {
+    font-size: 1.5rem; /* Tamaño del título */
+    margin-bottom: 10px; /* Espaciado inferior del título */
+    color: #333; /* Color del texto */
+}
+
+.product-description-card p {
+    font-size: 1.2rem; /* Tamaño del texto */
+    color: #666; /* Color del texto */
+    text-align: justify;
+}

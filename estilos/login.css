@@ -1,0 +1,200 @@
+
+body, h1, h2, p, ul, img, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+li, title {
+    margin-left: 20px;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8; 
+}
+
+
+.container3 {
+    max-width: 100%;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    
+}
+.container4 {
+    max-width: 100%;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    
+}
+.navbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffff; 
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+.logo img {
+    max-width: 100px;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+  }
+
+.logo img {
+    margin-right: 30px;
+    max-width: 150px;
+}
+input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  button {
+    padding: 10px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+  }
+
+.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.menu li:last-child {
+    margin-right: 0;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #333333; 
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.menu li a:hover {
+    color: #666666; 
+}
+
+
+.store-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.facebook-btn {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #fff; 
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    height: 20px;
+    width: 20px;
+}
+
+.facebook-btn img {
+    vertical-align: middle;
+    height: 25px;
+    width: 25px;
+}
+
+.facebook-btn:hover {
+    background-color: #dadada; 
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    background-color: #f0f0f0; /* Cambia el color de fondo del contenedor si lo deseas */
+}
+
+.formulario {
+    width: 500px;
+    background-color: #fff; /* Color de fondo del formulario */
+    padding: 30px; /* Espaciado interno del formulario */
+    border-radius: 8px; /* Ajusta la curvatura de los bordes */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para un efecto de elevación */
+}
+
+.formulario form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Alinea los elementos del formulario a la izquierda */
+.formulario form div {
+    display: flex;
+    align-items: center;
+}
+
+/* Estilo para las etiquetas */
+.formulario form label {
+    flex: 1; /* Hace que las etiquetas ocupen el mismo espacio */
+    text-align: center;
+    margin-right: 10px; /* Espacio entre la etiqueta y el campo de entrada */
+}
+
+/* Estilo para los campos de entrada */
+.formulario form input[type="text"],
+.formulario form input[type="password"],
+.formulario form input[type="submit"] {
+    margin-bottom: 15px; /* Espacio inferior entre los campos */
+    padding: 10px; /* Espaciado interno de los campos */
+    width: 100px;
+   
+}
+
+/* Estilo para el botón de inicio de sesión */
+.formulario form input[type="submit"] {
+    margin-top: 15px; /* Espacio superior al botón */
+}
+
+/* Alinea los elementos del formulario */
+.formulario form div {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centra los elementos horizontalmente */
+}
+
+    
+
+
+
+.registrarse {
+    margin-top: 15px;
+}
+
+.registrarse a {
+    color: blue;
+    text-decoration: none;
+}
+
+/* Estilo para el botón de inicio de sesión */
+
+
+
+
+

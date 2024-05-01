@@ -193,13 +193,18 @@ input {
   }
   .quantity-container {
     width: 650px;
-    margin-top: 90px;
+    margin-top: 200px;
     display: flex;
     align-items: center; /* Alinea los elementos verticalmente */
-    justify-content: space-between;
+    justify-content: space-between; /* Espacio entre los elementos */
 }
 
 /* Estilos para los botones */
 .quantity-container button {
-    margin-right: 10px; /* Espacio entre los botones */
+    margin-left: 30px; /* Espacio entre el botón "Agregar al carrito" y el campo de cantidad */
+}
+
+.container2{
+    height: 250px;
+
 }
