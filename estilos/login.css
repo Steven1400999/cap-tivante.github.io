@@ -3,6 +3,7 @@ body, h1, h2, p, ul, img, button {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-align: center;
     
 }
 li, title {
@@ -178,10 +179,6 @@ input {
     align-items: center;
     justify-content: center; /* Centra los elementos horizontalmente */
 }
-
-    
-
-
 
 .registrarse {
     margin-top: 15px;

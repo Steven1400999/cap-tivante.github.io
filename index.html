@@ -23,17 +23,10 @@
   <meta name="description"
     content="Gorras, sombreros, gorros perfectos para tener un estilo perfecto, para protegerte de los rayos del sol y para que sesas Cap-tivante.">
   <meta name="keywords" content="sombreros, gorras, cachuchas, gorros" />
-  <meta name="author" content="Steven Quezada González, 
-  Kevin Iván Ramirez Chairez,
-  Diego Sebastian Medina Zarate,
-  Brayan Ariel Flores De Lira,
-  Leonardo Jesus Gutierrez Muñoz," />
-  <meta name="robots" content="index"/>
+  <meta name="author" content="Steven Quezada González, Kevin Iván Ramirez Chairez, Diego Sebastian Medina Zarate, Brayan Ariel Flores De Lira, Leonardo Jesus Gutierrez Muñoz," />
+  <meta name="robots" content="index" />
 
-
-
-
-<link rel="stylesheet" href="estilos/index.css">
+  <link rel="stylesheet" href="estilos/index.css">
 </head>
 
 <body>
@@ -42,10 +35,9 @@
       <nav class="navbar">
         <ul class="menu">
           <li><a href="index.html" title="Contacto Cap-tivante">Contacto</a></li>
-          <li><a href="https://www.facebook.com/profile.php?id=61557315856153" target="_blank" class="facebook-btn" title="Facebook"><img
-                src="imagenes/facebook.png" alt="Facebook" title="Icono_Facebook"></a></li>
-                <li><a href="login.html" title="Iniciar sesión">Iniciar sesión</a></li>
-                
+          <li><a href="https://www.facebook.com/profile.php?id=61557315856153" target="_blank" class="facebook-btn"
+              title="Facebook"><img src="imagenes/facebook.png" alt="Facebook" title="Icono_Facebook"></a></li>
+          <li><a href="login.html" title="Iniciar sesión">Iniciar sesión</a></li>
         </ul>
       </nav>
     </div>
@@ -56,12 +48,12 @@
         </div>
         <ul class="menu">
           <li><a href="index.html" title="Inicio Cap-tivante">INICIO</a></li>
-          <li><a href="gorras.html"title="Gorras Cap-tivante">GORRAS</a></li>
-          <li><a href="sombreros.html"title="Sombreros Cap-tivante">SOMBREROS</a></li>
+          <li><a href="gorras.html" title="Gorras Cap-tivante">GORRAS</a></li>
+          <li><a href="sombreros.html" title="Sombreros Cap-tivante">SOMBREROS</a></li>
           <li><a href="viseras.html" title="Viseras Cap-tivante">VISERAS</a></li>
         </ul>
-        <form action="/search">
-          <input type="text" name="q" placeholder="Buscar">
+        <form id="search-form">
+          <input type="text" id="search-input" placeholder="Buscar">
           <button type="submit">Buscar</button>
         </form>
       </nav>
@@ -69,7 +61,6 @@
   </header>
 
   <div class="container">
-
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -98,48 +89,81 @@
     </div>
   </div>
 
-
-
   <div class="container">
     <h1 class="store-title">Bienvenido a Cap-tivante</h1>
     <div class="products-container" id="products-container">
+      <!-- Aquí se mostrarán los productos -->
     </div>
   </div>
 
+  <!-- Script para la funcionalidad de búsqueda -->
   <script>
+    // Get the search form, input, and products container elements
+    const searchForm = document.getElementById('search-form');
+    const searchInput = document.getElementById('search-input');
+    const productsContainer = document.getElementById('products-container');
+
+    // Function to create a product element
+    function createProductElement(product) {
+      const productWrapper = document.createElement('div');
+      productWrapper.classList.add('product-wrapper');
+
+      const productElement = document.createElement('a');
+      productElement.classList.add('product');
+      productElement.href = `producto.html?nombre=${encodeURIComponent(product.nombre)}&imagen=${encodeURIComponent(product.imagen)}&precio=${encodeURIComponent(product.precio)}&descripcion=${encodeURIComponent(product.descripcion)}`;
+      productElement.title = product.nombre;
+      productElement.innerHTML = `
+        <div class="product-image">
+          <img src="${product.imagen}" alt="${product.nombre}" title="${product.nombre}">
+        </div>
+        <div class="product-info">
+          <h2>${product.nombre}</h2>
+          <p class="price">$${product.precio}</p>
+          <button class="buy-button">Ver producto</button>
+        </div>
+      `;
+
+      productWrapper.appendChild(productElement);
+      return productWrapper;
+    }
+
+    // Fetch products from JSON file
     fetch('productos.json')
       .then(response => response.json())
       .then(data => {
-        const productsContainer = document.getElementById('products-container');
+        // Display all products initially
         data.forEach(product => {
-
-          const productWrapper = document.createElement('div');
-          productWrapper.classList.add('product-wrapper');
-
-          const productElement = document.createElement('a');
-          productElement.classList.add('product');
-          productElement.href = `producto.html?nombre=${encodeURIComponent(product.nombre)}&imagen=${encodeURIComponent(product.imagen)}&precio=${encodeURIComponent(product.precio)}&descripcion=${encodeURIComponent(product.descripcion)}`;
-          productElement.title = product.nombre;
-          productElement.innerHTML = `
-                        <div class="product-image">
-                            <img src="${product.imagen}" alt="${product.nombre}"  title="${product.nombre}">
-                        </div>
-                        <div class="product-info">
-                            <h2>${product.nombre}</h2>
-                            <p class="price"> $${product.precio}</p>
-                            <button class="buy-button">Ver producto</button>
-                        </div>
-                    `;
+          const productElement = createProductElement(product);
           productsContainer.appendChild(productElement);
-
         });
       })
       .catch(error => console.error('Error al cargar los datos de los productos:', error));
+
+    // Add event listener to the search form
+    searchForm.addEventListener('submit', function (event) {
+      event.preventDefault(); // Prevent form submission
+
+      // Get the search term
+      const searchTerm = searchInput.value.trim().toLowerCase();
+
+      // Filter products based on the search term
+      const filteredProducts = Array.from(productsContainer.children).filter(product => {
+        const productName = product.querySelector('.product-info h2').textContent.toLowerCase();
+        return productName.includes(searchTerm);
+      });
+
+      // Show or hide products based on the search results
+      Array.from(productsContainer.children).forEach(product => {
+        if (filteredProducts.includes(product)) {
+          product.style.display = 'block';
+        } else {
+          product.style.display = 'none';
+        }
+      });
+    });
   </script>
 
-
-
-  <footer style="background-color:  #fff; color:  #a5a4a4; padding: 60px;">
+  <footer style="background-color: #fff; color: #a5a4a4; padding: 60px;">
     <div style="text-align: center;">
       <h3>Contacto</h3>
       <p>¡Estamos aquí para ayudarte! Contáctanos para cualquier consulta o inquietud.</p>
@@ -149,7 +173,7 @@
     <div style="text-align: center; margin-top: 40px;">
       <h3>Síguenos en redes sociales</h3>
       <a href="https://www.facebook.com/profile.php?id=61557315856153" target="_blank" style="color: #a5a4a4; text-decoration: none; margin-right: 10px;">Facebook</a>
-      <a href="#" style="color:  #a5a4a4; text-decoration: none; margin-right: 10px;">Instagram</a>
+      <a href="#" style="color: #a5a4a4; text-decoration: none; margin-right: 10px;">Instagram</a>
       <a href="#" style="color: #a5a4a4; text-decoration: none; margin-right: 10px;">Twitter</a>
     </div>
     <div style="text-align: center; margin-top: 40px;">

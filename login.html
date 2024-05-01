@@ -1,23 +1,21 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iniciar sesión - Cap-tivante</title>
+    <title>Iniciar sesión o Registrarse - Cap-tivante</title>
     <link rel="stylesheet" href="estilos/login.css">
-    
 </head>
-
 <body>
     <header>
+        <!-- Navbar -->
         <div class="container4">
             <nav class="navbar">
-                <ul class="menu">
+                <ul class="menu" id="navbar-menu">
                     <li><a href="index.html" title="Contacto Cap-tivante">Contacto</a></li>
                     <li><a href="https://www.facebook.com/profile.php?id=61557315856153" target="_blank" class="facebook-btn" title="Facebook"><img
                                 src="imagenes/facebook.png" alt="Facebook" title="Icono_Facebook"></a></li>
-                    <li><a href="login.html" title="Iniciar sesión">Iniciar sesión</a></li>
+                    <!-- Aquí se mostrará el nombre de usuario o el enlace de inicio de sesión -->
                 </ul>
             </nav>
         </div>
@@ -41,26 +39,45 @@
     </header>
 
     <div class="container">
-        <div class="formulario">
+        <div class="formulario" id="login-formulario">
             <h1>Inicio de sesión</h1>
-            <form method="post">
+            <form id="login-form">
                 <div class="username">
-                    <input type="text" required>
-                    <label>Correo electronico</label>
+                    <input type="text" id="email" required>
+                    <label>Correo electrónico</label>
                 </div>
-                <div class="contrasena">
-                    <input type="password" required>
+                <div class="password">
+                    <input type="password" id="password" required>
                     <label>Contraseña</label>
                 </div>
-                <input type="submit" value="Iniciar">
+                <input type="submit" value="Iniciar sesión">
                 <div class="registrarse">
-                    <a href="#">Registrarse</a>
+                    <a href="#" onclick="toggleForms()">Registrarse</a>
+                </div>
+            </form>
+        </div>
+
+        <div class="formulario" id="register-formulario" style="display: none;">
+            <h1>Registrarse</h1>
+            <form id="register-form">
+                <div class="username">
+                    <input type="text" id="register-email" required>
+                    <label>Correo electrónico</label>
+                </div>
+                <div class="password">
+                    <input type="password" id="register-password" required>
+                    <label>Contraseña</label>
+                </div>
+                <input type="submit" value="Registrarse">
+                <div class="registrarse">
+                    <a href="#" onclick="toggleForms()">Ya tengo una cuenta</a>
                 </div>
             </form>
         </div>
     </div>
 
     <footer style="background-color: #fff; color: #a5a4a4; padding: 60px;">
+        <!-- Footer content -->
         <div style="text-align: center;">
             <h3>Contacto</h3>
             <p>¡Estamos aquí para ayudarte! Contáctanos para cualquier consulta o inquietud.</p>
@@ -79,6 +96,81 @@
         </div>
     </footer>
 
-</body>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var storedEmail = localStorage.getItem("email");
+            var storedPassword = localStorage.getItem("password");
 
+            if (storedEmail && storedPassword) {
+                // Si hay credenciales almacenadas, ocultar el formulario de registro y mostrar el formulario de inicio de sesión
+                document.getElementById("login-formulario").style.display = "block";
+                document.getElementById("register-formulario").style.display = "none";
+                // Mostrar el nombre de usuario en el navbar
+                document.getElementById("navbar-menu").innerHTML = `<li>Bienvenido, ${storedEmail}!</li><li><a href="#" onclick="logout()">Cerrar sesión</a></li>`;
+            } else {
+                // Si no hay credenciales almacenadas, mostrar el formulario de registro y ocultar el formulario de inicio de sesión
+                document.getElementById("login-formulario").style.display = "none";
+                document.getElementById("register-formulario").style.display = "block";
+            }
+        });
+
+        document.getElementById("login-form").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            // Obtener los valores del formulario
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+
+            // Obtener el correo electrónico y la contraseña almacenados en local storage
+            var storedEmail = localStorage.getItem("email");
+            var storedPassword = localStorage.getItem("password");
+
+            // Verificar si las credenciales son correctas
+            if (email === storedEmail && password === storedPassword) {
+                alert("Inicio de sesión exitoso!");
+                // Redireccionar al usuario a otra página, por ejemplo, la página de inicio
+                window.location.href = "index.html";
+            } else {
+                alert("Correo electrónico o contraseña incorrectos.");
+            }
+        });
+
+        document.getElementById("register-form").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            // Obtener los valores del formulario
+            var email = document.getElementById("register-email").value;
+            var password = document.getElementById("register-password").value;
+
+            // Almacenar el correo electrónico y la contraseña en local storage
+            localStorage.setItem("email", email);
+            localStorage.setItem("password", password);
+
+            alert("¡Registro exitoso!");
+            // Redireccionar al usuario a la página de inicio de sesión
+            window.location.href = "login.html";
+        });
+
+        function toggleForms() {
+            // Alternar la visualización de los formularios de inicio de sesión y registro
+            var loginFormulario = document.getElementById("login-formulario");
+            var registerFormulario = document.getElementById("register-formulario");
+
+            if (loginFormulario.style.display === "block") {
+                loginFormulario.style.display = "none";
+                registerFormulario.style.display = "block";
+            } else {
+                loginFormulario.style.display = "block";
+                registerFormulario.style.display = "none";
+            }
+        }
+
+        function logout() {
+            // Eliminar las credenciales almacenadas y recargar la página para mostrar nuevamente los formularios de inicio de sesión y registro
+            localStorage.removeItem("email");
+            localStorage.removeItem("password");
+            location.reload();
+        }
+    </script>
+</body>
 </html>
