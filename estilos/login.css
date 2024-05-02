@@ -19,6 +19,7 @@ body {
     padding-left: 20px;
     padding-right: 20px;
     
+    
 }
 .container4 {
     max-width: 100%;
@@ -26,6 +27,7 @@ body {
     padding-left: 20px;
     padding-right: 20px;
     padding-top: 20px;
+    
     
 }
 .navbar {
@@ -141,19 +143,22 @@ input {
 .formulario form {
     display: flex;
     flex-direction: column;
+    
 }
 
 /* Alinea los elementos del formulario a la izquierda */
 .formulario form div {
     display: flex;
     align-items: center;
+   
 }
 
 /* Estilo para las etiquetas */
 .formulario form label {
     flex: 1; /* Hace que las etiquetas ocupen el mismo espacio */
     text-align: center;
-    margin-right: 10px; /* Espacio entre la etiqueta y el campo de entrada */
+    margin-right: 50px; /* Espacio entre la etiqueta y el campo de entrada */
+    
 }
 
 /* Estilo para los campos de entrada */
@@ -163,12 +168,19 @@ input {
     margin-bottom: 15px; /* Espacio inferior entre los campos */
     padding: 10px; /* Espaciado interno de los campos */
     width: 100px;
+    
+   
+    
    
 }
 
 /* Estilo para el botón de inicio de sesión */
 .formulario form input[type="submit"] {
     margin-top: 15px; /* Espacio superior al botón */
+    background-color: #15a1cc; 
+    color: white;
+    width: 170px;
+    
 }
 
 /* Alinea los elementos del formulario */
@@ -176,14 +188,17 @@ input {
     display: flex;
     align-items: center;
     justify-content: center; /* Centra los elementos horizontalmente */
+    width: 300px;
+    
 }
 
 .registrarse {
     margin-top: 15px;
+    
 }
 
 .registrarse a {
-    color: blue;
+    color: black;
     text-decoration: none;
 }
 
