@@ -17,6 +17,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
+    text-align: center;
     
 }
 
@@ -237,7 +238,7 @@ input {
     color: white;
     border: none;
     cursor: pointer;
-    padding: 10px 20px;
+ 
     text-align: center;
     text-decoration: none;
     font-size: 16px;
@@ -250,4 +251,8 @@ input {
 #sort-reverse-name-button:hover,
 #sort-price-button:hover {
     background-color: #15a1cc; /* Cambia el color de fondo al pasar por encima */
+}
+
+.modal-body p,h6{
+    text-align: justify;
 }

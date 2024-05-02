@@ -3,39 +3,43 @@
 
 <head>
     <link rel="stylesheet" href="estilos/index.css">
+    <style>
+        .hidden {
+          display: none;
+        }
+      </style>
     <!-- Encabezado aquí -->
 </head>
 
 <body>
     <header>
         <div class="container4">
-            <nav class="navbar">
-                <ul class="menu">
-                    <li><a href="index.html" title="Contacto Cap-tivante">Contacto</a></li>
-                    <li><a href="https://www.facebook.com/profile.php?id=61557315856153" target="_blank"
-                            class="facebook-btn" title="Facebook"><img src="imagenes/facebook.png" alt="Facebook"
-                                title="Icono_Facebook"></a></li>
-                </ul>
-            </nav>
+          <nav class="navbar">
+            <ul class="menu">
+              <li><a href="index.html" title="Contacto Cap-tivante">Contacto</a></li>
+              <li><a href="https://www.facebook.com/profile.php?id=61557315856153" target="_blank" class="facebook-btn" title="Facebook"><img src="imagenes/facebook.png" alt="Facebook" title="Icono_Facebook"></a></li>
+              <li><a href="login.html" title="Iniciar sesión">Iniciar sesión</a></li>
+            </ul>
+          </nav>
         </div>
         <div class="container3">
-            <nav class="navbar">
-                <div class="logo">
-                    <img src="imagenes/logosombrero2.jpeg" alt="Logo de la tienda" title="Logo_sombrero">
-                </div>
-                <ul class="menu">
-                    <li><a href="index.html" title="Inicio Cap-tivante">INICIO</a></li>
-                    <li><a href="gorras.html" title="Gorras Cap-tivante">GORRAS</a></li>
-                    <li><a href="sombreros.html" title="Sombreros Cap-tivante">SOMBREROS</a></li>
-                    <li><a href="viseras.html" title="Viseras Cap-tivante">VISERAS</a></li>
-                </ul>
-                <form action="/search">
-                    <input type="text" name="q" placeholder="Buscar">
-                    <button type="submit">Buscar</button>
-                </form>
-            </nav>
+          <nav class="navbar">
+            <div class="logo">
+              <img src="imagenes/logosombrero2.jpeg" alt="Logo de la tienda" title="Logo_sombrero">
+            </div>
+            <ul class="menu">
+              <li><a href="index.html" title="Inicio Cap-tivante">INICIO</a></li>
+              <li><a href="gorras.html" title="Gorras Cap-tivante">GORRAS</a></li>
+              <li><a href="sombreros.html" title="SombrerosCap-tivante">SOMBREROS</a></li>
+              <li><a href="viseras.html" title="Viseras Cap-tivante">VISERAS</a></li>
+            </ul>
+            <form id="search-form">
+              <input type="text" id="search-input" placeholder="Buscar">
+              <button type="submit">Buscar</button>
+            </form>
+          </nav>
         </div>
-    </header>
+      </header>
 
     <div class="container">
         <div class="products-container" id="products-container">

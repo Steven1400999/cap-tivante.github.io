@@ -29,6 +29,11 @@
   <meta name="robots" content="index" />
 
   <link rel="stylesheet" href="estilos/index.css">
+  <style>
+    .hidden {
+      display: none;
+    }
+  </style>
 </head>
 
 <body>
@@ -112,6 +117,7 @@
     const reverseSortButton = document.getElementById('sort-reverse-name-button');
     const priceSortButton = document.getElementById('sort-price-button'); // Nuevo botón
     const priceSortReverseButton = document.getElementById('sort-price-reverse-button'); // Nuevo botón
+    const carousel = document.getElementById('carouselExampleIndicators');
 
     // Function to create a product element
     function createProductElement(product) {
@@ -171,17 +177,25 @@
         }
       });
 
-      // Show the sort buttons if there are search results
+      // Change the title text based on search results
+      const titleText = filteredProducts.length > 0 ? 'Resultados de búsqueda' : 'Bienvenido a Cap-tivante';
+      document.querySelector('.store-title').textContent = titleText;
+
+      // Show or hide the sort buttons based on search results
       if (filteredProducts.length > 0) {
         sortButton.style.display = 'inline-block';
         reverseSortButton.style.display = 'inline-block';
-        priceSortButton.style.display = 'inline-block'; // Mostrar el nuevo botón
-        priceSortReverseButton.style.display = 'inline-block'; // Mostrar el nuevo botón
+        priceSortButton.style.display = 'inline-block';
+        priceSortReverseButton.style.display = 'inline-block';
+        // Hide the carousel
+        carousel.classList.add('hidden');
       } else {
         sortButton.style.display = 'none';
         reverseSortButton.style.display = 'none';
-        priceSortButton.style.display = 'none'; // Ocultar el nuevo botón
-        priceSortReverseButton.style.display = 'none'; // Ocultar el nuevo botón
+        priceSortButton.style.display = 'none';
+        priceSortReverseButton.style.display = 'none';
+        // Show the carousel
+        carousel.classList.remove('hidden');
       }
     });
 
@@ -246,7 +260,7 @@
     });
   </script>
 
-  <footer style="background-color: #fff; color: #a5a4a4; padding: 60px; width: 100;">
+<footer style="background-color: #fff; color: #a5a4a4; padding: 60px; width: 100vw; position: absolute; left: 0; right: 0;">
     <div style="text-align: center;">
       <h3>Contacto</h3>
       <p>¡Estamos aquí para ayudarte! Contáctanos para cualquier consulta o inquietud.</p>
