@@ -18,6 +18,7 @@ body {
     margin: 0 auto;
     padding: 20px;
     text-align: center;
+   
     
 }
 
@@ -113,6 +114,7 @@ input {
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
+    
     
     
 }
