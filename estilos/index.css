@@ -259,3 +259,6 @@ input {
 .modal-body p,h6{
     text-align: justify;
 }
+.cart-icon {
+    font-size: px; /* Tamaño del emoji */
+  }

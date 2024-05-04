@@ -44,6 +44,7 @@
           <li><a href="index.html" title="Contacto Cap-tivante">Contacto</a></li>
           <li><a href="https://www.facebook.com/profile.php?id=61557315856153" target="_blank" class="facebook-btn" title="Facebook"><img src="imagenes/facebook.png" alt="Facebook" title="Icono_Facebook"></a></li>
           <li><a href="login.html" title="Iniciar sesión">Iniciar sesión</a></li>
+          <li><a href="carrito.html" title="Carrito de compras" class="cart-icon">🛒</a></li>
         </ul>
       </nav>
     </div>
@@ -258,6 +259,14 @@
         productsContainer.appendChild(product);
       });
     });
+    function addToCart() {
+    const quantity = document.getElementById('quantity').value;
+    const product = { nombre: nombre, imagen: imagen, precio: precio, descripcion: descripcion, cantidad: quantity };
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.push(product);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    alert(`Producto añadido al carrito correctamente.`);
+}
   </script>
 
 <footer style="background-color: #fff; color: #a5a4a4; padding: 60px; width: 100vw; position: absolute; left: 0; right: 0;">

@@ -104,22 +104,27 @@
 
         function addToCart() {
             const quantity = document.getElementById('quantity').value;
-            alert(`Agregado al carrito: ${quantity} ${nombre}(s)`);
-        }
 
-        function rateProduct(event) {
-            const clickedStar = event.target;
-            const allStars = document.querySelectorAll('.fa-star');
+            // Crear un objeto que represente el producto agregado
+            const product = {
+                nombre: nombre,
+                imagen: imagen,
+                precio: precio,
+                descripcion: descripcion,
+                cantidad: quantity
+            };
 
-            const clickedIndex = Array.from(allStars).indexOf(clickedStar);
+            // Obtener la lista de productos en el carrito del localStorage o inicializarla si no existe
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-            allStars.forEach((star, index) => {
-                if (index <= clickedIndex) {
-                    star.classList.add('checked');
-                } else {
-                    star.classList.remove('checked');
-                }
-            });
+            // Agregar el producto al carrito
+            cart.push(product);
+
+            // Guardar la lista actualizada de productos en el carrito en el localStorage
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            // Redirigir al usuario a la página del carrito
+            window.location.href = 'carrito.html';
         }
     </script>
 

@@ -1,0 +1,182 @@
+body, h2, p, ul, img, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+h1{
+    font-size: 1em;
+    text-align: center;
+}
+li, title {
+    margin-left: 20px;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8; 
+}
+.container3 {
+    max-width: 100%;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    
+    
+}
+.container4 {
+    max-width: 100%;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    
+    
+}
+.navbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffff; 
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+.remove-button{
+    border: none;
+    color: aliceblue;
+    width: 6%;
+    height: 50px;
+    font-size: 29px; /* Tamaño del emoji */ 
+    
+}
+.remove-button:hover {
+background-color: #e92a2a; 
+}
+
+.navbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffff; 
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+.logo img {
+    max-width: 100px;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+  }
+
+.logo img {
+    margin-right: 30px;
+    max-width: 150px;
+}
+input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .button2 {
+    padding: 10px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+  }
+
+.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.menu li:last-child {
+    margin-right: 0;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #333333; 
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.menu li a:hover {
+    color: #666666; 
+}
+
+.facebook-btn {
+    display: inline-block;
+    background-color: #ffffff; 
+    color: #fff; 
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    height: 20px;
+    width: 20px;
+}
+
+.facebook-btn img {
+    vertical-align: middle;
+    height: 25px;
+    width: 25px;
+}
+
+.facebook-btn:hover {
+    background-color: #dadada; 
+}
+
+.container2{
+    height: 250px;
+    
+
+}
+.product-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 800px;
+    margin-left: 100px;
+  
+   
+}
+
+.product-card img {
+    width: 200px;
+    height: 200px;
+    margin-left: 100px;
+  
+    
+}
+
+.product-card h2 {
+    margin-top: 0;
+    margin-left: 100px;
+}
+.product-card .product-info {
+    margin-left: 100px;
+}
+.product-card p {
+    margin-left: 100px;
+}
+
+.container{
+    background-color: white;
+}
