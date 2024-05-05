@@ -51,6 +51,7 @@
         <!-- Aquí se mostrarán los productos en el carrito -->
     </div>
 
+    <!-- Script para mostrar productos en el carrito -->
     <script>
         // Obtener la lista de productos en el carrito del localStorage
         const cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -97,25 +98,60 @@
         }
     </script>
 
-   
-<footer style="background-color:  #fff; color:  #a5a4a4; padding: 60px;">
-    <div style="text-align: center;">
-        <h3>Contacto</h3>
-        <p>¡Estamos aquí para ayudarte! Contáctanos para cualquier consulta o inquietud.</p>
-        <p>Email: info@tu-tienda.com</p>
-        <p>Teléfono: +52 449 12345678</p>
-    </div>
-    <div style="text-align: center; margin-top: 40px;">
-        <h3>Síguenos en redes sociales</h3>
-        <a href="https://www.facebook.com/profile.php?id=61557315856153" target="_blank"
-            style="color: #a5a4a4; text-decoration: none; margin-right: 10px;">Facebook</a>
-        <a href="#" style="color:  #a5a4a4; text-decoration: none; margin-right: 10px;">Instagram</a>
-        <a href="#" style="color: #a5a4a4; text-decoration: none; margin-right: 10px;">Twitter</a>
-    </div>
-    <div style="text-align: center; margin-top: 40px;">
-        <p>&copy; 2024 Cap-tivante. Todos los derechos reservados.</p>
-    </div>
-</footer>
+    <!-- Script de PayPal -->
+    <script src="https://www.paypal.com/sdk/js?client-id=AS4la092l_tJ4zN9enDwFu_OY8nGV7J-FdiZFcy_myu_DN1h0XaYqKeDMU-m3O4K1h7l124gksJgUhvJ"></script>
+    <script>
+        function calcularPrecioTotal() {
+            // Obtener la lista de productos en el carrito del localStorage
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            // Calcular el precio total sumando los precios individuales de cada producto en el carrito
+            const totalPrice = cart.reduce((total, product) => total + (parseFloat(product.precio) * parseInt(product.cantidad)), 0);
+
+            // Actualizar el botón de PayPal con el nuevo precio
+            paypal.Buttons({
+                style: {
+                    color: 'blue',
+                    shape: 'pill'
+                },
+                createOrder: function(data, actions) {
+                    // Crear la orden de compra con el precio total calculado
+                    return actions.order.create({
+                        purchase_units: [{
+                            amount: {
+                                value: totalPrice.toFixed(2) // Redondear el precio total a 2 decimales
+                            }
+                        }]
+                    });
+                }
+            }).render('#paypal-button-container');
+        }
+
+        // Llamar a la función para calcular el precio total cuando se carga la página
+        calcularPrecioTotal();
+    </script>
+
+    <!-- Contenedor del botón de PayPal -->
+    <div id="paypal-button-container"></div>
+
+    <footer style="background-color:  #fff; color:  #a5a4a4; padding: 60px; margin-right: 100px;">
+        <div style="text-align: center;">
+            <h3>Contacto</h3>
+            <p>¡Estamos aquí para ayudarte! Contáctanos para cualquier consulta o inquietud.</p>
+            <p>Email: info@tu-tienda.com</p>
+            <p>Teléfono: +52 449 12345678</p>
+        </div>
+        <div style="text-align: center; margin-top: 40px;">
+            <h3>Síguenos en redes sociales</h3>
+            <a href="https://www.facebook.com/profile.php?id=61557315856153" target="_blank"
+                style="color: #a5a4a4; text-decoration: none; margin-right: 10px;">Facebook</a>
+            <a href="#" style="color:  #a5a4a4; text-decoration: none; margin-right: 10px;">Instagram</a>
+            <a href="#" style="color: #a5a4a4; text-decoration: none; margin-right: 10px;">Twitter</a>
+        </div>
+        <div style="text-align: center; margin-top: 40px;">
+            <p>&copy; 2024 Cap-tivante. Todos los derechos reservados.</p>
+        </div>
+    </footer>
 </body>
 
 </html>
