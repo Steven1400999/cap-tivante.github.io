@@ -32,6 +32,9 @@
     <header>
         <div class="container4">
             <nav class="navbar">
+                <ul class="menu" id="navbar-menu">
+                    <!-- Aquí se mostrará el nombre de usuario si la sesión está iniciada -->
+                </ul>
                 <ul class="menu">
                     <li><a href="index.html" title="Producto">Contacto</a></li>
                     <li><a href="https://www.facebook.com/profile.php?id=61557315856153" target="_blank"
@@ -123,8 +126,11 @@
             // Guardar la lista actualizada de productos en el carrito en el localStorage
             localStorage.setItem('cart', JSON.stringify(cart));
 
-            // Redirigir al usuario a la página del carrito
-            window.location.href = 'carrito.html';
+            const alertMessage = `¡Producto añadido al carrito!\n\nNombre: ${nombre}\nPrecio: ${precio}\nDescripción: ${descripcion}\nCantidad: ${quantity}`;
+
+            // Mostrar una alerta con los datos del producto añadido al carrito
+            alert(alertMessage);
+
         }
     </script>
 
@@ -158,6 +164,23 @@
             <p>&copy; 2024 Tu Tienda de Sombreros. Todos los derechos reservados.</p>
         </div>
     </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var storedEmail = localStorage.getItem("email");
+            var storedPassword = localStorage.getItem("password");
+      
+            if (storedEmail && storedPassword) {
+                // Si hay credenciales almacenadas, mostrar el nombre de usuario en el navbar
+                document.getElementById("navbar-menu").innerHTML = `<li>Bienvenido, ${storedEmail}!</li><li><a href="login.html" onclick="logout()">Cerrar sesión</a></li>`;
+            }
+        });
+      
+        function logout() {
+            // Limpiar las credenciales almacenadas
+            localStorage.removeItem("email");
+            localStorage.removeItem("password");
+        }
+      </script>
 </body>
 
 </html>

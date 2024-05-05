@@ -47,9 +47,9 @@ body {
 .remove-button{
     border: none;
     color: aliceblue;
-    width: 6%;
-    height: 50px;
-    font-size: 29px; /* Tamaño del emoji */ 
+    width: 40px;
+    height: 40px;
+    font-size: 15px; /* Tamaño del emoji */ 
     
 }
 .remove-button:hover {
@@ -154,24 +154,20 @@ input {
     border-radius: 5px;
     padding: 10px;
     margin-bottom: 20px;
-    width: 1000px;
+    width: px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra */
-  
+    height: 450px;
   
    
 }
 
 .product-card img {
-    width: 150px;
+    width: 190px;
     height: 150px;
-    margin-left: 100px;
-    margin-top: 20px;
-  
-    
+    margin-left: 100px;   
 }
 
 .product-card h2 {
-    margin-top: 0;
     margin-left: 100px;
     
 }
@@ -184,6 +180,7 @@ input {
 
 .container{
     background-color: white;
+    
 }
 #paypal-button-container {
     text-align: center;

@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iniciar sesión o Registrarse - Cap-tivante</title>
+    <title>Iniciar sesión Cap-tivante</title>
     <link rel="stylesheet" href="estilos/login.css">
 </head>
+
 <body>
     <header>
         <!-- Navbar -->
@@ -13,9 +15,7 @@
             <nav class="navbar">
                 <ul class="menu" id="navbar-menu">
                     <li><a href="index.html" title="Contacto Cap-tivante">Contacto</a></li>
-                    <li><a href="https://www.facebook.com/profile.php?id=61557315856153" target="_blank" class="facebook-btn" title="Facebook"><img
-                                src="imagenes/facebook.png" alt="Facebook" title="Icono_Facebook"></a></li>
-                    <!-- Aquí se mostrará el nombre de usuario o el enlace de inicio de sesión -->
+                    <!-- Aquí se mostrará el nombre de usuario si la sesión está iniciada -->
                 </ul>
             </nav>
         </div>
@@ -152,25 +152,28 @@
         });
 
         function toggleForms() {
-            // Alternar la visualización de los formularios de inicio de sesión y registro
-            var loginFormulario = document.getElementById("login-formulario");
-            var registerFormulario = document.getElementById("register-formulario");
+            var loginForm = document.getElementById("login-formulario");
+            var registerForm = document.getElementById("register-formulario");
 
-            if (loginFormulario.style.display === "block") {
-                loginFormulario.style.display = "none";
-                registerFormulario.style.display = "block";
+            if (loginForm.style.display === "block") {
+                // Si el formulario de inicio de sesión está visible, ocultarlo y mostrar el formulario de registro
+                loginForm.style.display = "none";
+                registerForm.style.display = "block";
             } else {
-                loginFormulario.style.display = "block";
-                registerFormulario.style.display = "none";
+                // Si el formulario de registro está visible, ocultarlo y mostrar el formulario de inicio de sesión
+                loginForm.style.display = "block";
+                registerForm.style.display = "none";
             }
         }
 
         function logout() {
-            // Eliminar las credenciales almacenadas y recargar la página para mostrar nuevamente los formularios de inicio de sesión y registro
+            // Limpiar las credenciales almacenadas
             localStorage.removeItem("email");
             localStorage.removeItem("password");
-            location.reload();
+            // Redireccionar al usuario a la página de inicio de sesión
+            window.location.href = "login.html";
         }
     </script>
 </body>
+
 </html>

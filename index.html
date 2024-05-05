@@ -40,11 +40,16 @@
   <header>
     <div class="container4">
       <nav class="navbar">
+        <ul class="menu" id="navbar-menu">
+          <!-- Aquí se mostrará el nombre de usuario si la sesión está iniciada -->
+      </ul>
         <ul class="menu">
+          
           <li><a href="index.html" title="Contacto Cap-tivante">Contacto</a></li>
           <li><a href="https://www.facebook.com/profile.php?id=61557315856153" target="_blank" class="facebook-btn" title="Facebook"><img src="imagenes/facebook.png" alt="Facebook" title="Icono_Facebook"></a></li>
           <li><a href="login.html" title="Iniciar sesión">Iniciar sesión</a></li>
           <li><a href="carrito.html" title="Carrito de compras" class="cart-icon">🛒</a></li>
+          
         </ul>
       </nav>
     </div>
@@ -318,6 +323,24 @@
       $('#cookieModal').modal('show');
     });
   </script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+      var storedEmail = localStorage.getItem("email");
+      var storedPassword = localStorage.getItem("password");
+
+      if (storedEmail && storedPassword) {
+          // Si hay credenciales almacenadas, mostrar el nombre de usuario en el navbar
+          document.getElementById("navbar-menu").innerHTML = `<li>Bienvenido, ${storedEmail}!</li><li><a href="login.html" onclick="logout()">Cerrar sesión</a></li>`;
+      }
+  });
+
+  function logout() {
+      // Limpiar las credenciales almacenadas
+      localStorage.removeItem("email");
+      localStorage.removeItem("password");
+  }
+</script>
 
 </body>
 
