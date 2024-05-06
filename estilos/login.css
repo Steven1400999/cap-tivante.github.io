@@ -27,7 +27,7 @@ body {
     padding-left: 20px;
     padding-right: 20px;
     padding-top: 20px;
-    
+  
     
 }
 .navbar {
@@ -133,7 +133,7 @@ input {
 }
 
 .formulario {
-    width: 500px;
+    width: 600px;
     background-color: #fff; /* Color de fondo del formulario */
     padding: 30px; /* Espaciado interno del formulario */
     border-radius: 8px; /* Ajusta la curvatura de los bordes */
@@ -143,7 +143,7 @@ input {
 .formulario form {
     display: flex;
     flex-direction: column;
-    
+   
 }
 
 /* Alinea los elementos del formulario a la izquierda */
@@ -167,8 +167,9 @@ input {
 .formulario form input[type="submit"] {
     margin-bottom: 15px; /* Espacio inferior entre los campos */
     padding: 10px; /* Espaciado interno de los campos */
-    width: 100px;
-    
+    width: 150px;
+    border-radius: 5px;
+   
    
     
    
@@ -203,7 +204,10 @@ input {
 }
 
 /* Estilo para el botón de inicio de sesión */
-
+.container{
+    margin-top: 20px;
+    max-width: 100%;
+}
 
 
 
