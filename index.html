@@ -325,21 +325,24 @@
   </script>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-      var storedEmail = localStorage.getItem("email");
-      var storedPassword = localStorage.getItem("password");
+     document.addEventListener("DOMContentLoaded", function () {
+    var storedEmail = localStorage.getItem("email");
 
-      if (storedEmail && storedPassword) {
-          // Si hay credenciales almacenadas, mostrar el nombre de usuario en el navbar
-          document.getElementById("navbar-menu").innerHTML = `<li>Bienvenido, ${storedEmail}!</li><li><a href="login.html" onclick="logout()">Cerrar sesión</a></li>`;
-      }
+    if (storedEmail) {
+        var navbarMenu = document.getElementById("navbar-menu");
+        var usernameItem = document.createElement("li");
+        usernameItem.innerHTML = `<a href="usuario.html" title="Perfil de ${storedEmail}">${storedEmail}</a></li><li><a href="#" onclick="logout()">Cerrar sesión</a></li>`;
+        navbarMenu.appendChild(usernameItem);
+    }
   });
 
   function logout() {
-      // Limpiar las credenciales almacenadas
-      localStorage.removeItem("email");
-      localStorage.removeItem("password");
-  }
+            // Limpiar las credenciales almacenadas
+            localStorage.removeItem("email");
+            localStorage.removeItem("password");
+            // Redireccionar al usuario a la página de inicio de sesión
+            window.location.href = "login.html";
+        }
 </script>
 
 </body>

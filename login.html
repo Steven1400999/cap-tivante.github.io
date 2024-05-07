@@ -124,43 +124,28 @@
     </footer>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            var storedEmail = localStorage.getItem("email");
-            var storedPassword = localStorage.getItem("password");
+      
+    document.getElementById("login-form").addEventListener("submit", function (event) {
+        event.preventDefault();
 
-            if (storedEmail && storedPassword) {
-                // Mostrar el formulario de inicio de sesión y ocultar el formulario de registro
-                document.getElementById("login-formulario").style.display = "block";
-                document.getElementById("register-formulario").style.display = "none";
-            } else {
-                // Si no hay credenciales almacenadas, mostrar el formulario de registro y ocultar el formulario de inicio de sesión
-                document.getElementById("login-formulario").style.display = "none";
-                document.getElementById("register-formulario").style.display = "block";
-            }
-        });
+        // Obtener los valores del formulario de inicio de sesión
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
 
-        document.getElementById("login-form").addEventListener("submit", function (event) {
-            event.preventDefault();
+        // Verificar las credenciales en el almacenamiento local
+        var storedEmail = localStorage.getItem("email");
+        var storedPassword = localStorage.getItem("password");
 
-            // Obtener los valores del formulario de inicio de sesión
-            var email = document.getElementById("email").value;
-            var password = document.getElementById("password").value;
+        if (email === storedEmail && password === storedPassword) {
+            alert("Inicio de sesión exitoso!");
+            // Redireccionar al usuario a la página de inicio
+            window.location.href = "index.html";
+        } else {
+            // Mostrar un mensaje de error si las credenciales no coinciden
+            alert("Error: Credenciales incorrectas.");
+        }
+    });
 
-            // Verificar las credenciales en el almacenamiento local
-            var storedEmail = localStorage.getItem("email");
-            var storedPassword = localStorage.getItem("password");
-
-            if (email === storedEmail && password === storedPassword) {
-                alert("Inicio de sesión exitoso!");
-                // Mostrar el nombre de usuario en el navbar y el enlace para cerrar sesión
-                document.getElementById("navbar-menu").innerHTML = `<li>Bienvenido, ${storedEmail}!</li><li><a href="#" onclick="logout()">Cerrar sesión</a></li>`;
-                // Redireccionar al usuario a la página de inicio
-                window.location.href = "index.html";
-            } else {
-                // Mostrar un mensaje de error si las credenciales no coinciden
-                alert("Error: Credenciales incorrectas.");
-            }
-        });
 
         document.getElementById("register-form").addEventListener("submit", function (event) {
             event.preventDefault();
