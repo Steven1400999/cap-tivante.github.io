@@ -82,7 +82,7 @@ input {
 
 .menu li {
     display: inline-block;
-    margin-right: 27px;
+    margin-right: 20px;
 }
 
 .menu li:last-child {
@@ -196,7 +196,7 @@ input {
     transition: background-color 0.3s;
     height: 20px;
     width: 20px;
-   margin-right: 20px;
+    margin-right: 10px;
 }
 
 .facebook-btn img {
