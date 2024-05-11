@@ -1,0 +1,115 @@
+
+body, h1, h2, p, ul, img, button {
+    box-sizing: border-box;
+    text-align: center;
+    
+}
+li, title {
+    margin-left: 20px;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8; 
+}
+
+
+.container3 {
+    max-width: 100%;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    
+    
+}
+.container4 {
+    max-width: 100%;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+  
+    
+}
+.navbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffff; 
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+.logo img {
+    max-width: 100px;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+  }
+
+.logo img {
+    margin-right: 30px;
+    max-width: 150px;
+}
+
+.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.menu li:last-child {
+    margin-right: 0;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #333333; 
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.menu li a:hover {
+    color: #666666; 
+}
+
+
+.store-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    background-color: #f0f0f0; /* Cambia el color de fondo del contenedor si lo deseas */
+}
+
+/* Estilo para el botón de inicio de sesión */
+.container{
+    margin-top: 20px;
+    max-width: 100%;
+}
+.card
+{
+    width: 600px;
+    height: 300px;
+}
+
+.card-text{
+    text-align: justify;
+}
+
+h5{
+    font-weight: bold;
+}

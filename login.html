@@ -34,7 +34,7 @@
         display: none;
       }
     </style>
-  </head>
+</head>
 
 <body>
     <header>
@@ -78,27 +78,6 @@
                     <label>Contraseña</label>
                 </div>
                 <input type="submit" value="Iniciar sesión">
-                <div class="registrarse">
-                    <a href="#" onclick="toggleForms()">Registrarse</a>
-                </div>
-            </form>
-        </div>
-
-        <div class="formulario" id="register-formulario" style="display: none;">
-            <h1>Registrarse</h1>
-            <form id="register-form">
-                <div class="username">
-                    <input type="text" id="register-email" required>
-                    <label>Correo electrónico</label>
-                </div>
-                <div class="password">
-                    <input type="password" id="register-password" required>
-                    <label>Contraseña</label>
-                </div>
-                <input type="submit" value="Registrarse">
-                <div class="registrarse">
-                    <a href="#" onclick="toggleForms()">Ya tengo una cuenta</a>
-                </div>
             </form>
         </div>
     </div>
@@ -124,65 +103,32 @@
     </footer>
 
     <script>
-      
-    document.getElementById("login-form").addEventListener("submit", function (event) {
-        event.preventDefault();
-
-        // Obtener los valores del formulario de inicio de sesión
-        var email = document.getElementById("email").value;
-        var password = document.getElementById("password").value;
-
-        // Verificar las credenciales en el almacenamiento local
-        var storedEmail = localStorage.getItem("email");
-        var storedPassword = localStorage.getItem("password");
-
-        if (email === storedEmail && password === storedPassword) {
-            alert("Inicio de sesión exitoso!");
-            // Redireccionar al usuario a la página de inicio
-            window.location.href = "index.html";
-        } else {
-            // Mostrar un mensaje de error si las credenciales no coinciden
-            alert("Error: Credenciales incorrectas.");
-        }
-    });
-        document.getElementById("register-form").addEventListener("submit", function (event) {
+        document.getElementById("login-form").addEventListener("submit", function (event) {
             event.preventDefault();
 
-            // Obtener los valores del formulario de registro
-            var email = document.getElementById("register-email").value;
-            var password = document.getElementById("register-password").value;
+            // Obtener los valores del formulario de inicio de sesión
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
 
-            // Almacenar las credenciales de registro en el almacenamiento local
-            localStorage.setItem("email", email);
-            localStorage.setItem("password", password);
-
-            alert("Registro exitoso!");
-            // Redireccionar al usuario al formulario de inicio de sesión
-            window.location.href = "login.html";
+            // Leer el archivo JSON de usuarios
+            fetch('usuario.json')
+                .then(response => response.json())
+                .then(data => {
+                    // Verificar si las credenciales coinciden con algún usuario en el JSON
+                    const user = data.find(user => user.correo === email && user.contraseña === password);
+                    if (user) {
+                        // Almacenar el nombre de usuario en el localStorage
+                        localStorage.setItem("usuario", user.usuario);
+                        alert("Inicio de sesión exitoso!");
+                        // Redireccionar al usuario a la página de inicio
+                        window.location.href = "index.html";
+                    } else {
+                        // Mostrar un mensaje de error si las credenciales no coinciden
+                        alert("Error: Usuario no encontrado.");
+                    }
+                })
+                .catch(error => console.error('Error al cargar los datos de los usuarios:', error));
         });
-
-        function toggleForms() {
-            var loginForm = document.getElementById("login-formulario");
-            var registerForm = document.getElementById("register-formulario");
-
-            if (loginForm.style.display === "block") {
-                // Si el formulario de inicio de sesión está visible, ocultarlo y mostrar el formulario de registro
-                loginForm.style.display = "none";
-                registerForm.style.display = "block";
-            } else {
-                // Si el formulario de registro está visible, ocultarlo y mostrar el formulario de inicio de sesión
-                loginForm.style.display = "block";
-                registerForm.style.display = "none";
-            }
-        }
-
-        function logout() {
-            // Limpiar las credenciales almacenadas
-            localStorage.removeItem("email");
-            localStorage.removeItem("password");
-            // Redireccionar al usuario a la página de inicio de sesión
-            window.location.href = "login.html";
-        }
     </script>
 </body>
 

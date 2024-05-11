@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-205HXP6ZKV"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+  
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+  
+      gtag('config', 'G-205HXP6ZKV');
+    </script>
+  
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cap-tivante Gorras, Sombreros y más...</title>
+    <meta name="description" content="Gorras, sombreros, gorros perfectos para tener un estilo perfecto, para protegerte de los rayos del sol y para que seas Cap-tivante.">
+    <meta name="keywords" content="sombreros, gorras, cachuchas, gorros" />
+    <meta name="author" content="Steven Quezada González, Kevin Iván Ramirez Chairez, Diego Sebastian Medina Zarate, Brayan Ariel Flores De Lira, Leonardo Jesus Gutierrez Muñoz," />
+    <meta name="robots" content="index" />
+  
+    <link rel="stylesheet" href="estilos/usuario.css">
+    <style>
+      .hidden {
+        display: none;
+      }
+    </style>
+</head>
+
+<body>
+    <header>
+        <!-- Navbar -->
+        <div class="container4">
+            <nav class="navbar">
+                <ul class="menu" id="navbar-menu">
+                    <!-- Aquí se mostrará el nombre de usuario si la sesión está iniciada -->
+                </ul>
+            </nav>
+        </div>
+        <div class="container3">
+            <nav class="navbar">
+                <div class="logo">
+                    <img src="imagenes/logosombrero2.jpeg" alt="Logo de la tienda" title="Logo_sombrero">
+                </div>
+                <ul class="menu">
+                    <li><a href="index.html" title="Inicio Cap-tivante">INICIO</a></li>
+                    <li><a href="gorras.html" title="Gorras Cap-tivante">GORRAS</a></li>
+                    <li><a href="sombreros.html" title="Sombreros Cap-tivante">SOMBREROS</a></li>
+                    <li><a href="viseras.html" title="Viseras Cap-tivante">VISERAS</a></li>
+                </ul>
+                <form action="/search">
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="row" id="card-container">
+            <!-- Aquí se mostrarán las tarjetas -->
+        </div>
+    </div>
+
+    <footer style="background-color: #fff; color: #a5a4a4; padding: 60px;">
+        <!-- Footer content -->
+        <div style="text-align: center;">
+            <h3>Contacto</h3>
+            <p>¡Estamos aquí para ayudarte! Contáctanos para cualquier consulta o inquietud.</p>
+            <p>Email: info@tu-tienda.com</p>
+            <p>Teléfono: +123456789</p>
+        </div>
+        <div style="text-align: center; margin-top: 40px;">
+            <h3>Síguenos en redes sociales</h3>
+            <a href="https://www.facebook.com/profile.php?id=61557315856153" target="_blank"
+                style="color: #a5a4a4; text-decoration: none; margin-right: 10px;">Facebook</a>
+            <a href="#" style="color: #a5a4a4; text-decoration: none; margin-right: 10px;">Instagram</a>
+            <a href="#" style="color: #a5a4a4; text-decoration: none; margin-right: 10px;">Twitter</a>
+        </div>
+        <div style="text-align: center; margin-top: 40px;">
+            <p>&copy; 2024 Tu Tienda de Sombreros. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Función para cargar el archivo JSON
+        function cargarJSON(callback) {   
+            var xobj = new XMLHttpRequest();
+            xobj.overrideMimeType("application/json");
+            xobj.open('GET', 'usuario.json', true);
+            xobj.onreadystatechange = function () {
+                if (xobj.readyState == 4 && xobj.status == "200") {
+                    callback(JSON.parse(xobj.responseText));
+                }
+            };
+            xobj.send(null);
+        }
+
+        // Función para generar las tarjetas
+        function generarTarjetas(data) {
+            var cardContainer = document.getElementById("card-container");
+            data.forEach(function(usuario) {
+                var card = document.createElement("div");
+                card.classList.add("col-md-4", "mb-3");
+                card.innerHTML = `
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">INFORMACION DEL USUARIO</h5>
+                            <p class="card-text">Nombre: ${usuario.nombre}</p>
+                            <p class="card-text">Apellidos: ${usuario.apellidos}</p>
+                            <p class="card-text">Correo: ${usuario.correo}</p>
+                            <p class="card-text">Usuario: ${usuario.usuario}</p>
+                            <p class="card-text">Dirección: ${usuario.direccion}</p>
+                            <p class="card-text">Ciudad: ${usuario.ciudad}</p>
+                        </div>
+                    </div>
+                `;
+                cardContainer.appendChild(card);
+            });
+        }
+
+        // Cargar el JSON y generar las tarjetas
+        cargarJSON(function(data) {
+            generarTarjetas(data);
+        });
+    </script>
+</body>
+
+</html>
