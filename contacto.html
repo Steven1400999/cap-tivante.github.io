@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="estilos/contacto.css">
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+    <title>Sombreros</title>
+</head>
+
+<body>
+    <header>
+        <div class="container4">
+            <nav class="navbar">
+                <ul class="menu" id="navbar-menu">
+                    <!-- Aquí se mostrará el nombre de usuario si la sesión está iniciada -->
+                </ul>
+                <ul class="menu">
+                    <li><a href="index.html" title="Contacto Cap-tivante">Contacto</a></li>
+                    <li><a href="https://www.facebook.com/profile.php?id=61557315856153" target="_blank"
+                            class="facebook-btn" title="Facebook"><img src="imagenes/facebook.png" alt="Facebook"
+                                title="Icono_Facebook"></a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="container3">
+            <nav class="navbar">
+                <div class="logo">
+                    <img src="imagenes/logosombrero2.jpeg" alt="Logo de la tienda" title="Logo_sombrero">
+                </div>
+                <ul class="menu">
+                    <li><a href="index.html" title="Inicio Cap-tivante">INICIO</a></li>
+                    <li><a href="gorras.html" title="Gorras Cap-tivante">GORRAS</a></li>
+                    <li><a href="sombreros.html" title="Sombreros Cap-tivante">SOMBREROS</a></li>
+                    <li><a href="viseras.html" title="Viseras Cap-tivante">VISERAS</a></li>
+                </ul>
+                <h2>##############</h2>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container mt-5">
+        <div class="card card-1">
+            <div class="card-body">
+                <h5 class="card-title">Formulario de Contacto</h5>
+                <form id="form1">
+                    <div class="form-group row">
+                        <label for="tema" class="col-sm-2 col-form-label">Tema:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="tema" name="tema" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="correo" class="col-sm-2 col-form-label">Correo:</label>
+                        <div class="col-sm-10">
+                            <input type="email" class="form-control" id="correo" name="correo" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="adjuntar" class="col-sm-2 col-form-label">Adjuntar:</label>
+                        <div class="col-sm-10">
+                            <input type="file" class="form-control-file" id="adjuntar" name="adjuntar">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="mensaje" class="col-sm-2 col-form-label">Mensaje:</label>
+                        <div class="col-sm-10">
+                            <textarea class="form-control" id="mensaje" name="mensaje" rows="3" required></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-10 offset-sm-2">
+                            <button type="submit" class="btn btn-primary" id="enviarBtn">Enviar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+
+    <footer style="background-color:  #fff; color:  #a5a4a4; padding: 60px;">
+        <div style="text-align: center;">
+            <h3>Contacto</h3>
+            <p>¡Estamos aquí para ayudarte! Contáctanos para cualquier consulta o inquietud.</p>
+            <p>Email: info@tu-tienda.com</p>
+            <p>Teléfono: +52 449 12345678</p>
+        </div>
+        <div style="text-align: center; margin-top: 40px;">
+            <h3>Síguenos en redes sociales</h3>
+            <a href="https://www.facebook.com/profile.php?id=61557315856153" target="_blank"
+                style="color: #a5a4a4; text-decoration: none; margin-right: 10px;">Facebook</a>
+            <a href="#" style="color:  #a5a4a4; text-decoration: none; margin-right: 10px;">Instagram</a>
+            <a href="#" style="color: #a5a4a4; text-decoration: none; margin-right: 10px;">Twitter</a>
+        </div>
+        <div style="text-align: center; margin-top: 40px;">
+            <p>&copy; 2024 Cap-tivante. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Captura del formulario
+        const form1 = document.getElementById('contactForm');
+    
+        // Agrega un evento para manejar el envío del formulario
+        form.addEventListener('submit', function(event) {
+            // Previene el comportamiento predeterminado de enviar el formulario
+            event.preventDefault();
+    
+            // Aquí puedes agregar la lógica para enviar el correo electrónico si lo deseas
+    
+            // Muestra una alerta de "Correo enviado"
+            alert("Correo enviado");
+        });
+    </script>
+
+</body>
+
+</html>

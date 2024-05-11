@@ -44,29 +44,12 @@ body {
     max-width: 100px;
 }
 
-form {
-    display: flex;
-    align-items: center;
-    margin-right: 10px;
-  }
 
 .logo img {
     margin-right: 30px;
     max-width: 150px;
 }
-input {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
 
-  button {
-    padding: 10px;
-    background-color: #000;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-  }
 
 .menu {
     list-style-type: none;
@@ -77,6 +60,9 @@ input {
 .menu li {
     display: inline-block;
     margin-right: 20px;
+    
+  
+
 }
 
 .menu li:last-child {
@@ -112,6 +98,7 @@ input {
     transition: background-color 0.3s;
     height: 20px;
     width: 20px;
+    margin-right: 20px;
 }
 
 .facebook-btn img {
@@ -128,61 +115,10 @@ input {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 500px;
+    height: 600px;
     background-color: #f0f0f0; /* Cambia el color de fondo del contenedor si lo deseas */
 }
 
-.formulario {
-    width: 600px;
-    background-color: #fff; /* Color de fondo del formulario */
-    padding: 30px; /* Espaciado interno del formulario */
-    border-radius: 8px; /* Ajusta la curvatura de los bordes */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para un efecto de elevación */
-}
-
-.formulario form {
-    display: flex;
-    flex-direction: column;
-   
-}
-
-/* Alinea los elementos del formulario a la izquierda */
-.formulario form div {
-    display: flex;
-    align-items: center;
-   
-}
-
-/* Estilo para las etiquetas */
-.formulario form label {
-    flex: 1; /* Hace que las etiquetas ocupen el mismo espacio */
-    text-align: center;
-    margin-right: 50px; /* Espacio entre la etiqueta y el campo de entrada */
-    
-}
-
-/* Estilo para los campos de entrada */
-.formulario form input[type="text"],
-.formulario form input[type="password"],
-.formulario form input[type="submit"] {
-    margin-bottom: 15px; /* Espacio inferior entre los campos */
-    padding: 10px; /* Espaciado interno de los campos */
-    width: 150px;
-    border-radius: 5px;
-   
-   
-    
-   
-}
-
-/* Estilo para el botón de inicio de sesión */
-.formulario form input[type="submit"] {
-    margin-top: 15px; /* Espacio superior al botón */
-    background-color: #15a1cc; 
-    color: white;
-    width: 170px;
-    
-}
 
 /* Alinea los elementos del formulario */
 .formulario form div {
@@ -193,18 +129,26 @@ input {
     
 }
 
-.registrarse {
-    margin-top: 15px;
-    
-}
-
-.registrarse a {
-    color: black;
-    text-decoration: none;
-}
-
 /* Estilo para el botón de inicio de sesión */
 .container{
     margin-top: 20px;
     max-width: 100%;
+}
+.card-1{
+    width: 1000px;
+    
+}
+.card-1 .btn-primary {
+    background-color: #15a1cc; 
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    display: block; /* Coloca el botón en bloque */
+}
+
+h2{
+    color: white;
 }
