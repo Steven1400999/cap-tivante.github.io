@@ -112,17 +112,28 @@
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">INFORMACION DEL USUARIO</h5>
-                            <p class="card-text">Nombre: ${usuario.nombre}</p>
-                            <p class="card-text">Apellidos: ${usuario.apellidos}</p>
-                            <p class="card-text">Correo: ${usuario.correo}</p>
-                            <p class="card-text">Usuario: ${usuario.usuario}</p>
-                            <p class="card-text">Dirección: ${usuario.direccion}</p>
-                            <p class="card-text">Ciudad: ${usuario.ciudad}</p>
+                            <div class="card-text">
+                                <p><span id="nombre-${usuario.usuario}-text">Nombre:</span> <span id="nombre-${usuario.usuario}">${usuario.nombre}</span> <button class="editar-btn" onclick="editarCampo('nombre-${usuario.usuario}', '${usuario.nombre}')">Editar</button></p>
+                                <p><span id="apellidos-${usuario.usuario}-text">Apellidos:</span> <span id="apellidos-${usuario.usuario}">${usuario.apellidos}</span> <button class="editar-btn" onclick="editarCampo('apellidos-${usuario.usuario}', '${usuario.apellidos}')">Editar</button></p>
+                                <p><span id="correo-${usuario.usuario}-text">Correo:</span> <span id="correo-${usuario.usuario}">${usuario.correo}</span> <button class="editar-btn" onclick="editarCampo('correo-${usuario.usuario}', '${usuario.correo}')">Editar</button></p>
+                                <p><span id="usuario-${usuario.usuario}-text">Usuario:</span> <span id="usuario-${usuario.usuario}">${usuario.usuario}</span> <button class="editar-btn" onclick="editarCampo('usuario-${usuario.usuario}', '${usuario.usuario}')">Editar</button></p>
+                                <p><span id="direccion-${usuario.usuario}-text">Dirección:</span> <span id="direccion-${usuario.usuario}">${usuario.direccion}</span> <button class="editar-btn" onclick="editarCampo('direccion-${usuario.usuario}', '${usuario.direccion}')">Editar</button></p>
+                                <p><span id="ciudad-${usuario.usuario}-text">Ciudad:</span> <span id="ciudad-${usuario.usuario}">${usuario.ciudad}</span> <button class="editar-btn" onclick="editarCampo('ciudad-${usuario.usuario}', '${usuario.ciudad}')">Editar</button></p>
+                            </div>
                         </div>
                     </div>
                 `;
                 cardContainer.appendChild(card);
             });
+        }
+
+        // Función para editar el campo
+        function editarCampo(id, valorActual) {
+            var nuevoValor = prompt("Editar informacion:", valorActual);
+            if (nuevoValor !== null) {
+                var campo = document.getElementById(id);
+                campo.textContent = nuevoValor;
+            }
         }
 
         // Cargar el JSON y generar las tarjetas

@@ -20,6 +20,7 @@ body {
     padding-right: 20px;
     
     
+    
 }
 .container4 {
     max-width: 100%;
@@ -27,7 +28,8 @@ body {
     padding-left: 20px;
     padding-right: 20px;
     padding-top: 20px;
-  
+    
+
     
 }
 .navbar {
@@ -103,13 +105,41 @@ form {
 .card
 {
     width: 600px;
-    height: 300px;
-}
-
-.card-text{
-    text-align: justify;
+    height: 430px;
 }
 
 h5{
     font-weight: bold;
+    padding: 20px;
+}
+  /* Estilos para los botones de editar */
+  .editar-btn {
+    background-color: #1cc5ef;
+    color: white;
+    border: none; /* Quitamos los bordes */
+    padding: 5px 10px; /* Espacio alrededor del texto */
+    border-radius: 5px; /* Borde redondeado */
+    cursor: pointer; /* Cambiamos el cursor al pasar sobre el botón */
+    transition: background-color 0.3s; /* Transición suave del color de fondo */
+    width: 70px;
+}
+
+/* Estilos para cuando el cursor está sobre el botón */
+.editar-btn:hover {
+    background-color: #a5a4a4; }
+
+/* Alinear los elementos de texto y botón en una línea */
+.card-text p {
+    display: flex;
+    margin-bottom: 5px;
+}
+
+/* Establecer un ancho máximo para los elementos de texto */
+.card-text span {
+    flex: 1;
+    max-width: 200px; /* Cambia este valor según tus necesidades */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-right: 10px;
 }
