@@ -18,12 +18,16 @@
             <nav class="navbar">
                 <ul class="menu" id="navbar-menu">
                     <!-- Aquí se mostrará el nombre de usuario si la sesión está iniciada -->
-                </ul>
+                    <li id="username"></li>
+                    <li id="logout-link" style="display: none;"><a href="#" onclick="logout()">Cerrar sesión</a></li>
+                  </ul>
                 <ul class="menu">
                     <li><a href="index.html" title="Contacto Cap-tivante">Contacto</a></li>
                     <li><a href="https://www.facebook.com/profile.php?id=61557315856153" target="_blank"
                             class="facebook-btn" title="Facebook"><img src="imagenes/facebook.png" alt="Facebook"
                                 title="Icono_Facebook"></a></li>
+                                <li><a href="carrito.html" title="Carrito de compras" class="cart-icon">🛒</a></li>
+
                 </ul>
             </nav>
         </div>
@@ -100,22 +104,27 @@
             .catch(error => console.error('Error al cargar los datos de los productos:', error));
     </script>
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            var storedEmail = localStorage.getItem("email");
-            var storedPassword = localStorage.getItem("password");
-      
-            if (storedEmail && storedPassword) {
-                // Si hay credenciales almacenadas, mostrar el nombre de usuario en el navbar
-                document.getElementById("navbar-menu").innerHTML = `<li>Bienvenido, ${storedEmail}!</li><li><a href="login.html" onclick="logout()">Cerrar sesión</a></li>`;
-            }
-        });
-      
-        function logout() {
-            // Limpiar las credenciales almacenadas
-            localStorage.removeItem("email");
-            localStorage.removeItem("password");
+        if (localStorage.getItem("usuario") === null) {
+            // No hay sesión iniciada, no mostrar el nombre de usuario, el enlace "Cerrar sesión" y el enlace "Iniciar sesión"
+            document.getElementById("username").style.display = "none";
+            document.getElementById("logout-link").style.display = "none";
+            document.getElementById("login-link").style.display = "block"; // Mostrar el enlace "Iniciar sesión"
+        } else {
+            // Hay sesión iniciada, mostrar el nombre de usuario y el enlace "Cerrar sesión", y ocultar el enlace "Iniciar sesión"
+            document.getElementById("username").innerHTML = `<a href="usuario.html">${localStorage.getItem("usuario")}</a>`;
+            document.getElementById("logout-link").style.display = "inline";
+            document.getElementById("login-link").style.display = "none"; // Ocultar el enlace "Iniciar sesión"
         }
-      </script>
+          function logout() {
+            // Limpiar la información de sesión
+            localStorage.removeItem("usuario"); // Eliminar el nombre de usuario del almacenamiento local
+        
+            // Redireccionar al usuario a la página de inicio de sesión o a una página no autenticada
+            window.location.href = "index.html";
+            alert("sesion cerrada!");
+
+        }
+        </script>
 </body>
 
 </html>

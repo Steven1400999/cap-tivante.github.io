@@ -35,9 +35,9 @@
                 </div>
                 <ul class="menu">
                     <li><a href="index.html" title="Inicio">INICIO</a></li>
-                    <li><a href="#" title="Gorras Cap-tivante">GORRAS</a></li>
-                    <li><a href="#" title="Sombreros Cap-tivante">SOMBREROS</a></li>
-                    <li><a href="#" title="Viseras Cap-tivante">VISERAS</a></li>
+                    <li><a href="gorras.html" title="Gorras Cap-tivante">GORRAS</a></li>
+                    <li><a href="sombreros.html" title="Sombreros Cap-tivante">SOMBREROS</a></li>
+                    <li><a href="viseras.html" title="Viseras Cap-tivante">VISERAS</a></li>
                 </ul>
                 <form action="/search">
                     <input type="text" name="q" placeholder="Buscar">
@@ -78,7 +78,7 @@
                             <p>Precio: ${product.precio}</p>
                             <p>Cantidad: ${product.cantidad}</p>
                             <p>Descripción: ${product.descripcion}</p>
-                            <button onclick="removeFromCart(${cart.indexOf(product)})" class="remove-button">🗑️</button>
+                            <button onclick="removeFromCart(${cart.indexOf(product)})" class="remove-button">Eliminar</button>
                         </div>
                     </div>
                 `;

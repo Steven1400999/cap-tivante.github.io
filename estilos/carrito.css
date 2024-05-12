@@ -52,10 +52,20 @@ body {
     font-size: 15px; /* Tamaño del emoji */ 
     
 }
-.remove-button:hover {
-background-color: #e92a2a; 
+.product-card button {
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 15px;
+    cursor: pointer;
+    width: 100px;
+    margin-left: 96px;
 }
 
+.product-card button:hover {
+    background-color: #ff4d4d;
+}
 .navbar {
     width: 100%;
     display: flex;

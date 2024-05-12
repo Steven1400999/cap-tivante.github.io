@@ -101,6 +101,7 @@ form {
 .container{
     margin-top: 20px;
     max-width: 100%;
+    height: 600px;
 }
 .card
 {
@@ -142,4 +143,22 @@ h5{
     text-overflow: ellipsis;
     white-space: nowrap;
     margin-right: 10px;
+}
+.recuadro {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: white;
+    width: 350px;
+}
+
+.deseos {
+    background-color: #ffe5b4;
+}
+
+.historial {
+    background-color: #b4d8e5;
 }

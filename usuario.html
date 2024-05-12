@@ -5,34 +5,46 @@
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-205HXP6ZKV"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-  
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
-  
-      gtag('config', 'G-205HXP6ZKV');
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-205HXP6ZKV');
     </script>
-  
+
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cap-tivante Gorras, Sombreros y más...</title>
+    <title>Usuario</title>
     <meta name="description" content="Gorras, sombreros, gorros perfectos para tener un estilo perfecto, para protegerte de los rayos del sol y para que seas Cap-tivante.">
     <meta name="keywords" content="sombreros, gorras, cachuchas, gorros" />
     <meta name="author" content="Steven Quezada González, Kevin Iván Ramirez Chairez, Diego Sebastian Medina Zarate, Brayan Ariel Flores De Lira, Leonardo Jesus Gutierrez Muñoz," />
     <meta name="robots" content="index" />
-  
+
     <link rel="stylesheet" href="estilos/usuario.css">
     <style>
-      .hidden {
-        display: none;
-      }
+        .hidden {
+            display: none;
+        }
+
+        .recuadro {
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+
+        .recuadro:hover {
+            background-color: #f0f0f0;
+        }
     </style>
 </head>
 
@@ -63,8 +75,26 @@
     </header>
 
     <div class="container">
-        <div class="row" id="card-container">
-            <!-- Aquí se mostrarán las tarjetas -->
+        
+        <div class="row">
+            <div class="col-md-4">
+                <div class="recuadro" onclick="location.href='infousuario.html';">
+                    <h3>INFORMACION</h3>
+                    <p>Descripción de la ventana</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="recuadro" onclick="location.href='listadeseos.html';">
+                    <h3>Lista de Deseos</h3>
+                    <p>Ver productos guardados</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="recuadro" onclick="location.href='historial_compras.html';">
+                    <h3>Historial de Compras</h3>
+                    <p>Ver historial de compras realizadas</p>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -87,60 +117,6 @@
             <p>&copy; 2024 Tu Tienda de Sombreros. Todos los derechos reservados.</p>
         </div>
     </footer>
-
-    <script>
-        // Función para cargar el archivo JSON
-        function cargarJSON(callback) {   
-            var xobj = new XMLHttpRequest();
-            xobj.overrideMimeType("application/json");
-            xobj.open('GET', 'usuario.json', true);
-            xobj.onreadystatechange = function () {
-                if (xobj.readyState == 4 && xobj.status == "200") {
-                    callback(JSON.parse(xobj.responseText));
-                }
-            };
-            xobj.send(null);
-        }
-
-        // Función para generar las tarjetas
-        function generarTarjetas(data) {
-            var cardContainer = document.getElementById("card-container");
-            data.forEach(function(usuario) {
-                var card = document.createElement("div");
-                card.classList.add("col-md-4", "mb-3");
-                card.innerHTML = `
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">INFORMACION DEL USUARIO</h5>
-                            <div class="card-text">
-                                <p><span id="nombre-${usuario.usuario}-text">Nombre:</span> <span id="nombre-${usuario.usuario}">${usuario.nombre}</span> <button class="editar-btn" onclick="editarCampo('nombre-${usuario.usuario}', '${usuario.nombre}')">Editar</button></p>
-                                <p><span id="apellidos-${usuario.usuario}-text">Apellidos:</span> <span id="apellidos-${usuario.usuario}">${usuario.apellidos}</span> <button class="editar-btn" onclick="editarCampo('apellidos-${usuario.usuario}', '${usuario.apellidos}')">Editar</button></p>
-                                <p><span id="correo-${usuario.usuario}-text">Correo:</span> <span id="correo-${usuario.usuario}">${usuario.correo}</span> <button class="editar-btn" onclick="editarCampo('correo-${usuario.usuario}', '${usuario.correo}')">Editar</button></p>
-                                <p><span id="usuario-${usuario.usuario}-text">Usuario:</span> <span id="usuario-${usuario.usuario}">${usuario.usuario}</span> <button class="editar-btn" onclick="editarCampo('usuario-${usuario.usuario}', '${usuario.usuario}')">Editar</button></p>
-                                <p><span id="direccion-${usuario.usuario}-text">Dirección:</span> <span id="direccion-${usuario.usuario}">${usuario.direccion}</span> <button class="editar-btn" onclick="editarCampo('direccion-${usuario.usuario}', '${usuario.direccion}')">Editar</button></p>
-                                <p><span id="ciudad-${usuario.usuario}-text">Ciudad:</span> <span id="ciudad-${usuario.usuario}">${usuario.ciudad}</span> <button class="editar-btn" onclick="editarCampo('ciudad-${usuario.usuario}', '${usuario.ciudad}')">Editar</button></p>
-                            </div>
-                        </div>
-                    </div>
-                `;
-                cardContainer.appendChild(card);
-            });
-        }
-
-        // Función para editar el campo
-        function editarCampo(id, valorActual) {
-            var nuevoValor = prompt("Editar informacion:", valorActual);
-            if (nuevoValor !== null) {
-                var campo = document.getElementById(id);
-                campo.textContent = nuevoValor;
-            }
-        }
-
-        // Cargar el JSON y generar las tarjetas
-        cargarJSON(function(data) {
-            generarTarjetas(data);
-        });
-    </script>
 </body>
 
 </html>

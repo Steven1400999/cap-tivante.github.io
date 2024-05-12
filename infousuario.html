@@ -22,13 +22,13 @@
   
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio sesion</title>
+    <title>Infromacion</title>
     <meta name="description" content="Gorras, sombreros, gorros perfectos para tener un estilo perfecto, para protegerte de los rayos del sol y para que seas Cap-tivante.">
     <meta name="keywords" content="sombreros, gorras, cachuchas, gorros" />
     <meta name="author" content="Steven Quezada González, Kevin Iván Ramirez Chairez, Diego Sebastian Medina Zarate, Brayan Ariel Flores De Lira, Leonardo Jesus Gutierrez Muñoz," />
     <meta name="robots" content="index" />
   
-    <link rel="stylesheet" href="estilos/login.css">
+    <link rel="stylesheet" href="estilos/usuario.css">
     <style>
       .hidden {
         display: none;
@@ -58,27 +58,13 @@
                     <li><a href="viseras.html" title="Viseras Cap-tivante">VISERAS</a></li>
                 </ul>
                 <form action="/search">
-                    <input type="text" name="q" placeholder="Buscar">
-                    <button type="submit">Buscar</button>
-                </form>
             </nav>
         </div>
     </header>
 
     <div class="container">
-        <div class="formulario" id="login-formulario">
-            <h1>Inicio de sesión</h1>
-            <form id="login-form">
-                <div class="username">
-                    <input type="text" id="email" required>
-                    <label>Correo electrónico</label>
-                </div>
-                <div class="password">
-                    <input type="password" id="password" required>
-                    <label>Contraseña</label>
-                </div>
-                <input type="submit" value="Iniciar sesión">
-            </form>
+        <div class="row" id="card-container">
+            <!-- Aquí se mostrarán las tarjetas -->
         </div>
     </div>
 
@@ -103,31 +89,56 @@
     </footer>
 
     <script>
-        document.getElementById("login-form").addEventListener("submit", function (event) {
-            event.preventDefault();
+        // Función para cargar el archivo JSON
+        function cargarJSON(callback) {   
+            var xobj = new XMLHttpRequest();
+            xobj.overrideMimeType("application/json");
+            xobj.open('GET', 'usuario.json', true);
+            xobj.onreadystatechange = function () {
+                if (xobj.readyState == 4 && xobj.status == "200") {
+                    callback(JSON.parse(xobj.responseText));
+                }
+            };
+            xobj.send(null);
+        }
 
-            // Obtener los valores del formulario de inicio de sesión
-            var email = document.getElementById("email").value;
-            var password = document.getElementById("password").value;
+        // Función para generar las tarjetas
+        function generarTarjetas(data) {
+            var cardContainer = document.getElementById("card-container");
+            data.forEach(function(usuario) {
+                var card = document.createElement("div");
+                card.classList.add("col-md-4", "mb-3");
+                card.innerHTML = `
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">INFORMACION DEL USUARIO</h5>
+                            <div class="card-text">
+                                <p><span id="nombre-${usuario.usuario}-text">Nombre:</span> <span id="nombre-${usuario.usuario}">${usuario.nombre}</span> <button class="editar-btn" onclick="editarCampo('nombre-${usuario.usuario}', '${usuario.nombre}')">Editar</button></p>
+                                <p><span id="apellidos-${usuario.usuario}-text">Apellidos:</span> <span id="apellidos-${usuario.usuario}">${usuario.apellidos}</span> <button class="editar-btn" onclick="editarCampo('apellidos-${usuario.usuario}', '${usuario.apellidos}')">Editar</button></p>
+                                <p><span id="correo-${usuario.usuario}-text">Correo:</span> <span id="correo-${usuario.usuario}">${usuario.correo}</span> <button class="editar-btn" onclick="editarCampo('correo-${usuario.usuario}', '${usuario.correo}')">Editar</button></p>
+                                <p><span id="usuario-${usuario.usuario}-text">Usuario:</span> <span id="usuario-${usuario.usuario}">${usuario.usuario}</span> <button class="editar-btn" onclick="editarCampo('usuario-${usuario.usuario}', '${usuario.usuario}')">Editar</button></p>
+                                <p><span id="direccion-${usuario.usuario}-text">Dirección:</span> <span id="direccion-${usuario.usuario}">${usuario.direccion}</span> <button class="editar-btn" onclick="editarCampo('direccion-${usuario.usuario}', '${usuario.direccion}')">Editar</button></p>
+                                <p><span id="ciudad-${usuario.usuario}-text">Ciudad:</span> <span id="ciudad-${usuario.usuario}">${usuario.ciudad}</span> <button class="editar-btn" onclick="editarCampo('ciudad-${usuario.usuario}', '${usuario.ciudad}')">Editar</button></p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                cardContainer.appendChild(card);
+            });
+        }
 
-            // Leer el archivo JSON de usuarios
-            fetch('usuario.json')
-                .then(response => response.json())
-                .then(data => {
-                    // Verificar si las credenciales coinciden con algún usuario en el JSON
-                    const user = data.find(user => user.correo === email && user.contraseña === password);
-                    if (user) {
-                        // Almacenar el nombre de usuario en el localStorage
-                        localStorage.setItem("usuario", user.usuario);
-                        alert("Inicio de sesión exitoso!");
-                        // Redireccionar al usuario a la página de inicio
-                        window.location.href = "index.html";
-                    } else {
-                        // Mostrar un mensaje de error si las credenciales no coinciden
-                        alert("Error: Usuario no encontrado.");
-                    }
-                })
-                .catch(error => console.error('Error al cargar los datos de los usuarios:', error));
+        // Función para editar el campo
+        function editarCampo(id, valorActual) {
+            var nuevoValor = prompt("Editar informacion:", valorActual);
+            if (nuevoValor !== null) {
+                var campo = document.getElementById(id);
+                campo.textContent = nuevoValor;
+            }
+        }
+
+        // Cargar el JSON y generar las tarjetas
+        cargarJSON(function(data) {
+            generarTarjetas(data);
         });
     </script>
 </body>

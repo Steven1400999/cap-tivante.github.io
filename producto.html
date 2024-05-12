@@ -14,6 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalles de producto, Cap-tivante la mejor tienda.</title>
     <link rel="stylesheet" href="estilos/producto.css">
+    <script src="https://kit.fontawesome.com/e02ff19eaa.js" crossorigin="anonymous"></script>
     <title>Cap-tivante Gorras, Sombreros y más...</title>
     <meta name="description"
         content="Gorras, sombreros, gorros perfectos para tener un estilo perfecto, para protegerte de los rayos del sol y para que sesas Cap-tivante.">
@@ -24,7 +25,6 @@
     Brayan Ariel Flores De Lira,
     Leonardo Jesus Gutierrez Muñoz," />
     <meta name="robots" content="index" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
 
@@ -34,7 +34,9 @@
             <nav class="navbar">
                 <ul class="menu" id="navbar-menu">
                     <!-- Aquí se mostrará el nombre de usuario si la sesión está iniciada -->
-                </ul>
+                    <li id="username"></li>
+                    <li id="logout-link" style="display: none;"><a href="#" onclick="logout()">Cerrar sesión</a></li>
+                  </ul>
                 <ul class="menu">
                     <li><a href="index.html" title="Producto">Contacto</a></li>
                     <li><a href="https://www.facebook.com/profile.php?id=61557315856153" target="_blank"
@@ -77,6 +79,7 @@
             <label for="quantity">Cantidad:</label>
             <input type="number" id="quantity" name="quantity" min="1" value="1">
             <button onclick="addToCart()">Agregar al carrito</button>
+            <button onclick="addToWishlist()">🤍</button>
         </div>
     </div>
 
@@ -165,22 +168,57 @@
         </div>
     </footer>
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            var storedEmail = localStorage.getItem("email");
-            var storedPassword = localStorage.getItem("password");
-      
-            if (storedEmail && storedPassword) {
-                // Si hay credenciales almacenadas, mostrar el nombre de usuario en el navbar
-                document.getElementById("navbar-menu").innerHTML = `<li>Bienvenido, ${storedEmail}!</li><li><a href="login.html" onclick="logout()">Cerrar sesión</a></li>`;
-            }
-        });
-      
-        function logout() {
-            // Limpiar las credenciales almacenadas
-            localStorage.removeItem("email");
-            localStorage.removeItem("password");
+        if (localStorage.getItem("usuario") === null) {
+            // No hay sesión iniciada, no mostrar el nombre de usuario, el enlace "Cerrar sesión" y el enlace "Iniciar sesión"
+            document.getElementById("username").style.display = "none";
+            document.getElementById("logout-link").style.display = "none";
+            document.getElementById("login-link").style.display = "block"; // Mostrar el enlace "Iniciar sesión"
+        } else {
+            // Hay sesión iniciada, mostrar el nombre de usuario y el enlace "Cerrar sesión", y ocultar el enlace "Iniciar sesión"
+            document.getElementById("username").innerHTML = `<a href="usuario.html">${localStorage.getItem("usuario")}</a>`;
+            document.getElementById("logout-link").style.display = "inline";
+            document.getElementById("login-link").style.display = "none"; // Ocultar el enlace "Iniciar sesión"
         }
+          function logout() {
+            // Limpiar la información de sesión
+            localStorage.removeItem("usuario"); // Eliminar el nombre de usuario del almacenamiento local
+        
+            // Redireccionar al usuario a la página de inicio de sesión o a una página no autenticada
+            window.location.href = "index.html";
+        }
+        </script>
+
+      <script>
+       function addToWishlist() {
+        // Obtener los datos del producto
+        const nombre = getUrlParameter('nombre');
+        const imagen = getUrlParameter('imagen');
+        const precio = getUrlParameter('precio');
+        const descripcion = getUrlParameter('descripcion');
+
+        // Crear un objeto que represente el producto añadido a la lista de deseos
+        const product = {
+            nombre: nombre,
+            imagen: imagen,
+            precio: precio,
+            descripcion: descripcion
+        };
+
+        // Obtener la lista de productos en la lista de deseos del localStorage o inicializarla si no existe
+        let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+
+        // Agregar el producto a la lista de deseos
+        wishlist.push(product);
+
+        // Guardar la lista actualizada de productos en la lista de deseos en el localStorage
+        localStorage.setItem('wishlist', JSON.stringify(wishlist));
+
+        // Mostrar una alerta con los detalles del producto añadido a la lista de deseos
+        const alertMessage = `¡Producto añadido a la lista de deseos!\n\nNombre: ${nombre}\nPrecio: ${precio}\nDescripción: ${descripcion}`;
+        alert(alertMessage);
+}
       </script>
+
 </body>
 
 </html>

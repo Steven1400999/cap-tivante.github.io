@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Deseos</title>
+    <link rel="stylesheet" href="estilos/listadeseos.css">
+</head>
+
+<body>
+    <header>
+        <div class="container4">
+            <nav class="navbar">
+                <ul class="menu" id="navbar-menu">
+                    <!-- Aquí se mostrará el nombre de usuario si la sesión está iniciada -->
+                </ul>
+                <ul class="menu">
+                    <li><a href="index.html" title="Producto">Contacto</a></li>
+                    <li><a href="https://www.facebook.com/profile.php?id=61557315856153" target="_blank"
+                            class="facebook-btn" title="Facebook Cap-tivante"><img src="imagenes/facebook.png"
+                                alt="Facebook" title="Logo_facebook"></a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="container3">
+            <nav class="navbar">
+                <div class="logo">
+                    <img src="imagenes/logosombrero2.jpeg" alt="Logo de la tienda" title="Logo tienda sombrero">
+                </div>
+                <ul class="menu">
+                    <li><a href="index.html" title="Inicio">INICIO</a></li>
+                    <li><a href="gorras.html" title="Gorras Cap-tivante">GORRAS</a></li>
+                    <li><a href="sombreros.html" title="Sombreros Cap-tivante">SOMBREROS</a></li>
+                    <li><a href="viseras.html" title="Viseras Cap-tivante">VISERAS</a></li>
+                </ul>
+                <form action="">
+                </form>
+            </nav>
+        </div>
+    </header>
+
+    <h1>Lista de Deseos</h1>
+
+    <div id="wishlist-items" class="wishlist-container">
+        <!-- Contenedor de las cards de los productos en la lista de deseos -->
+    </div>
+
+    <footer style="background-color: #fff; color: #a5a4a4; padding: 60px;">
+        <div style="text-align: center;">
+            <h3>Contacto</h3>
+            <p>¡Estamos aquí para ayudarte! Contáctanos para cualquier consulta o inquietud.</p>
+            <p>Email: info@tu-tienda.com</p>
+            <p>Teléfono: +52 449 12345678</p>
+        </div>
+        <div style="text-align: center; margin-top: 40px;">
+            <h3>Síguenos en redes sociales</h3>
+            <a href="https://www.facebook.com/profile.php?id=61557315856153" target="_blank"
+                style="color: #a5a4a4; text-decoration: none; margin-right: 10px;">Facebook</a>
+            <a href="#" style="color: #a5a4a4; text-decoration: none; margin-right: 10px;">Instagram</a>
+            <a href="#" style="color: #a5a4a4; text-decoration: none; margin-right: 10px;">Twitter</a>
+        </div>
+        <div style="text-align: center; margin-top: 40px;">
+            <p>&copy; 2024 Cap-tivante. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="listadeseos.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Obtener la lista de productos en la lista de deseos del localStorage
+            const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+
+            // Obtener el contenedor donde se mostrarán los productos en la lista de deseos
+            const wishlistItemsContainer = document.getElementById('wishlist-items');
+
+            // Verificar si hay productos en la lista de deseos
+            if (wishlist.length === 0) {
+                wishlistItemsContainer.innerHTML = '<p>No hay productos en la lista de deseos.</p>';
+            } else {
+                // Iterar sobre la lista de productos en la lista de deseos y mostrarlos en la página
+                wishlist.forEach(product => {
+                    const productElement = document.createElement('div');
+                    productElement.classList.add('product-card');
+                    productElement.innerHTML = `
+                        <div>
+                            <img src="${product.imagen}" alt="${product.nombre}">
+                        </div>
+                        <div>
+                            <h2>${product.nombre}</h2>
+                            <p>Precio: ${product.precio}</p>
+                            <p>Descripción: ${product.descripcion}</p>
+                            <button onclick="removeFromWishlist(${wishlist.indexOf(product)})" class="remove-button">Eliminar</button>
+                        </div>
+                    `;
+                    wishlistItemsContainer.appendChild(productElement);
+                });
+            }
+        });
+
+        function removeFromWishlist(index) {
+            // Obtener la lista de productos en la lista de deseos del localStorage
+            let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+
+            // Eliminar el producto de la lista de deseos en el índice dado
+            wishlist.splice(index, 1);
+
+            // Actualizar la lista de deseos en el localStorage
+            localStorage.setItem('wishlist', JSON.stringify(wishlist));
+
+            // Recargar la página para reflejar los cambios
+            location.reload();
+        }
+    </script>
+</body>
+
+</html>

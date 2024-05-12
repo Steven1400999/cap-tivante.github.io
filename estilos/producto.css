@@ -208,3 +208,10 @@ input {
     height: 250px;
 
 }
+.like-button {
+    /* Agrega los estilos específicos para el botón de "Me gusta" aquí */
+    background-color: #1cc5ef;
+    color: white;
+    width: 150px;
+    /* Otros estilos que desees aplicar */
+}
