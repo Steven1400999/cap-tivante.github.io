@@ -57,8 +57,6 @@
                     <li><a href="#" title="Viseras Cap-tivante">VISERAS</a></li>
                 </ul>
                 <form action="/search">
-                    <input type="text" name="q" placeholder="Buscar">
-                    <button type="submit" class="button2">Buscar</button>
                 </form>
             </nav>
         </div>
@@ -148,6 +146,58 @@
         <h2>🫱Política de devoluciones</h2>
         <p>Aceptamos devoluciones dentro de 3 días. Contáctanos para obtener instrucciones. Tu satisfacción.</p>
     </div>
+
+<div class="container2 product-container">
+    <h2>Deja una reseña</h2>
+    <form id="reviewForm">
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" name="name" required><br>
+
+        <label for="rating">Calificación:</label>
+        <select id="rating" name="rating" required>
+            <option value="">Selecciona una calificación</option>
+            <option value="5">5 estrellas</option>
+            <option value="4">4 estrellas</option>
+            <option value="3">3 estrellas</option>
+            <option value="2">2 estrellas</option>
+            <option value="1">1 estrella</option>
+        </select><br>
+
+        <label for="review">Reseña:</label><br>
+        <textarea id="review" name="review" rows="4" cols="50" required></textarea><br>
+
+        <!-- Botón de enviar reseña -->
+        <button type="submit">Enviar reseña</button>
+    </form>
+</div>
+
+<div class="container2 product-container" id="reviewsContainer">
+    <h2>Reseñas</h2>
+    <ul id="reviewsList"></ul>
+</div>
+
+<script>
+    document.getElementById("reviewForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Evitar que se envíe el formulario
+
+        // Obtener los datos del formulario
+        const name = document.getElementById("name").value;
+        const rating = document.getElementById("rating").value;
+        const review = document.getElementById("review").value;
+
+        // Crear un elemento de lista para mostrar la reseña
+        const reviewItem = document.createElement("li");
+        reviewItem.innerHTML = `<strong>${name}</strong> - Calificación: ${rating}<br>${review}`;
+
+        // Agregar la reseña a la lista de reseñas
+        document.getElementById("reviewsList").appendChild(reviewItem);
+
+        // Limpiar el formulario después de enviar la reseña
+        document.getElementById("name").value = "";
+        document.getElementById("rating").value = "";
+        document.getElementById("review").value = "";
+    });
+</script>
 
     <footer style="background-color: #fff; color: #a5a4a4; padding: 60px;">
         <div style="text-align: center;">

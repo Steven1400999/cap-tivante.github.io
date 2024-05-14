@@ -67,6 +67,8 @@ background-color: #a5a4a4;
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
+    height: 100px;
+    
     
 }
 body, h1, h2, p, ul, img, button {
@@ -110,17 +112,6 @@ input {
     border: 1px solid #ccc;
     border-radius: 5px;
   }
-
-  .button2 {
-    padding: 10px;
-    background-color: #000;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    width: 90px;
-    height: 40px;
-  }
-
 .menu {
     list-style-type: none;
     margin: 0;
@@ -159,6 +150,7 @@ input {
     transition: background-color 0.3s;
     height: 20px;
     width: 20px;
+    margin-right: 20px;
 }
 
 .facebook-btn img {
@@ -214,4 +206,21 @@ input {
     color: white;
     width: 150px;
     /* Otros estilos que desees aplicar */
+}
+button[type="submit"] {
+    /* Estilos específicos para el botón "Enviar reseña" */
+    padding: 10px 20px; /* Espaciado interno */
+    border: none; /* Sin borde */
+    width: 150px;
+    border-radius: 5px; /* Borde redondeado */
+    cursor: pointer; /* Cursor al pasar por encima */
+    font-size: 16px; /* Tamaño del texto */
+    margin-left: 10px;
+}
+select#rating {
+    width: 250px; /* Ancho completo */
+    padding: 5px; /* Espaciado interno */
+    font-size: 16px; /* Tamaño del texto */
+    border: 1px solid #ccc; /* Borde */
+    border-radius: 4px; /* Borde redondeado */
 }

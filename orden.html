@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Orden de Compra</title>
+<link rel="stylesheet" href="estilos/carrito.css">
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<style>
+    table {
+        width: 1800px;
+        border-collapse: collapse;
+        margin-left: 40px;
+        height: 400px;
+        margin-top: 30px;
+    
+    }
+    h2{
+        margin-left: 40px;
+        margin-top: 20px;
+    }
+
+    th, td {
+        padding: 8px;
+        text-align: center;
+        border-bottom: 1px solid #ddd;
+    
+    }
+
+    th {
+        background-color: #1cc5ef;
+        color: white;
+    }
+    img {
+        max-width: 100px; /* Ancho máximo de la imagen */
+        height: auto; /* Altura automática para mantener la proporción */
+    }
+</style>
+</head>
+<body>
+    <header>
+        <div class="container4">
+            <nav class="navbar">
+                <ul class="menu" id="navbar-menu">
+                    <!-- Aquí se mostrará el nombre de usuario si la sesión está iniciada -->
+                </ul>
+            </nav>
+        </div>
+        <div class="container3">
+            <nav class="navbar">
+                <div class="logo">
+                    <img src="imagenes/logosombrero2.jpeg" alt="Logo de la tienda" title="Logo tienda sombrero">
+                </div>
+                <ul class="menu">
+                    <li><a href="index.html" title="Inicio">INICIO</a></li>
+                    <li><a href="gorras.html" title="Gorras Cap-tivante">GORRAS</a></li>
+                    <li><a href="sombreros.html" title="Sombreros Cap-tivante">SOMBREROS</a></li>
+                    <li><a href="viseras.html" title="Viseras Cap-tivante">VISERAS</a></li>
+                </ul>
+                <form action="/">
+                    
+                </form>
+            </nav>
+        </div>
+    </header>
+
+<h2>Orden de Compra</h2>
+
+<table>
+    <tr>
+      <th>Numero orden</th>
+      <th>Tipo</th>
+      <th>Imagen</th>
+      <th>Precio</th>
+      <th>Nombre</th>
+      <th>Fecha</th>
+      <th>Cantidad</th>
+      <th>Pago</th>
+      <th>Detalles</th> <!-- Nueva columna para los botones "Mostrar más" -->
+    </tr>
+  </table>
+  
+  <div id="paypal-button-container"></div>
+  
+  <footer style="background-color:  #fff; color:  #a5a4a4; padding: 60px; margin-right: 10px;">
+      <div style="text-align: center;">
+          <h3>Contacto</h3>
+          <p>¡Estamos aquí para ayudarte! Contáctanos para cualquier consulta o inquietud.</p>
+          <p>Email: info@tu-tienda.com</p>
+          <p>Teléfono: +52 449 12345678</p>
+      </div>
+      <div style="text-align: center; margin-top: 40px;">
+          <h3>Síguenos en redes sociales</h3>
+          <a href="https://www.facebook.com/profile.php?id=61557315856153" target="_blank"
+              style="color: #a5a4a4; text-decoration: none; margin-right: 10px;">Facebook</a>
+          <a href="#" style="color:  #a5a4a4; text-decoration: none; margin-right: 10px;">Instagram</a>
+          <a href="#" style="color: #a5a4a4; text-decoration: none; margin-right: 10px;">Twitter</a>
+      </div>
+      <div style="text-align: center; margin-top: 40px;">
+          <p>&copy; 2024 Cap-tivante. Todos los derechos reservados.</p>
+      </div>
+  </footer>
+  
+  <script>
+      // Datos del JSON
+      var ordenes = [
+          {
+            "numeroorden": "#3829",
+            "fecha": "10/05/2024",
+            "estado": "Entregado",
+            "tipo": "gorra",
+            "nombre": "New Era Gorra Oficial de Juego Los Angeles Dodgers",
+            "precio": "367.99",
+            "cantidad": "1",
+            "pago": "Transferencia bancaria",
+            "direccion": "Pánfilo Natera 910, Pozo Bravo Sur, 20126 Aguascalientes, Ags.",
+            "estatus": "pagado",
+            "correo": "steven9991400@gmail.com",
+            "imagen": "imagenes/producto1.jpg"
+
+          },
+          {
+              "numeroorden": "#3830",
+              "fecha": "15/05/2024",
+              "estado": "Entregado",
+              "tipo": "gorra",
+              "nombre": "New Era Gorra York Yankees Blackout Basic MLB 59Fifty Negra",
+              "precio": "789.75",
+              "cantidad": "1",
+              "pago": "Transferencia bancaria",
+              "direccion": "Pánfilo Natera 910, Pozo Bravo Sur, 20126 Aguascalientes, Ags.",
+              "estatus": "pagado",
+              "correo": "steven9991400@gmail.com",
+              "imagen": "imagenes/producto2.jpg"
+          }
+      ];
+  
+      // Función para agregar filas a la tabla con los datos de las órdenes
+      function mostrarOrdenes() {
+          var tabla = document.querySelector('table');
+  
+          ordenes.forEach(function(orden, index) {
+              var fila = tabla.insertRow(index + 1); // Insertar después de la fila de encabezado
+  
+              var cellNumeroOrden = fila.insertCell(0);
+              cellNumeroOrden.innerText = orden.numeroorden;
+  
+              var cellTipo = fila.insertCell(1);
+              cellTipo.innerText = orden.tipo;
+  
+              var cellImagen = fila.insertCell(2);
+              var imagen = document.createElement('img');
+              imagen.src = orden.imagen;
+              imagen.alt = 'Imagen de ' + orden.nombre;
+              cellImagen.appendChild(imagen);
+  
+              var cellPrecio = fila.insertCell(3);
+              cellPrecio.innerText = orden.precio;
+  
+              var cellNombre = fila.insertCell(4);
+              cellNombre.innerText = orden.nombre;
+  
+              var cellFecha = fila.insertCell(5);
+              cellFecha.innerText = orden.fecha;
+  
+              var cellCantidad = fila.insertCell(6);
+              cellCantidad.innerText = orden.cantidad;
+  
+              var cellPago = fila.insertCell(7);
+              cellPago.innerText = orden.pago;
+  
+              // Nueva columna de detalles con el botón "Mostrar más"
+              var cellDetalles = fila.insertCell(8);
+              var botonMostrarMas = document.createElement('button');
+              botonMostrarMas.innerText = 'Mostrar más';
+              botonMostrarMas.onclick = function() {
+                  mostrarDetalles(index);
+              };
+              cellDetalles.appendChild(botonMostrarMas);
+          });
+      }
+  
+      // Función para mostrar los detalles de la orden seleccionada
+      function mostrarDetalles(index) {
+          var orden = ordenes[index];
+          var fila = document.querySelector('table').rows[index + 1];
+  
+          // Crear un párrafo para cada detalle de la orden
+          var detalles = document.createElement('p');
+          detalles.innerHTML = '<strong>Direccion:</strong> ' + orden.direccion + '<br>' +
+                                '<strong>Estatus:</strong> ' + orden.estatus+ '<br>' +
+                                '<strong>Correo:</strong> ' + orden.correo;
+  
+          // Insertar los detalles en la celda correspondiente
+          var cellDetalles = fila.cells[8];
+          cellDetalles.innerHTML = ''; // Limpiar el contenido existente
+          cellDetalles.appendChild(detalles);
+      }
+  
+      // Mostrar las órdenes al cargar la página
+      window.onload = mostrarOrdenes;
+  </script>
+  
+  </body>
+  </html>
