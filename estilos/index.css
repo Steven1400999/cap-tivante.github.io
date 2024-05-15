@@ -1,4 +1,43 @@
 
+body {
+    font-family: Arial, sans-serif;
+    padding: 10px;
+}
+
+.header {
+    text-align: center;
+}
+
+.gorras {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gorra {
+    margin: 20px 0;
+}
+
+@media (min-width: 600px) {
+    .gorras {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .gorra {
+        width: 45%;
+    }
+}
+
+/* Estilos para computadoras de escritorio */
+@media (min-width: 992px) {
+    .gorra {
+        width: 30%;
+    }
+}
+
+--------------------------------------------
 body, h1, h2, p, ul, img, button {
     margin: 0;
     padding: 0;
