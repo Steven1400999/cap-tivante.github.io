@@ -5,34 +5,34 @@
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-205HXP6ZKV"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-  
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
-  
-      gtag('config', 'G-205HXP6ZKV');
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-205HXP6ZKV');
     </script>
-  
+
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio sesion</title>
+    <title>Inicio sesión</title>
     <meta name="description" content="Gorras, sombreros, gorros perfectos para tener un estilo perfecto, para protegerte de los rayos del sol y para que seas Cap-tivante.">
     <meta name="keywords" content="sombreros, gorras, cachuchas, gorros" />
     <meta name="author" content="Steven Quezada González, Kevin Iván Ramirez Chairez, Diego Sebastian Medina Zarate, Brayan Ariel Flores De Lira, Leonardo Jesus Gutierrez Muñoz," />
     <meta name="robots" content="index" />
-  
+
     <link rel="stylesheet" href="estilos/login.css">
     <style>
-      .hidden {
-        display: none;
-      }
+        .hidden {
+            display: none;
+        }
     </style>
 </head>
 
@@ -66,7 +66,21 @@
     </header>
 
     <div class="container">
-        <div class="formulario" id="login-formulario">
+        <div class="formulario" id="registro-formulario">
+            <h1>Registro</h1>
+            <form id="registro-form">
+                <div class="username">
+                    <input type="text" id="registro-email" required>
+                    <label>Correo electrónico</label>
+                </div>
+                <div class="password">
+                    <input type="password" id="registro-password" required>
+                    <label>Contraseña</label>
+                </div>
+                <input type="submit" value="Registrarse">
+            </form>
+        </div>
+        <div class="formulario hidden" id="login-formulario">
             <h1>Inicio de sesión</h1>
             <form id="login-form">
                 <div class="username">
@@ -103,6 +117,25 @@
     </footer>
 
     <script>
+        // Manejar el envío del formulario de registro
+        document.getElementById("registro-form").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            // Obtener los valores del formulario de registro
+            var registroEmail = document.getElementById("registro-email").value;
+            var registroPassword = document.getElementById("registro-password").value;
+
+            alert("Registro exitoso. Por favor inicia sesión.");
+
+
+            // Aquí iría el código para el proceso de registro, como enviar los datos al servidor
+
+            // Después de un registro exitoso, ocultar el formulario de registro y mostrar el formulario de inicio de sesión
+            document.getElementById("registro-formulario").classList.add("hidden");
+            document.getElementById("login-formulario").classList.remove("hidden");
+        });
+
+        // Manejar el envío del formulario de inicio de sesión
         document.getElementById("login-form").addEventListener("submit", function (event) {
             event.preventDefault();
 
@@ -134,3 +167,4 @@
 </body>
 
 </html>
+

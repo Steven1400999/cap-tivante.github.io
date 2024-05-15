@@ -70,7 +70,7 @@
                     <li><a href="gorras.html" title="Gorras Cap-tivante">GORRAS</a></li>
                     <li><a href="sombreros.html" title="SombrerosCap-tivante">SOMBREROS</a></li>
                     <li><a href="viseras.html" title="Viseras Cap-tivante">VISERAS</a></li>
-                    <li><a href="crud.html" title="Administrar productos">Administrar Productos</a></li>
+                    <li><a href="crud.html" title="Administrar productos">AMINISTRADOR PRODUCTOS</a></li>
                 </ul>
                 <form id="search-form">
                     <input type="text" id="search-input" placeholder="Buscar">
@@ -94,8 +94,8 @@
             <input type="number" id="new-product-price" placeholder="Precio" required>
             <input type="text" id="new-product-description" placeholder="Descripción" required>
             <input type="text" id="new-product-category" placeholder="Categoría" required>
-            <button type="button" onclick="addProduct()">Agregar Producto</button>
-        </form>
+            <button type="button" class="btn-agregar" onclick="addProduct()">Agregar Producto</button>      
+          </form>
 
         <h2>Productos Actuales</h2>
         <table class="table">
@@ -440,6 +440,23 @@
             window.location.href = "index.html";
             alert("sesion cerrada!");
         }
+    </script>
+    <script>
+        function previewImage(event) {
+    const input = event.target;
+    const preview = document.getElementById('image-preview');
+
+    if (input.files && input.files[0]) {
+        const reader = new FileReader();
+
+        reader.onload = function (e) {
+            preview.src = e.target.result;
+            preview.style.display = 'block'; // Mostrar la vista previa cuando se carga una imagen
+        };
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
     </script>
 
 </body>

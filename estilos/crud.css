@@ -14,10 +14,11 @@ body {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1500px;
     margin: 0 auto;
     padding: 20px;
     text-align: center;
+
    
     
 }
@@ -95,6 +96,7 @@ input {
     color: #fff;
     border: none;
     border-radius: 5px;
+    margin-right: 10px;
   }
 
 .menu {
@@ -135,9 +137,7 @@ input {
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
-    
-    
-    
+
 }
 
 .product {
@@ -289,3 +289,46 @@ input {
     margin-right: 10px;
   }
  
+  .btn-agregar {
+    background-color: #1cc5ef;
+    color: white;
+    border-radius: 5px;  
+    cursor: pointer;
+    width: 500px;
+}
+
+.edit-input{
+    border-radius: 5px;
+    
+
+}
+.btn-warning {
+    background-color: #ffc107; /* Cambia este valor al color que desees */
+    color: #212529; /* Cambia este valor al color que desees */
+    width: 100px;
+}
+
+.btn-danger {
+    background-color: #dc3545; /* Cambia este valor al color que desees */
+    color: #ffffff; /* Cambia este valor al color que desees */
+    width: 100px;
+    margin-top: 10px;
+}
+.custom-file-upload {
+    margin-top: 7px;
+    background-color: white;
+    padding: 10px 20px; /* Ajusta este valor según el espacio que desees alrededor del texto y del botón */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer;
+    width: 400px;
+    height: 60px;
+}
+.custom-file-upload input[type="file"] {
+    display: none; /* Ocultar el input de tipo file */
+}
+
+#image-preview {
+    display: none; /* Ocultar la vista previa por defecto */
+    margin-top: 10px; /* Espaciado superior */
+}
+
