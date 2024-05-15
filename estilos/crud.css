@@ -1,0 +1,291 @@
+
+body, h1, h2, p, ul, img, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+li, title {
+    margin-left: 20px;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8; 
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+   
+    
+}
+.container3 {
+    max-width: 100%;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    
+}
+.container4 {
+    max-width: 100%;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    
+}
+.navbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffff; 
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+.logo img {
+    max-width: 100px;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+  }
+
+.logo img {
+    margin-right: 30px;
+    max-width: 150px;
+}
+input {
+    padding: 10px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    margin: 2%;
+  }
+
+  .custom-file-upload {
+    border: 1px solid #000000;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    margin-right: 5px;
+    border-radius: 10%;
+  }
+  
+  .custom-file-upload input[type="file"] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 1px;
+    cursor: pointer;
+    opacity: 0;
+  }  
+
+
+
+  button {
+    padding: 10px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+  }
+
+.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.menu li:last-child {
+    margin-right: 0;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #333333; 
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.menu li a:hover {
+    color: #666666; 
+}
+
+
+.store-title {
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+
+.products-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    
+    
+    
+}
+
+.product {
+    width: 270px;
+    height: 480px; 
+    margin-bottom: 40px;
+    background-color: #ffffff; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    display: flex; 
+    flex-direction: column; 
+    
+}
+
+.product-info {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1; 
+}
+
+.buy-button {
+    width: 100%; 
+    height: 50px; 
+    background-color: #1cc5ef;
+}
+
+.product:hover {
+    transform: translateY(-5px);
+}
+
+.product-image {
+    padding: 40px;
+    text-align: center;
+    
+    
+}
+
+.product-image img {
+    max-width: 100%;
+    height: 130px;
+}
+
+
+
+.product-info h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #969090;
+}
+
+.price {
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+    color: black;
+    font-size: larger;
+}
+
+.description {
+    color: #555555; 
+    margin-bottom: 20px;
+}
+
+
+.buy-button:hover {
+    background-color: #a5a4a4; 
+}
+.facebook-btn {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #fff; 
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
+}
+
+.facebook-btn img {
+    vertical-align: middle;
+    height: 25px;
+    width: 25px;
+}
+
+.facebook-btn:hover {
+    background-color: #dadada; 
+}
+
+.product-description-card {
+    background-color: #ffffff;
+    padding: 20px; /* Espaciado interno */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra */
+    width: 1140px;
+    height: 250px;
+   
+}
+
+.product-description-card h2 {
+    font-size: 1.5rem; /* Tamaño del título */
+    margin-bottom: 10px; /* Espaciado inferior del título */
+    color: #333; /* Color del texto */
+    
+}
+
+.product-description-card p {
+    font-size: 1.2rem; /* Tamaño del texto */
+    color: #666; /* Color del texto */
+    text-align: justify;
+   
+}
+
+#sort-name-button,
+#sort-reverse-name-button,
+#sort-price-reverse-button,
+#sort-price-button {
+    margin-top: 10px;
+    background-color: #1cc5ef;
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+   
+    
+}
+
+#sort-name-button:hover,
+#sort-reverse-name-button:hover,
+#sort-price-button:hover {
+    background-color: #15a1cc; /* Cambia el color de fondo al pasar por encima */
+}
+
+.modal-body p,h6{
+    text-align: justify;
+}
+.cart-icon {
+    font-size: px; /* Tamaño del emoji */
+    margin-right: 10px;
+  }
+ 

@@ -119,6 +119,7 @@
                     if (user) {
                         // Almacenar el nombre de usuario en el localStorage
                         localStorage.setItem("usuario", user.usuario);
+                        localStorage.setItem("rol", user.rol);
                         alert("Inicio de sesión exitoso!");
                         // Redireccionar al usuario a la página de inicio
                         window.location.href = "index.html";

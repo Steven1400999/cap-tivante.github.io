@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-205HXP6ZKV"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-205HXP6ZKV');
+    </script>
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cap-tivante Gorras, Sombreros y más...</title>
+    <meta name="description"
+        content="Gorras, sombreros, gorros perfectos para tener un estilo perfecto, para protegerte de los rayos del sol y para que seas Cap-tivante.">
+    <meta name="keywords" content="sombreros, gorras, cachuchas, gorros" />
+    <meta name="author"
+        content="Steven Quezada González, Kevin Iván Ramirez Chairez, Diego Sebastian Medina Zarate, Brayan Ariel Flores De Lira, Leonardo Jesus Gutierrez Muñoz," />
+    <meta name="robots" content="index" />
+
+    <link rel="stylesheet" href="estilos/crud.css">
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container4">
+            <nav class="navbar">
+                <ul class="menu" id="navbar-menu">
+                    <!-- Aquí se mostrará el nombre de usuario si la sesión está iniciada -->
+                    <li id="username"></li>
+                    <li id="logout-link" style="display: none;"><a href="#" onclick="logout()">Cerrar sesión</a></li>
+                </ul>
+                <ul class="menu">
+
+                    <li><a href="contacto.html" title="Contacto Cap-tivante">Contacto</a></li>
+                    <li><a href="https://www.facebook.com/profile.php?id=61557315856153" target="_blank"
+                            class="facebook-btn" title="Facebook"><img src="imagenes/facebook.png" alt="Facebook"
+                                title="Icono_Facebook"></a></li>
+                    <li><a id="login-link" href="login.html" style="display: none;" title="Iniciar sesión">Iniciar
+                            sesión</a></li>
+                    <li><a href="carrito.html" title="Carrito de compras" class="cart-icon">🛒</a></li>
+
+                </ul>
+            </nav>
+        </div>
+        <div class="container3">
+            <nav class="navbar">
+                <div class="logo">
+                    <img src="imagenes/logosombrero2.jpeg" alt="Logo de la tienda" title="Logo_sombrero">
+                </div>
+                <ul class="menu">
+                    <li><a href="index.html" title="Inicio Cap-tivante">INICIO</a></li>
+                    <li><a href="gorras.html" title="Gorras Cap-tivante">GORRAS</a></li>
+                    <li><a href="sombreros.html" title="SombrerosCap-tivante">SOMBREROS</a></li>
+                    <li><a href="viseras.html" title="Viseras Cap-tivante">VISERAS</a></li>
+                    <li><a href="crud.html" title="Administrar productos">Administrar Productos</a></li>
+                </ul>
+                <form id="search-form">
+                    <input type="text" id="search-input" placeholder="Buscar">
+                    <button type="submit">Buscar</button>
+                </form>
+            </nav>
+        </div>
+    </header>
+
+
+    <div class="container">
+        <h1 class="store-title">Administración de Productos y Categorías</h1>
+        <form id="add-product-form">
+            <input type="text" id="new-product-name" placeholder="Nombre del Producto" required>
+            <label for="new-product-image" class="custom-file-upload">
+                <input type="file" id="new-product-image" accept="image/jpeg, image/png" required onchange="previewImage(event)"> 
+                Subir imagen
+            </label>
+            <img id="image-preview" src="#" alt="Image preview" width="10%" height="10%">
+
+            <input type="number" id="new-product-price" placeholder="Precio" required>
+            <input type="text" id="new-product-description" placeholder="Descripción" required>
+            <input type="text" id="new-product-category" placeholder="Categoría" required>
+            <button type="button" onclick="addProduct()">Agregar Producto</button>
+        </form>
+
+        <h2>Productos Actuales</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Imagen</th>
+                    <th>Precio</th>
+                    <th>Descripción</th>
+                    <th>Categoría</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="product-list"></tbody>
+        </table>
+
+    </div>
+
+    <!-- Modal for Editing Products -->
+    <div class="modal fade" id="editProductModal" tabindex="-1" aria-labelledby="editProductModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editProductModalLabel">Editar Producto</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <input type="text" id="edit-product-name" placeholder="Nombre del Producto" required>
+                    <input type="text" id="edit-product-price" placeholder="Precio" required>
+                    <input type="text" id="edit-product-description" placeholder="Descripción" required>
+                    <input type="text" id="edit-product-category" placeholder="Categoría" required>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" onclick="saveChanges()">Guardar Cambios</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+
+        function previewImage(event) {
+            const input = event.target;
+            const preview = document.getElementById('image-preview');
+
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+
+                reader.onload = function (e) {
+                    preview.src = e.target.result;
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        let products = [];
+        let selectedIndex = -1;
+
+        function addProduct() {
+            const name = document.getElementById('new-product-name').value;
+            const imageFile = document.getElementById('new-product-image').files[0];
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                const price = document.getElementById('new-product-price').value;
+                const description = document.getElementById('new-product-description').value;
+                const category = document.getElementById('new-product-category').value;
+                const product = { nombre: name, imagen: e.target.result, precio: price, descripcion: description, categoria: category };
+                products.unshift(product);
+                displayProducts();
+                document.getElementById('add-product-form').reset();
+            };
+            reader.readAsDataURL(imageFile);
+        }
+
+        fetch('productos.json')
+            .then(response => response.json())
+            .then(data => {
+                products = data; // Asumiendo que el JSON está en el formato correcto
+                displayProducts(); // Llamada a mostrar los productos
+            })
+            .catch(error => console.error('Error al cargar los datos de los productos:', error));
+
+
+        function displayProducts() {
+            const productList = document.getElementById('product-list');
+            productList.innerHTML = products.map((product, index) => `
+      <tr>
+        <td>${product.nombre}</td>
+        <td><img src="${product.imagen}" alt="Imagen de producto" style="height: 50px;"></td>
+        <td>${product.precio}</td>
+        <td>${product.descripcion}</td>
+        <td>${product.tipo}</td>
+        <td>
+          <button onclick="editProduct(${index})" class="btn btn-warning">Editar</button>
+          <button onclick="deleteProduct(${index})" class="btn btn-danger">Eliminar</button>
+        </td>
+      </tr>
+    `).join('');
+        }
+
+
+        function deleteProduct(index) {
+            products.splice(index, 1);
+            displayProducts();
+        }
+
+        function editProduct(index) {
+            selectedIndex = index;
+            const product = products[index];
+            document.getElementById('edit-product-name').value = product.nombre;
+            document.getElementById('edit-product-price').value = product.precio;
+            document.getElementById('edit-product-description').value = product.descripcion;
+            document.getElementById('edit-product-category').value = product.categoria;
+            $('#editProductModal').modal('show');
+        }
+
+        function saveChanges() {
+            const product = products[selectedIndex];
+            product.nombre = document.getElementById('edit-product-name').value;
+            product.precio = document.getElementById('edit-product-price').value;
+            product.descripcion = document.getElementById('edit-product-description').value;
+            product.categoria = document.getElementById('edit-product-category').value;
+            $('#editProductModal').modal('hide');
+            displayProducts();
+        }
+    </script>
+
+
+    <!-- Script para la funcionalidad de búsqueda -->
+    <script>
+        // Get the search form, input, and products container elements
+        const searchForm = document.getElementById('search-form');
+        const searchInput = document.getElementById('search-input');
+        const productsContainer = document.getElementById('products-container');
+        const sortButton = document.getElementById('sort-name-button');
+        const reverseSortButton = document.getElementById('sort-reverse-name-button');
+        const priceSortButton = document.getElementById('sort-price-button'); // Nuevo botón
+        const priceSortReverseButton = document.getElementById('sort-price-reverse-button'); // Nuevo botón
+        const carousel = document.getElementById('carouselExampleIndicators');
+
+        // Function to create a product element
+        function createProductElement(product) {
+            const productWrapper = document.createElement('div');
+            productWrapper.classList.add('product-wrapper');
+
+            const productElement = document.createElement('a');
+            productElement.classList.add('product');
+            productElement.href = `producto.html?nombre=${encodeURIComponent(product.nombre)}&imagen=${encodeURIComponent(product.imagen)}&precio=${encodeURIComponent(product.precio)}&descripcion=${encodeURIComponent(product.descripcion)}`;
+            productElement.title = product.nombre;
+            productElement.innerHTML = `
+        <div class="product-image">
+          <img src="${product.imagen}" alt="${product.nombre}" title="${product.nombre}">
+        </div>
+        <div class="product-info">
+          <h2>${product.nombre}</h2>
+          <p class="price">$${product.precio}</p>
+          <button class="buy-button">Ver producto</button>
+        </div>
+      `;
+
+            productWrapper.appendChild(productElement);
+            return productWrapper;
+        }
+
+        // Fetch products from JSON file
+        fetch('productos.json')
+            .then(response => response.json())
+            .then(data => {
+                // Display all products initially
+                data.forEach(product => {
+                    const productElement = createProductElement(product);
+                    productsContainer.appendChild(productElement);
+                });
+            })
+            .catch(error => console.error('Error al cargar los datos de los productos:', error));
+
+        // Add event listener to the search form
+        searchForm.addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Get the search term
+            const searchTerm = searchInput.value.trim().toLowerCase();
+
+            // Filter products based on the search term
+            const filteredProducts = Array.from(productsContainer.children).filter(product => {
+                const productName = product.querySelector('.product-info h2').textContent.toLowerCase();
+                return productName.includes(searchTerm);
+            });
+
+            // Show or hide products based on the search results
+            Array.from(productsContainer.children).forEach(product => {
+                if (filteredProducts.includes(product)) {
+                    product.style.display = 'block';
+                } else {
+                    product.style.display = 'none';
+                }
+            });
+
+            // Change the title text based on search results
+            const titleText = filteredProducts.length > 0 ? 'Resultados de búsqueda' : 'Bienvenido a Cap-tivante';
+            document.querySelector('.store-title').textContent = titleText;
+
+            // Show or hide the sort buttons based on search results
+            if (filteredProducts.length > 0) {
+                sortButton.style.display = 'inline-block';
+                reverseSortButton.style.display = 'inline-block';
+                priceSortButton.style.display = 'inline-block';
+                priceSortReverseButton.style.display = 'inline-block';
+                // Hide the carousel
+                carousel.classList.add('hidden');
+            } else {
+                sortButton.style.display = 'none';
+                reverseSortButton.style.display = 'none';
+                priceSortButton.style.display = 'none';
+                priceSortReverseButton.style.display = 'none';
+                // Show the carousel
+                carousel.classList.remove('hidden');
+            }
+        });
+
+        // Add event listener to the sort button
+        sortButton.addEventListener('click', function () {
+            const sortedProducts = Array.from(productsContainer.children)
+                .sort((a, b) => {
+                    const nameA = a.querySelector('.product-info h2').textContent.toLowerCase();
+                    const nameB = b.querySelector('.product-info h2').textContent.toLowerCase();
+                    return nameA.localeCompare(nameB);
+                });
+
+            productsContainer.innerHTML = '';
+            sortedProducts.forEach(product => {
+                productsContainer.appendChild(product);
+            });
+        });
+
+        // Add event listener to the reverse sort button
+        reverseSortButton.addEventListener('click', function () {
+            const sortedProducts = Array.from(productsContainer.children)
+                .sort((a, b) => {
+                    const nameA = a.querySelector('.product-info h2').textContent.toLowerCase();
+                    const nameB = b.querySelector('.product-info h2').textContent.toLowerCase();
+                    return nameB.localeCompare(nameA);
+                });
+
+            productsContainer.innerHTML = '';
+            sortedProducts.forEach(product => {
+                productsContainer.appendChild(product);
+            });
+        });
+
+        // Add event listener to the price sort button
+        priceSortButton.addEventListener('click', function () {
+            const sortedProducts = Array.from(productsContainer.children)
+                .sort((a, b) => {
+                    const priceA = parseFloat(a.querySelector('.price').textContent.replace('$', ''));
+                    const priceB = parseFloat(b.querySelector('.price').textContent.replace('$', ''));
+                    return priceA - priceB;
+                });
+
+            productsContainer.innerHTML = '';
+            sortedProducts.forEach(product => {
+                productsContainer.appendChild(product);
+            });
+        });
+
+        // Add event listener to the price reverse sort button
+        priceSortReverseButton.addEventListener('click', function () {
+            const sortedProducts = Array.from(productsContainer.children)
+                .sort((a, b) => {
+                    const priceA = parseFloat(a.querySelector('.price').textContent.replace('$', ''));
+                    const priceB = parseFloat(b.querySelector('.price').textContent.replace('$', ''));
+                    return priceB - priceA;
+                });
+
+            productsContainer.innerHTML = '';
+            sortedProducts.forEach(product => {
+                productsContainer.appendChild(product);
+            });
+        });
+        function addToCart() {
+            const quantity = document.getElementById('quantity').value;
+            const product = { nombre: nombre, imagen: imagen, precio: precio, descripcion: descripcion, cantidad: quantity };
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push(product);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(`Producto añadido al carrito correctamente.`);
+        }
+    </script>
+
+    <footer
+        style="background-color: #fff; color: #a5a4a4; padding: 60px; width: 100vw; position: absolute; left: 0; right: 0;">
+        <div style="text-align: center;">
+            <h3>Contacto</h3>
+            <p>¡Estamos aquí para ayudarte! Contáctanos para cualquier consulta o inquietud.</p>
+            <p>Email: info@tu-tienda.com</p>
+            <p>Teléfono: +52 449 12345678</p>
+        </div>
+        <div style="text-align: center; margin-top: 40px;">
+            <h3>Síguenos en redes sociales</h3>
+            <a href="https://www.facebook.com/profile.php?id=61557315856153" target="_blank"
+                style="color: #a5a4a4; text-decoration: none; margin-right: 10px;">Facebook</a>
+            <a href="#" style="color: #a5a4a4; text-decoration: none; margin-right: 10px;">Instagram</a>
+            <a href="#" style="color: #a5a4a4; text-decoration: none; margin-right: 10px;">Twitter</a>
+        </div>
+        <div style="text-align: center; margin-top: 40px;">
+            <p>&copy; 2024 Cap-tivante. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+
+    <script>
+        if (localStorage.getItem("usuario") === null) {
+            // No hay sesión iniciada, no mostrar el nombre de usuario, el enlace "Cerrar sesión" y el enlace "Iniciar sesión"
+            document.getElementById("username").style.display = "none";
+            document.getElementById("logout-link").style.display = "none";
+            document.getElementById("login-link").style.display = "block"; // Mostrar el enlace "Iniciar sesión"
+        } else {
+            // Hay sesión iniciada, mostrar el nombre de usuario y el enlace "Cerrar sesión", y ocultar el enlace "Iniciar sesión"
+            document.getElementById("username").innerHTML = `<a href="usuario.html">${localStorage.getItem("usuario")}</a>`;
+            document.getElementById("logout-link").style.display = "inline";
+            document.getElementById("login-link").style.display = "none"; // Ocultar el enlace "Iniciar sesión"
+        }
+
+        if (localStorage.getItem("rol") === "Administrador") {
+            document.querySelector('a[title="Administrar productos"]').style.display = "block"; // Mostrar para administradores
+        } else {
+            document.querySelector('a[title="Administrar productos"]').style.display = "none"; // Ocultar para clientes
+        }
+
+        function logout() {
+            // Limpiar la información de sesión
+            localStorage.removeItem("usuario"); // Eliminar el nombre de usuario del almacenamiento local
+            localStorage.removeItem("rol");
+
+            // Redireccionar al usuario a la página de inicio de sesión o a una página no autenticada
+            window.location.href = "index.html";
+            alert("sesion cerrada!");
+        }
+    </script>
+
+</body>
+
+</html>

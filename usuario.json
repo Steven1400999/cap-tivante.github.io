@@ -6,7 +6,19 @@
       "contraseña": "12345678",
       "usuario": "Menfis",
       "direccion": "Madero #123",
-      "ciudad": "Aguascalienetes"
+      "ciudad": "Aguascalienetes",
+      "rol": "Administrador"
+    },
+
+    {
+      "nombre": "Steven",
+      "apellidos": "Quezada Gonzalez",
+      "correo": "steven@gmail.com",
+      "contraseña": "12345678",
+      "usuario": "Stewei",
+      "direccion": "Pozo bravo #999",
+      "ciudad": "Aguascalienetes",
+      "rol": "Cliente"
     }
 ]
   
