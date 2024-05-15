@@ -104,8 +104,10 @@
 
         // Función para generar las tarjetas
         function generarTarjetas(data) {
+            var usuarioActual = localStorage.getItem("usuario"); 
             var cardContainer = document.getElementById("card-container");
             data.forEach(function(usuario) {
+                if (usuario.usuario === usuarioActual) { 
                 var card = document.createElement("div");
                 card.classList.add("col-md-4", "mb-3");
                 card.innerHTML = `
@@ -124,6 +126,7 @@
                     </div>
                 `;
                 cardContainer.appendChild(card);
+                }
             });
         }
 
