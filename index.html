@@ -138,6 +138,7 @@
       productWrapper.classList.add('product-wrapper');
 
       const productElement = document.createElement('a');
+    
       productElement.classList.add('product');
       productElement.href = `producto.html?nombre=${encodeURIComponent(product.nombre)}&imagen=${encodeURIComponent(product.imagen)}&precio=${encodeURIComponent(product.precio)}&descripcion=${encodeURIComponent(product.descripcion)}`;
       productElement.title = product.nombre;
