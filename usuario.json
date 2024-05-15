@@ -19,6 +19,18 @@
       "direccion": "Pozo bravo #999",
       "ciudad": "Aguascalienetes",
       "rol": "Cliente"
+    },
+
+    {
+      "nombre": "Kevin",
+      "apellidos": "Ramirez Chairez",
+      "correo": "kevin@gmail.com",
+      "contraseña": "12345678",
+      "usuario": "Kevin",
+      "direccion": "Peralta",
+      "ciudad": "Aguascalienetes",
+      "rol": "Cliente"
     }
+
 ]
   
