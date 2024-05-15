@@ -30,7 +30,6 @@ body {
     }
 }
 
-/* Estilos para computadoras de escritorio */
 @media (min-width: 992px) {
     .gorra {
         width: 30%;
