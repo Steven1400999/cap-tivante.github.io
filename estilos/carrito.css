@@ -52,6 +52,17 @@ body {
     font-size: 15px; /* Tamaño del emoji */ 
     
 }
+
+
+.cupon-button{
+    background-color: #06648a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 15px;
+}
+
+
 .product-card button {
     background-color: #ff6b6b;
     color: white;
@@ -199,3 +210,4 @@ input {
     margin-left: 500px;
     
 }
+

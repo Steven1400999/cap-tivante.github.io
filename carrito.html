@@ -59,6 +59,95 @@
     </div>
 
     <!-- Script para mostrar productos en el carrito -->
+    <center>
+        <br>
+        <br>
+        <h6>¿Cuentas con un cupon de descuento? Ingresalo aqui.</h6>
+        <input type="text" id="coupon-code" placeholder="Ingresa tu cupón">
+        <button id="apply-coupon-btn" onclick="aplicarCupon()" class="cupon-button">Aplicar Cupón</button>
+        <p id="discount-message"></p> <!-- Mensaje de validación -->
+    </center>
+    
+    <center>
+        <h3 id="total-sin-impuestos"></h3>
+        <h3 id="total-envio"></h3>
+        <h3 id="impuestos"></h3>
+        <hr>
+        <h3 id="total-con-impuestos"></h3>
+    </center>
+
+    <script>
+       // IVA del 16% (puedes ajustarlo según tus necesidades)
+    const IVA = 0.16;
+    const PorcentajeEnvio = 0.10;
+    let totalSinImpuestos= 0;
+    let totalConImpuestos = 0;
+    let descuento = 0;
+
+// Función para calcular totales y mostrarlos
+    function calcularTotales() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    
+    // Calcular el total sin impuestos
+    totalSinImpuestos = cart.reduce((total, product) => {
+        return total + (parseFloat(product.precio) * parseInt(product.cantidad));
+    }, 0);
+
+
+    const totalConDescuento = totalSinImpuestos - descuento; 
+    const envio = totalConDescuento * PorcentajeEnvio;
+    const impuestos = totalConDescuento * IVA;
+
+    // Calcular el total con impuestos
+    totalConImpuestos = totalConDescuento * (1 + IVA)+ envio ;
+
+    // Mostrar los totales en la página
+    document.getElementById('total-sin-impuestos').innerText = `Total sin impuestos: $${totalSinImpuestos.toFixed(2)}`;
+    document.getElementById('total-envio').innerText = `Envio: $${envio.toFixed(2)}`;
+    document.getElementById('impuestos').innerText = `Impuestos: $${impuestos.toFixed(2)}`;
+
+    document.getElementById('total-con-impuestos').innerText = `Total: $${totalConImpuestos.toFixed(2)}`;
+}
+
+
+    // Función para cargar los cupones desde el archivo JSON
+    async function cargarCupones() {
+        const response = await fetch('cupones.json');
+        const cupones = await response.json();
+        return cupones;
+    }
+
+    // Función para aplicar el cupón de descuento
+    async function aplicarCupon() {
+        const couponCode = document.getElementById('coupon-code').value.trim();  // Obtener el valor ingresado por el usuario
+        const cupones = await cargarCupones(); // Cargar cupones dinámicamente desde el archivo JSON
+
+        // Buscar el cupón ingresado
+        const cuponValido = cupones.find(cupon => cupon.codigo === couponCode);
+
+        if (cuponValido) {
+            // Si hay un cupón válido, aplicar el descuento
+            descuento = totalSinImpuestos * (cuponValido.descuento / 100);
+            
+            // Mostrar mensaje de éxito
+            alert(`¡Cupón aplicado! Has obtenido un descuento de $${descuento.toFixed(2)} en el total.`);
+        } else {
+            // Si el cupón es inválido
+            descuento = 0;
+            alert("Cupón inválido. Intenta de nuevo.");
+        }
+
+        // Volver a calcular los totales con el descuento
+        calcularTotales();
+    }
+
+    // Llama a la función para calcular y mostrar los totales cuando la página se carga
+    calcularTotales();
+
+    </script>
+
+
+
     <script>
         // Obtener la lista de productos en el carrito del localStorage
         const cart = JSON.parse(localStorage.getItem('cart')) || [];

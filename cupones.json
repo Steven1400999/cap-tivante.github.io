@@ -1,0 +1,14 @@
+[
+    {
+        "codigo": "DESCUENTO10",
+        "descuento": 10
+    },
+    {
+        "codigo": "DESCUENTO15",
+        "descuento": 15
+    },
+    {
+        "codigo": "DESCUENTO20",
+        "descuento": 20
+    }
+]
