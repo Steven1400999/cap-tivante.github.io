@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-205HXP6ZKV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'G-205HXP6ZKV');
+  </script>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cap-tivante Gorras, Sombreros y más...</title>
+  <meta name="description" content="Gorras, sombreros, gorros perfectos para tener un estilo perfecto, para protegerte de los rayos del sol y para que seas Cap-tivante.">
+  <meta name="keywords" content="sombreros, gorras, cachuchas, gorros" />
+  <meta name="author" content="Steven Quezada González, Kevin Iván Ramirez Chairez, Diego Sebastian Medina Zarate, Brayan Ariel Flores De Lira, Leonardo Jesus Gutierrez Muñoz," />
+  <meta name="robots" content="index" />
+
+
+
+  <link rel="stylesheet" href="estilos/FAQ.css">
+  <style>
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container4">
+      <nav class="navbar">
+        <ul class="menu" id="navbar-menu">
+          <!-- Aquí se mostrará el nombre de usuario si la sesión está iniciada -->
+          <li id="username"></li>
+          <li id="logout-link" style="display: none;"><a href="#" onclick="logout()">Cerrar sesión</a></li>
+        </ul>
+        <ul class="menu">
+          
+          <li><a href="contacto.html" title="Contacto Cap-tivante">Contacto</a></li>
+          <li><a href="https://www.facebook.com/profile.php?id=61557315856153" target="_blank" class="facebook-btn" title="Facebook"><img src="imagenes/facebook.png" alt="Facebook" title="Icono_Facebook"></a></li>
+          <li><a id="login-link" href="login.html" style="display: none;" title="Iniciar sesión">Iniciar sesión</a></li>
+          <li><a href="carrito.html" title="Carrito de compras" class="cart-icon">🛒</a></li>
+          
+        </ul>
+      </nav>
+    </div>
+    <div class="container3">
+      <nav class="navbar">
+        <div class="logo">
+          <img src="imagenes/logosombrero2.jpeg" alt="Logo de la tienda" title="Logo_sombrero">
+        </div>
+        <ul class="menu">
+          <li><a href="index.html" title="Inicio Cap-tivante">INICIO</a></li>
+          <li><a href="gorras.html" title="Gorras Cap-tivante">GORRAS</a></li>
+          <li><a href="sombreros.html" title="SombrerosCap-tivante">SOMBREROS</a></li>
+          <li><a href="viseras.html" title="Viseras Cap-tivante">VISERAS</a></li>
+          <li><a href="crud.html" title="Administrar productos">Administrar Productos</a></li>
+        </ul>
+        <form id="search-form">
+          <input type="text" id="search-input" placeholder="Buscar">
+          <button type="submit">Buscar</button>
+        </form>
+      </nav>
+    </div>
+  </header>
+
+    <div class="container">
+        <h1 class="store-title">Preguntas Frecuentes (FAQ)</h1>
+        <div class="faq-container">
+            <div class="faq-item">
+                <h2>¿Cuáles son los métodos de pago aceptados?</h2>
+                <p>Aceptamos tarjetas de crédito, débito, PayPal, y transferencias bancarias.</p>
+            </div>
+            <div class="faq-item">
+                <h2>¿Cuánto tiempo tarda en llegar mi pedido?</h2>
+                <p>El tiempo de entrega es de 3 a 7 días hábiles, dependiendo de la ubicación.</p>
+            </div>
+            <div class="faq-item">
+                <h2>¿Puedo devolver un producto?</h2>
+                <p>Sí, aceptamos devoluciones dentro de los 30 días posteriores a la compra.</p>
+            </div>
+            <div class="faq-item">
+                <h2>¿Cómo puedo rastrear mi pedido?</h2>
+                <p>Te enviaremos un correo con el número de seguimiento una vez que tu pedido haya sido despachado.</p>
+            </div>
+            <div class="faq-item">
+                <h2>¿Ofrecen envío internacional?</h2>
+                <p>Sí, realizamos envíos internacionales. Los costos y tiempos varían según el destino.</p>
+            </div>
+            <div class="faq-item">
+                <h2>¿Qué hago si mi producto llega dañado?</h2>
+                <p>Puedes contactar a nuestro servicio al cliente para gestionar una devolución o cambio sin costo.</p>
+            </div>
+            <div class="faq-item">
+                <h2>¿Cómo puedo contactar al servicio al cliente?</h2>
+                <p>Puedes contactarnos a través del correo soporte@tienda.com o llamando al 01-800-123-4567.</p>
+            </div>
+            <div class="faq-item">
+                <h2>¿Puedo cancelar mi pedido?</h2>
+                <p>Los pedidos pueden cancelarse antes de ser despachados. Después de esto, deberás solicitar una devolución.</p>
+            </div>
+            <div class="faq-item">
+                <h2>¿Ofrecen garantía en los productos?</h2>
+                <p>Sí, todos nuestros productos cuentan con una garantía de 12 meses contra defectos de fabricación.</p>
+            </div>
+        </div>
+    </div>
+
+
+    <footer style="background-color: #fff; color: #a5a4a4; padding: 60px; width: 100vw; position: absolute; left: 0; right: 0;">
+        <div style="text-align: center;">
+          <h3>Contacto</h3>
+          <p>¡Estamos aquí para ayudarte! Contáctanos para cualquier consulta o inquietud.</p>
+          <p>Email: info@tu-tienda.com</p>
+          <p>Teléfono: +52 449 12345678</p>
+        </div>
+        <div style="text-align: center; margin-top: 40px;">
+          <h3>Síguenos en redes sociales</h3>
+          <a href="https://www.facebook.com/profile.php?id=61557315856153" target="_blank" style="color: #a5a4a4; text-decoration: none; margin-right: 10px;">Facebook</a>
+          <a href="#" style="color: #a5a4a4; text-decoration: none; margin-right: 10px;">Instagram</a>
+          <a href="#" style="color: #a5a4a4; text-decoration: none; margin-right: 10px;">Twitter</a>
+        </div>
+        <div style="text-align: center; margin-top: 40px;">
+          <p>&copy; 2024 Cap-tivante. Todos los derechos reservados.</p>
+        </div>
+      </footer>
+
+</body>
+
+
+<script>
+    if (localStorage.getItem("usuario") === null) {
+        // No hay sesión iniciada, no mostrar el nombre de usuario, el enlace "Cerrar sesión" y el enlace "Iniciar sesión"
+        document.getElementById("username").style.display = "none";
+        document.getElementById("logout-link").style.display = "none";
+        document.getElementById("login-link").style.display = "block"; // Mostrar el enlace "Iniciar sesión"
+    } else {
+        // Hay sesión iniciada, mostrar el nombre de usuario y el enlace "Cerrar sesión", y ocultar el enlace "Iniciar sesión"
+        document.getElementById("username").innerHTML = `<a href="usuario.html">${localStorage.getItem("usuario")}</a>`;
+        document.getElementById("logout-link").style.display = "inline";
+        document.getElementById("login-link").style.display = "none"; // Ocultar el enlace "Iniciar sesión"
+    }
+    
+    if (localStorage.getItem("rol") === "Administrador") {
+        document.querySelector('a[title="Administrar productos"]').style.display = "block"; // Mostrar para administradores
+    } else {
+        document.querySelector('a[title="Administrar productos"]').style.display = "none"; // Ocultar para clientes
+    }
+    
+      function logout() {
+        // Limpiado de inicio de sesión
+        localStorage.removeItem("usuario"); // Eliminar el nombre de usuario del almacenamiento local
+        localStorage.removeItem("rol");
+        // Redireccionar al usuario a la página de inicio de sesión o a una página no autenticada
+        window.location.href = "index.html";
+        alert("sesion cerrada!");
+    }
+    </script>
+    
+
+
+</html>
