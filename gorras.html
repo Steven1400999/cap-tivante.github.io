@@ -9,85 +9,88 @@
       display: none;
     }
   </style>
-   <title>Gorras</title>
+  <title>Gorras</title>
 </head>
 
 
 
 <body>
-    <header>
-        <div class="container4">
-          <nav class="navbar">
-            <ul class="menu" id="navbar-menu">
-              <!-- Aquí se mostrará el nombre de usuario si la sesión está iniciada -->
-              <li id="username"></li>
-              <li id="logout-link" style="display: none;"><a href="#" onclick="logout()">Cerrar Sesión</a></li>
-            </ul>
-            <ul class="menu">
-              <li><a href="index.html" title="Contacto Cap-tivante">Contacto</a></li>
-              <li><a href="https://www.facebook.com/profile.php?id=61557315856153" target="_blank" class="facebook-btn" title="Facebook"><img src="imagenes/facebook.png" alt="Facebook" title="Icono_Facebook"></a></li>
-              <li><a href="carrito.html" title="Carrito de compras" class="cart-icon">🛒</a></li>
-            </ul>
-          </nav>
-        </div>
-        <div class="container3">
-          <nav class="navbar">
-            <div class="logo">
-              <img src="imagenes/logosombrero2.jpeg" alt="Logo de la tienda" title="Logo_sombrero">
-            </div>
-            <ul class="menu">
-              <li><a href="index.html" title="Inicio Cap-tivante">INICIO</a></li>
-              <li><a href="gorras.html" title="Gorras Cap-tivante">GORRAS</a></li>
-              <li><a href="sombreros.html" title="SombrerosCap-tivante">SOMBREROS</a></li>
-              <li><a href="viseras.html" title="Viseras Cap-tivante">VISERAS</a></li>
-            </ul>
-            <form id="search-form">
-              <input type="text" id="search-input" placeholder="Buscar">
-              <button type="submit">Buscar</button>
-            </form>
-          </nav>
-        </div>
-      </header>
-
-    <div class="container">
-        <div class="products-container" id="products-container">
-            <!-- Tarjeta de descripción de las gorras -->
-            <div class="product-description-card">
-                <h2><strong>GORRAS</strong></h2>
-                <p>Accesorio diseñado y creado para cubrir la cabeza y proteger los ojos de la luz natural y la luz artificial mediante una visera y una pieza ajustable al cráneo, que puede incluir alas laterales.</p>
-            </div>
-        </div>
+  <header>
+    <div class="container4">
+      <nav class="navbar">
+        <ul class="menu" id="navbar-menu">
+          <!-- Aquí se mostrará el nombre de usuario si la sesión está iniciada -->
+          <li id="username"></li>
+          <li id="logout-link" style="display: none;"><a href="#" onclick="logout()">Cerrar Sesión</a></li>
+        </ul>
+        <ul class="menu">
+          <li><a href="index.html" title="Contacto Cap-tivante">Contacto</a></li>
+          <li><a href="https://www.facebook.com/profile.php?id=61557315856153" target="_blank" class="facebook-btn"
+              title="Facebook"><img src="imagenes/facebook.png" alt="Facebook" title="Icono_Facebook"></a></li>
+          <li><a href="FAQ.html" title="Contacto Cap-tivante">FAQ</a></li>
+          <li><a href="carrito.html" title="Carrito de compras" class="cart-icon">🛒</a></li>
+        </ul>
+      </nav>
     </div>
+    <div class="container3">
+      <nav class="navbar">
+        <div class="logo">
+          <img src="imagenes/logosombrero2.jpeg" alt="Logo de la tienda" title="Logo_sombrero">
+        </div>
+        <ul class="menu">
+          <li><a href="index.html" title="Inicio Cap-tivante">INICIO</a></li>
+          <li><a href="gorras.html" title="Gorras Cap-tivante">GORRAS</a></li>
+          <li><a href="sombreros.html" title="SombrerosCap-tivante">SOMBREROS</a></li>
+          <li><a href="viseras.html" title="Viseras Cap-tivante">VISERAS</a></li>
+        </ul>
+        <form id="search-form">
+          <input type="text" id="search-input" placeholder="Buscar">
+          <button type="submit">Buscar</button>
+        </form>
+      </nav>
+    </div>
+  </header>
 
-    <footer style="background-color:  #fff; color:  #a5a4a4; padding: 60px;">
-        <div style="text-align: center;">
-            <h3>Contacto</h3>
-            <p>¡Estamos aquí para ayudarte! Contáctanos para cualquier consulta o inquietud.</p>
-            <p>Email: info@tu-tienda.com</p>
-            <p>Teléfono: +52 449 12345678</p>
-        </div>
-        <div style="text-align: center; margin-top: 40px;">
-            <h3>Síguenos en redes sociales</h3>
-            <a href="https://www.facebook.com/profile.php?id=61557315856153" target="_blank"
-                style="color: #a5a4a4; text-decoration: none; margin-right: 10px;">Facebook</a>
-            <a href="#" style="color:  #a5a4a4; text-decoration: none; margin-right: 10px;">Instagram</a>
-            <a href="#" style="color: #a5a4a4; text-decoration: none; margin-right: 10px;">Twitter</a>
-        </div>
-        <div style="text-align: center; margin-top: 40px;">
-            <p>&copy; 2024 Cap-tivante. Todos los derechos reservados.</p>
-        </div>
-    </footer>
+  <div class="container">
+    <div class="products-container" id="products-container">
+      <!-- Tarjeta de descripción de las gorras -->
+      <div class="product-description-card">
+        <h2><strong>GORRAS</strong></h2>
+        <p>Accesorio diseñado y creado para cubrir la cabeza y proteger los ojos de la luz natural y la luz artificial
+          mediante una visera y una pieza ajustable al cráneo, que puede incluir alas laterales.</p>
+      </div>
+    </div>
+  </div>
 
-    <script>
-        fetch('productos.json')
-            .then(response => response.json())
-            .then(data => {
-                const productsContainer = document.getElementById('products-container');
-                const gorras = data.filter(product => product.categoria=== 'gorra');
-                gorras.forEach(product => {
-                    const productElement = document.createElement('div');
-                    productElement.classList.add('product');
-                    productElement.innerHTML = `
+  <footer style="background-color:  #fff; color:  #a5a4a4; padding: 60px;">
+    <div style="text-align: center;">
+      <h3>Contacto</h3>
+      <p>¡Estamos aquí para ayudarte! Contáctanos para cualquier consulta o inquietud.</p>
+      <p>Email: info@tu-tienda.com</p>
+      <p>Teléfono: +52 449 12345678</p>
+    </div>
+    <div style="text-align: center; margin-top: 40px;">
+      <h3>Síguenos en redes sociales</h3>
+      <a href="https://www.facebook.com/profile.php?id=61557315856153" target="_blank"
+        style="color: #a5a4a4; text-decoration: none; margin-right: 10px;">Facebook</a>
+      <a href="#" style="color:  #a5a4a4; text-decoration: none; margin-right: 10px;">Instagram</a>
+      <a href="#" style="color: #a5a4a4; text-decoration: none; margin-right: 10px;">Twitter</a>
+    </div>
+    <div style="text-align: center; margin-top: 40px;">
+      <p>&copy; 2024 Cap-tivante. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    fetch('productos.json')
+      .then(response => response.json())
+      .then(data => {
+        const productsContainer = document.getElementById('products-container');
+        const gorras = data.filter(product => product.categoria === 'gorra');
+        gorras.forEach(product => {
+          const productElement = document.createElement('div');
+          productElement.classList.add('product');
+          productElement.innerHTML = `
                         <div class="product-image">
                             <img src="${product.imagen}" alt="${product.nombre}"  title="${product.nombre}">
                         </div>
@@ -97,33 +100,33 @@
                             <button class="buy-button" onclick="window.location.href='producto.html?nombre=${encodeURIComponent(product.nombre)}&imagen=${encodeURIComponent(product.imagen)}&precio=${encodeURIComponent(product.precio)}&descripcion=${encodeURIComponent(product.descripcion)}'">Ver producto</button>
                         </div>
                     `;
-                    productsContainer.appendChild(productElement);
-                });
-            })
-            .catch(error => console.error('Error al cargar los datos de los productos:', error));
-    </script>
+          productsContainer.appendChild(productElement);
+        });
+      })
+      .catch(error => console.error('Error al cargar los datos de los productos:', error));
+  </script>
   <script>
     if (localStorage.getItem("usuario") === null) {
-        // No hay sesión iniciada, no mostrar el nombre de usuario, el enlace "Cerrar sesión" y el enlace "Iniciar sesión"
-        document.getElementById("username").style.display = "none";
-        document.getElementById("logout-link").style.display = "none";
-        document.getElementById("login-link").style.display = "block"; // Mostrar el enlace "Iniciar sesión"
+      // No hay sesión iniciada, no mostrar el nombre de usuario, el enlace "Cerrar sesión" y el enlace "Iniciar sesión"
+      document.getElementById("username").style.display = "none";
+      document.getElementById("logout-link").style.display = "none";
+      document.getElementById("login-link").style.display = "block"; // Mostrar el enlace "Iniciar sesión"
     } else {
-        // Hay sesión iniciada, mostrar el nombre de usuario y el enlace "Cerrar sesión", y ocultar el enlace "Iniciar sesión"
-        document.getElementById("username").innerHTML = `<a href="usuario.html">${localStorage.getItem("usuario")}</a>`;
-        document.getElementById("logout-link").style.display = "inline";
-        document.getElementById("login-link").style.display = "none"; // Ocultar el enlace "Iniciar sesión"
+      // Hay sesión iniciada, mostrar el nombre de usuario y el enlace "Cerrar sesión", y ocultar el enlace "Iniciar sesión"
+      document.getElementById("username").innerHTML = `<a href="usuario.html">${localStorage.getItem("usuario")}</a>`;
+      document.getElementById("logout-link").style.display = "inline";
+      document.getElementById("login-link").style.display = "none"; // Ocultar el enlace "Iniciar sesión"
     }
-      function logout() {
-        // Limpiar la información de sesión
-        localStorage.removeItem("usuario"); // Eliminar el nombre de usuario del almacenamiento local
-        localStorage.removeItem("rol");
+    function logout() {
+      // Limpiar la información de sesión
+      localStorage.removeItem("usuario"); // Eliminar el nombre de usuario del almacenamiento local
+      localStorage.removeItem("rol");
 
-        // Redireccionar al usuario a la página de inicio de sesión o a una página no autenticada
-        window.location.href = "index.html";
-        alert("sesion cerrada!");
+      // Redireccionar al usuario a la página de inicio de sesión o a una página no autenticada
+      window.location.href = "index.html";
+      alert("sesion cerrada!");
     }
-    </script>
+  </script>
 </body>
 
 </html>

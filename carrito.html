@@ -21,12 +21,14 @@
                     <!-- Aquí se mostrará el nombre de usuario si la sesión está iniciada -->
                     <li id="username"></li>
                     <li id="logout-link" style="display: none;"><a href="#" onclick="logout()">Cerrar sesión</a></li>
-                  </ul>
+                </ul>
                 <ul class="menu">
                     <li><a href="index.html" title="Producto">Contacto</a></li>
                     <li><a href="https://www.facebook.com/profile.php?id=61557315856153" target="_blank"
                             class="facebook-btn" title="Facebook Cap-tivante"><img src="imagenes/facebook.png"
                                 alt="Facebook" title="Logo_facebook"></a></li>
+                    <li><a href="FAQ.html" title="Contacto Cap-tivante">FAQ</a></li>
+                    <li><a href="carrito.html" title="Carrito de compras" class="cart-icon">🛒</a></li>
                 </ul>
             </nav>
         </div>
@@ -104,7 +106,8 @@
     </script>
 
     <!-- Script de PayPal -->
-    <script src="https://www.paypal.com/sdk/js?client-id=AV-n6M_PWeJUNPn96W4y6v-JJobqAmNZJXkUDEas415xyhr756USWdOJlBZkma1B7J8r5VH8irkOXm2n&currency=MXN"></script>
+    <script
+        src="https://www.paypal.com/sdk/js?client-id=AV-n6M_PWeJUNPn96W4y6v-JJobqAmNZJXkUDEas415xyhr756USWdOJlBZkma1B7J8r5VH8irkOXm2n&currency=MXN"></script>
     <script>
         function calcularPrecioTotal() {
             // Obtener la lista de productos en el carrito del localStorage
@@ -119,7 +122,7 @@
                     color: 'blue',
                     shape: 'pill'
                 },
-                createOrder: function(data, actions) {
+                createOrder: function (data, actions) {
                     // Crear la orden de compra con el precio total calculado
                     return actions.order.create({
                         purchase_units: [{
@@ -159,27 +162,27 @@
     </footer>
 
     <script>
- if (localStorage.getItem("usuario") === null) {
-    // No hay sesión iniciada, no mostrar el nombre de usuario, el enlace "Cerrar sesión" y el enlace "Iniciar sesión"
-    document.getElementById("username").style.display = "none";
-    document.getElementById("logout-link").style.display = "none";
-    document.getElementById("login-link").style.display = "block"; // Mostrar el enlace "Iniciar sesión"
-} else {
-    // Hay sesión iniciada, mostrar el nombre de usuario y el enlace "Cerrar sesión", y ocultar el enlace "Iniciar sesión"
-    document.getElementById("username").innerHTML = `<a href="usuario.html">${localStorage.getItem("usuario")}</a>`;
-    document.getElementById("logout-link").style.display = "inline";
-    document.getElementById("login-link").style.display = "none"; // Ocultar el enlace "Iniciar sesión"
-}
-  function logout() {
-    // Limpiar la información de sesión
-    localStorage.removeItem("usuario"); // Eliminar el nombre de usuario del almacenamiento local
-    localStorage.removeItem("rol");
+        if (localStorage.getItem("usuario") === null) {
+            // No hay sesión iniciada, no mostrar el nombre de usuario, el enlace "Cerrar sesión" y el enlace "Iniciar sesión"
+            document.getElementById("username").style.display = "none";
+            document.getElementById("logout-link").style.display = "none";
+            document.getElementById("login-link").style.display = "block"; // Mostrar el enlace "Iniciar sesión"
+        } else {
+            // Hay sesión iniciada, mostrar el nombre de usuario y el enlace "Cerrar sesión", y ocultar el enlace "Iniciar sesión"
+            document.getElementById("username").innerHTML = `<a href="usuario.html">${localStorage.getItem("usuario")}</a>`;
+            document.getElementById("logout-link").style.display = "inline";
+            document.getElementById("login-link").style.display = "none"; // Ocultar el enlace "Iniciar sesión"
+        }
+        function logout() {
+            // Limpiar la información de sesión
+            localStorage.removeItem("usuario"); // Eliminar el nombre de usuario del almacenamiento local
+            localStorage.removeItem("rol");
 
-    // Redireccionar al usuario a la página de inicio de sesión o a una página no autenticada
-    window.location.href = "index.html";
-    alert("sesion cerrada!");
-}
-      </script>
+            // Redireccionar al usuario a la página de inicio de sesión o a una página no autenticada
+            window.location.href = "index.html";
+            alert("sesion cerrada!");
+        }
+    </script>
 </body>
 
 </html>

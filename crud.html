@@ -55,8 +55,8 @@
                                 title="Icono_Facebook"></a></li>
                     <li><a id="login-link" href="login.html" style="display: none;" title="Iniciar sesión">Iniciar
                             sesión</a></li>
+                    <li><a href="FAQ.html" title="Contacto Cap-tivante">FAQ</a></li>
                     <li><a href="carrito.html" title="Carrito de compras" class="cart-icon">🛒</a></li>
-
                 </ul>
             </nav>
         </div>
@@ -86,7 +86,8 @@
         <form id="add-product-form">
             <input type="text" id="new-product-name" placeholder="Nombre del Producto" required>
             <label for="new-product-image" class="custom-file-upload">
-                <input type="file" id="new-product-image" accept="image/jpeg, image/png" required onchange="previewImage(event)"> 
+                <input type="file" id="new-product-image" accept="image/jpeg, image/png" required
+                    onchange="previewImage(event)">
                 Subir imagen
             </label>
             <img id="image-preview" src="#" alt="Image preview" width="10%" height="10%">
@@ -95,8 +96,8 @@
             <input type="text" id="new-product-description" placeholder="Descripción" required>
             <input type="text" id="new-product-category" placeholder="Categoría" required>
             <input type="number" id="new-product-stock" placeholder="Stock" required>
-            <button type="button" class="btn-agregar" onclick="addProduct()">Agregar Producto</button>      
-          </form>
+            <button type="button" class="btn-agregar" onclick="addProduct()">Agregar Producto</button>
+        </form>
 
         <h2>Productos Actuales</h2>
         <table class="table">
@@ -450,20 +451,20 @@
     </script>
     <script>
         function previewImage(event) {
-    const input = event.target;
-    const preview = document.getElementById('image-preview');
+            const input = event.target;
+            const preview = document.getElementById('image-preview');
 
-    if (input.files && input.files[0]) {
-        const reader = new FileReader();
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
 
-        reader.onload = function (e) {
-            preview.src = e.target.result;
-            preview.style.display = 'block'; // Mostrar la vista previa cuando se carga una imagen
-        };
+                reader.onload = function (e) {
+                    preview.src = e.target.result;
+                    preview.style.display = 'block'; // Mostrar la vista previa cuando se carga una imagen
+                };
 
-        reader.readAsDataURL(input.files[0]);
-    }
-}
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
     </script>
 
 </body>

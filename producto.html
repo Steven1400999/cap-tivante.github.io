@@ -36,12 +36,12 @@
                     <!-- Aquí se mostrará el nombre de usuario si la sesión está iniciada -->
                     <li id="username"></li>
                     <li id="logout-link" style="display: none;"><a href="#" onclick="logout()">Cerrar sesión</a></li>
-                  </ul>
+                </ul>
                 <ul class="menu">
                     <li><a href="index.html" title="Producto">Contacto</a></li>
-                    <li><a href="https://www.facebook.com/profile.php?id=61557315856153" target="_blank"
-                            class="facebook-btn" title="Facebook Cap-tivante"><img src="imagenes/facebook.png"
-                                alt="Facebook" title="Logo_facebook"></a></li>
+                    <li><a href="https://www.facebook.com/profile.php?id=61557315856153" target="_blank" class="facebook-btn" title="Facebook Cap-tivante"><img src="imagenes/facebook.png" alt="Facebook" title="Logo_facebook"></a></li>
+                    <li><a href="FAQ.html" title="Contacto Cap-tivante">FAQ</a></li>
+                    <li><a href="carrito.html" title="Carrito de compras" class="cart-icon">🛒</a></li>
                 </ul>
             </nav>
         </div>
@@ -147,57 +147,57 @@
         <p>Aceptamos devoluciones dentro de 3 días. Contáctanos para obtener instrucciones. Tu satisfacción.</p>
     </div>
 
-<div class="container2 product-container">
-    <h2>Deja una reseña</h2>
-    <form id="reviewForm">
-        <label for="name">Nombre:</label>
-        <input type="text" id="name" name="name" required><br>
+    <div class="container2 product-container">
+        <h2>Deja una reseña</h2>
+        <form id="reviewForm">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" name="name" required><br>
 
-        <label for="rating">Calificación:</label>
-        <select id="rating" name="rating" required>
-            <option value="">Selecciona una calificación</option>
-            <option value="5">5 estrellas</option>
-            <option value="4">4 estrellas</option>
-            <option value="3">3 estrellas</option>
-            <option value="2">2 estrellas</option>
-            <option value="1">1 estrella</option>
-        </select><br>
+            <label for="rating">Calificación:</label>
+            <select id="rating" name="rating" required>
+                <option value="">Selecciona una calificación</option>
+                <option value="5">5 estrellas</option>
+                <option value="4">4 estrellas</option>
+                <option value="3">3 estrellas</option>
+                <option value="2">2 estrellas</option>
+                <option value="1">1 estrella</option>
+            </select><br>
 
-        <label for="review">Reseña:</label><br>
-        <textarea id="review" name="review" rows="4" cols="50" required></textarea><br>
+            <label for="review">Reseña:</label><br>
+            <textarea id="review" name="review" rows="4" cols="50" required></textarea><br>
 
-        <!-- Botón de enviar reseña -->
-        <button type="submit">Enviar reseña</button>
-    </form>
-</div>
+            <!-- Botón de enviar reseña -->
+            <button type="submit">Enviar reseña</button>
+        </form>
+    </div>
 
-<div class="container2 product-container" id="reviewsContainer">
-    <h2>Reseñas</h2>
-    <ul id="reviewsList"></ul>
-</div>
+    <div class="container2 product-container" id="reviewsContainer">
+        <h2>Reseñas</h2>
+        <ul id="reviewsList"></ul>
+    </div>
 
-<script>
-    document.getElementById("reviewForm").addEventListener("submit", function(event) {
-        event.preventDefault(); // Evitar que se envíe el formulario
+    <script>
+        document.getElementById("reviewForm").addEventListener("submit", function (event) {
+            event.preventDefault(); // Evitar que se envíe el formulario
 
-        // Obtener los datos del formulario
-        const name = document.getElementById("name").value;
-        const rating = document.getElementById("rating").value;
-        const review = document.getElementById("review").value;
+            // Obtener los datos del formulario
+            const name = document.getElementById("name").value;
+            const rating = document.getElementById("rating").value;
+            const review = document.getElementById("review").value;
 
-        // Crear un elemento de lista para mostrar la reseña
-        const reviewItem = document.createElement("li");
-        reviewItem.innerHTML = `<strong>${name}</strong> - Calificación: ${rating}<br>${review}`;
+            // Crear un elemento de lista para mostrar la reseña
+            const reviewItem = document.createElement("li");
+            reviewItem.innerHTML = `<strong>${name}</strong> - Calificación: ${rating}<br>${review}`;
 
-        // Agregar la reseña a la lista de reseñas
-        document.getElementById("reviewsList").appendChild(reviewItem);
+            // Agregar la reseña a la lista de reseñas
+            document.getElementById("reviewsList").appendChild(reviewItem);
 
-        // Limpiar el formulario después de enviar la reseña
-        document.getElementById("name").value = "";
-        document.getElementById("rating").value = "";
-        document.getElementById("review").value = "";
-    });
-</script>
+            // Limpiar el formulario después de enviar la reseña
+            document.getElementById("name").value = "";
+            document.getElementById("rating").value = "";
+            document.getElementById("review").value = "";
+        });
+    </script>
 
     <footer style="background-color: #fff; color: #a5a4a4; padding: 60px;">
         <div style="text-align: center;">
@@ -229,7 +229,7 @@
             document.getElementById("logout-link").style.display = "inline";
             document.getElementById("login-link").style.display = "none"; // Ocultar el enlace "Iniciar sesión"
         }
-          function logout() {
+        function logout() {
             // Limpiar la información de sesión
             localStorage.removeItem("usuario"); // Eliminar el nombre de usuario del almacenamiento local
             localStorage.removeItem("rol");
@@ -237,38 +237,38 @@
             // Redireccionar al usuario a la página de inicio de sesión o a una página no autenticada
             window.location.href = "index.html";
         }
-        </script>
+    </script>
 
-      <script>
-       function addToWishlist() {
-        // Obtener los datos del producto
-        const nombre = getUrlParameter('nombre');
-        const imagen = getUrlParameter('imagen');
-        const precio = getUrlParameter('precio');
-        const descripcion = getUrlParameter('descripcion');
+    <script>
+        function addToWishlist() {
+            // Obtener los datos del producto
+            const nombre = getUrlParameter('nombre');
+            const imagen = getUrlParameter('imagen');
+            const precio = getUrlParameter('precio');
+            const descripcion = getUrlParameter('descripcion');
 
-        // Crear un objeto que represente el producto añadido a la lista de deseos
-        const product = {
-            nombre: nombre,
-            imagen: imagen,
-            precio: precio,
-            descripcion: descripcion
-        };
+            // Crear un objeto que represente el producto añadido a la lista de deseos
+            const product = {
+                nombre: nombre,
+                imagen: imagen,
+                precio: precio,
+                descripcion: descripcion
+            };
 
-        // Obtener la lista de productos en la lista de deseos del localStorage o inicializarla si no existe
-        let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+            // Obtener la lista de productos en la lista de deseos del localStorage o inicializarla si no existe
+            let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
 
-        // Agregar el producto a la lista de deseos
-        wishlist.push(product);
+            // Agregar el producto a la lista de deseos
+            wishlist.push(product);
 
-        // Guardar la lista actualizada de productos en la lista de deseos en el localStorage
-        localStorage.setItem('wishlist', JSON.stringify(wishlist));
+            // Guardar la lista actualizada de productos en la lista de deseos en el localStorage
+            localStorage.setItem('wishlist', JSON.stringify(wishlist));
 
-        // Mostrar una alerta con los detalles del producto añadido a la lista de deseos
-        const alertMessage = `¡Producto añadido a la lista de deseos!\n\nNombre: ${nombre}\nPrecio: ${precio}\nDescripción: ${descripcion}`;
-        alert(alertMessage);
-}
-      </script>
+            // Mostrar una alerta con los detalles del producto añadido a la lista de deseos
+            const alertMessage = `¡Producto añadido a la lista de deseos!\n\nNombre: ${nombre}\nPrecio: ${precio}\nDescripción: ${descripcion}`;
+            alert(alertMessage);
+        }
+    </script>
 
 </body>
 
