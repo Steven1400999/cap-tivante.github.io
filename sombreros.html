@@ -84,7 +84,7 @@
             .then(response => response.json())
             .then(data => {
                 const productsContainer = document.getElementById('products-container');
-                const sombreros = data.filter(product => product.tipo === 'sombrero');
+                const sombreros = data.filter(product => product.categoria === 'sombrero');
                 sombreros.forEach(product => {
                     const productElement = document.createElement('div');
                     productElement.classList.add('product');

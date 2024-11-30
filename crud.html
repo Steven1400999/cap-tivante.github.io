@@ -94,6 +94,7 @@
             <input type="number" id="new-product-price" placeholder="Precio" required>
             <input type="text" id="new-product-description" placeholder="Descripción" required>
             <input type="text" id="new-product-category" placeholder="Categoría" required>
+            <input type="number" id="new-product-stock" placeholder="Stock" required>
             <button type="button" class="btn-agregar" onclick="addProduct()">Agregar Producto</button>      
           </form>
 
@@ -106,6 +107,7 @@
                     <th>Precio</th>
                     <th>Descripción</th>
                     <th>Categoría</th>
+                    <th>Stock</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
@@ -130,6 +132,7 @@
                     <input type="text" id="edit-product-price" placeholder="Precio" required>
                     <input type="text" id="edit-product-description" placeholder="Descripción" required>
                     <input type="text" id="edit-product-category" placeholder="Categoría" required>
+                    <input type="text" id="edit-product-stock" placeholder="Stock" required>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
@@ -168,6 +171,7 @@
                 const price = document.getElementById('new-product-price').value;
                 const description = document.getElementById('new-product-description').value;
                 const category = document.getElementById('new-product-category').value;
+                const stock = document.getElementById('new-product-stock').value;
                 const product = { nombre: name, imagen: e.target.result, precio: price, descripcion: description, categoria: category };
                 products.unshift(product);
                 displayProducts();
@@ -193,7 +197,8 @@
         <td><img src="${product.imagen}" alt="Imagen de producto" style="height: 50px;"></td>
         <td>${product.precio}</td>
         <td>${product.descripcion}</td>
-        <td>${product.tipo}</td>
+        <td>${product.categoria}</td>
+        <td>${product.stock}</td>
         <td>
           <button onclick="editProduct(${index})" class="btn btn-warning">Editar</button>
           <button onclick="deleteProduct(${index})" class="btn btn-danger">Eliminar</button>
@@ -215,6 +220,7 @@
             document.getElementById('edit-product-price').value = product.precio;
             document.getElementById('edit-product-description').value = product.descripcion;
             document.getElementById('edit-product-category').value = product.categoria;
+            document.getElementById('edit-product-stock').value = product.stock;
             $('#editProductModal').modal('show');
         }
 
@@ -224,6 +230,7 @@
             product.precio = document.getElementById('edit-product-price').value;
             product.descripcion = document.getElementById('edit-product-description').value;
             product.categoria = document.getElementById('edit-product-category').value;
+            product.stock = document.getElementById('edit-product-stock').value;
             $('#editProductModal').modal('hide');
             displayProducts();
         }

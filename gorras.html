@@ -83,7 +83,7 @@
             .then(response => response.json())
             .then(data => {
                 const productsContainer = document.getElementById('products-container');
-                const gorras = data.filter(product => product.tipo === 'gorra');
+                const gorras = data.filter(product => product.categoria=== 'gorra');
                 gorras.forEach(product => {
                     const productElement = document.createElement('div');
                     productElement.classList.add('product');

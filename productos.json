@@ -1,115 +1,131 @@
 [
     {
       "nombre": "New Era Gorra Oficial de Juego Los Angeles Dodgers",
-      "tipo": "gorra",
+      "categoria": "gorra",
       "imagen": "imagenes/producto1.jpg",
       "precio": "367.99",
-      "descripcion": "Authentic Collection MLB"
+      "descripcion": "Authentic Collection MLB",
+      "stock": 265
     },
     {
       "nombre": "New Era Gorra York Yankees Blackout Basic MLB 59Fifty Negra",
-      "tipo": "gorra",
+      "categoria": "gorra",
       "imagen": "imagenes/producto2.jpg",
       "precio": "789.75",
-      "descripcion": "New Era New York Yankees 59Fifty - Gorra ajustada para hombre, color azul marino/blanco"
+      "descripcion": "New Era New York Yankees 59Fifty - Gorra ajustada para hombre, color azul marino/blanco",
+      "stock": 85
     },
     {
       "nombre": "Queue Essentials Western Style - Sombrero de Paja de Lona con popote Frontal",
-      "tipo": "sombrero",
+      "categoria": "sombrero",
       "imagen": "imagenes/producto3.jpg",
       "precio": "1022.84",
-      "descripcion": "Si vas a dar un paseo por el campo o por esa carretera del casco antiguo, nuestros sombreros de vaquero son una pieza esencial de tu atuendo peinando nuestros sombreros de gran aspecto con tus atuendos, estarÃ¡s seguro de recibir cumplidos"
+      "descripcion": "Si vas a dar un paseo por el campo o por esa carretera del casco antiguo, nuestros sombreros de vaquero son una pieza esencial de tu atuendo peinando nuestros sombreros de gran aspecto con tus atuendos, estarÃ¡s seguro de recibir cumplidos",
+      "stock": 37
     },
     {
       "nombre": "GENFIEN VISERA PARA MUJER PROTECCIÓN SOLAR ",
-      "tipo": "visera",
+      "categoria": "visera",
       "imagen": "imagenes/producto4.jpg",
       "precio": "395.00",
-      "descripcion": "Confeccionado con una tela liviana que no daña la piel, este sombrero para el sol tiene una banda para el sudor gruesa y cómoda en el interior que respira y absorbe el sudor, manteniéndote cómodo cuando sudas en verano y brindándote una mejor experiencia de entrenamiento."
+      "descripcion": "Confeccionado con una tela liviana que no daña la piel, este sombrero para el sol tiene una banda para el sudor gruesa y cómoda en el interior que respira y absorbe el sudor, manteniéndote cómodo cuando sudas en verano y brindándote una mejor experiencia de entrenamiento.",
+      "stock": 97
     },
     {
       "nombre": "New Era Gorra York Yankees Flower Graphic MLB 9Fifty Ajustable Unisex",
-      "tipo": "gorra",
+      "categoria": "gorra",
       "imagen": "imagenes/Producto5.jpg",
       "precio": "949.12",
-      "descripcion": "New Era Gorra New York Yankees Flower Graphic MLB 9Fifty Ajustable Unisex Adulto. La gorra Ajustable 9FIFTY cuenta con Visera Plana que puede curvarse a tu gusto. Se ajusta a tu medida con el Snapback por la parte trasera (De 54.9 cm a 61.5 cm)."
+      "descripcion": "New Era Gorra New York Yankees Flower Graphic MLB 9Fifty Ajustable Unisex Adulto. La gorra Ajustable 9FIFTY cuenta con Visera Plana que puede curvarse a tu gusto. Se ajusta a tu medida con el Snapback por la parte trasera (De 54.9 cm a 61.5 cm).",
+      "stock": 348
     },
     {
       "nombre": "Lanzom - Sombreros de sol para mujer, de ala ancha, con paja, plegable, para playa, para verano, talla 6 8/7-7 1/4",
-      "tipo": "sombrero",
+      "categoria": "sombrero",
       "imagen": "imagenes/Producto6.jpg",
       "precio": "501.15",
-      "descripcion": "Authentic Collection MLB"
+      "descripcion": "Authentic Collection MLB",
+      "stock": 45
     },
     {
       "nombre": "Jogoi Sombrero para Sol Mujer Hombre Sombrero de Paja de ala Ancha Plegable con Cordón de Viento Gorros de Playa Verano",
-      "tipo": "sombrero",
+      "categoria": "sombrero",
       "imagen": "imagenes/Producto7.jpg",
       "precio": "235.00",
-      "descripcion": "Material transpirable: el sombrero para el sol está hecho de papiro, que es suave y transpirable. Te mantendrá fresco en esos días increíblemente calurosos de verano y mantendrá bien su forma"
+      "descripcion": "Material transpirable: el sombrero para el sol está hecho de papiro, que es suave y transpirable. Te mantendrá fresco en esos días increíblemente calurosos de verano y mantendrá bien su forma",
+      "stock": 35
     },
     {
       "nombre": "PUMA Gorra Flatbrim",
-      "tipo": "gorra",
+      "categoria": "gorra",
       "imagen": "imagenes/producto8.jpg",
       "precio": "669.12",
-      "descripcion": "Banda de malla absorbente, Visera curva, Ajustador con cierre de contacto seguro para el pelo ,Logo Puma tejido en la parte delantera, Tamaño: Estánda"
+      "descripcion": "Banda de malla absorbente, Visera curva, Ajustador con cierre de contacto seguro para el pelo ,Logo Puma tejido en la parte delantera, Tamaño: Estánda",
+      "stock": 78
     },
     {
       "nombre": "MOBSAN clásico Gorra de béisbol Juice Wrld 999 Snapback Cap Cotton Printing Baseball Cap",
-      "tipo": "gorra",
+      "categoria": "gorra",
       "imagen": "imagenes/Producto9.jpg",
       "precio": "458.55",
-      "descripcion": "Tamaño: tamaño adulto, unisex (sello trasero ajustable),Material: poliéster y algodón, el ingrediente principal es algodón, poliéster y algodón, material delgado suave y liviano, sensación suave de la mano, absorción de humedad, construcción de malla de poliéster seca cómoda y rápida."
+      "descripcion": "Tamaño: tamaño adulto, unisex (sello trasero ajustable),Material: poliéster y algodón, el ingrediente principal es algodón, poliéster y algodón, material delgado suave y liviano, sensación suave de la mano, absorción de humedad, construcción de malla de poliéster seca cómoda y rápida.",
+      "stock": 65
     },
     {
       "nombre": "Champion Our Father Dad – Gorra Ajustable Cinta de Pelo para Hombre",
-      "tipo": "gorra",
+      "categoria": "gorra",
       "imagen": "imagenes/Producto10.jpg",
       "precio": "436.51",
-      "descripcion": "Ajuste relajado, Visera precurvada, Correa ajustable, Cinta de marca"
+      "descripcion": "Ajuste relajado, Visera precurvada, Correa ajustable, Cinta de marca",
+      "stock": 94
     },
     {
       "nombre": "Besoogii Sombrero clásico de ala ancha",
-      "tipo": "sombrero",
+      "categoria": "sombrero",
       "imagen": "imagenes/producto11.jpg",
       "precio": "237.21",
-      "descripcion": "sombrero de Fedora con una hebilla de cinturón café ancha, la tela es muy similar a la lana. Adecuado para otoño e invierno primavera correa ajustable en el interior"
+      "descripcion": "sombrero de Fedora con una hebilla de cinturón café ancha, la tela es muy similar a la lana. Adecuado para otoño e invierno primavera correa ajustable en el interior",
+      "stock": 67
     },
     {
       "nombre": "CCAKXCJJ - Sombrero de vaquero ",
-      "tipo": "sombrero",
+      "categoria": "sombrero",
       "imagen": "imagenes/producto12.jpg",
       "precio": "398",
-      "descripcion": "Tamaño: nuestros sombreros de vaquero de ante tienen circunferencia de capucha: 22.4 a 22.8 pulgadas, ancho del borde: 3.1 pulgadas, altura del sombrero: 4.7 pulgadas, adecuado para la mayoría"
+      "descripcion": "Tamaño: nuestros sombreros de vaquero de ante tienen circunferencia de capucha: 22.4 a 22.8 pulgadas, ancho del borde: 3.1 pulgadas, altura del sombrero: 4.7 pulgadas, adecuado para la mayoría",
+      "stock": 186
     },
     {
       "nombre": "Andy's Orchids Sombrero de paja",
-      "tipo": "sombrero",
+      "categoria": "sombrero",
       "imagen": "imagenes/producto13.jpg",
       "precio": "299.16",
-      "descripcion": "Material de alta calidad: fabricado con protección solar, ventilación, protección contra el viento y material parasol para máxima comodidad y protección."
+      "descripcion": "Material de alta calidad: fabricado con protección solar, ventilación, protección contra el viento y material parasol para máxima comodidad y protección.",
+      "stock": 134
     },
     {
       "nombre": "Under Armour Casual Visera ",
-      "tipo": "visera",
+      "categoria": "visera",
       "imagen": "imagenes/producto14.jpg",
       "precio": "440.00",
-      "descripcion": "El revestimiento frontal UA Siro ofrece gran elasticidad y una sensación ultra suave."
+      "descripcion": "El revestimiento frontal UA Siro ofrece gran elasticidad y una sensación ultra suave.",
+      "stock": 149
     },
     {
       "nombre": "Lacoste Visera Deportiva de piqué",
-      "tipo": "visera",
+      "categoria": "visera",
       "imagen": "imagenes/producto15.jpg",
       "precio": "973.00",
-      "descripcion": "Logotipo de cocodrilo verde con correa trasera ajustable, hecho 100% algodón."
+      "descripcion": "Logocategoria de cocodrilo verde con correa trasera ajustable, hecho 100% algodón.",
+      "stock": 116
     },
     {
       "nombre": "adidas Superlite 2 Performance Visor ",
-      "tipo": "visera",
+      "categoria": "visera",
       "imagen": "imagenes/producto16.jpg",
       "precio": "678.00",
-      "descripcion": "El partido es la clásica visera abrazadera con un escudo bordado marca adidas en la parte delantera y encuadernación de contraste en la parte superior."
+      "descripcion": "El partido es la clásica visera abrazadera con un escudo bordado marca adidas en la parte delantera y encuadernación de contraste en la parte superior.",
+      "stock": 999
     }
   ]
   

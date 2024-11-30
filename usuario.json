@@ -1,16 +1,5 @@
 [
     {
-      "nombre": "Diego Sebastian",
-      "apellidos": "Medina Zarate",
-      "correo": "zaratediego469@gmail.com",
-      "contraseña": "12345678",
-      "usuario": "Menfis",
-      "direccion": "Madero #123",
-      "ciudad": "Aguascalienetes",
-      "rol": "Administrador"
-    },
-
-    {
       "nombre": "Steven",
       "apellidos": "Quezada Gonzalez",
       "correo": "steven@gmail.com",
@@ -18,19 +7,42 @@
       "usuario": "Stewei",
       "direccion": "Pozo bravo #999",
       "ciudad": "Aguascalienetes",
+      "rol": "Administrador"
+    },
+
+    {
+      "nombre": "Kiwi",
+      "apellidos": "Cervantes",
+      "correo": "kiwi@gmail.com",
+      "contraseña": "12345678",
+      "usuario": "Kiwii",
+      "direccion": "Haciendas #123",
+      "ciudad": "Aguascalienetes",
       "rol": "Cliente"
     },
 
     {
-      "nombre": "Kevin",
-      "apellidos": "Ramirez Chairez",
-      "correo": "kevin@gmail.com",
+      "nombre": "Daniel",
+      "apellidos": "Cervantes",
+      "correo": "daniel@gmail.com",
       "contraseña": "12345678",
-      "usuario": "Kevin",
-      "direccion": "Peralta",
+      "usuario": "Daniel",
+      "direccion": "centro #123",
+      "ciudad": "Aguascalienetes",
+      "rol": "Cliente"
+    },
+
+    {
+      "nombre": "Oscar",
+      "apellidos": "Padilla",
+      "correo": "oscar@gmail.com",
+      "contraseña": "12345678",
+      "usuario": "Deska",
+      "direccion": "Haciendas #312",
       "ciudad": "Aguascalienetes",
       "rol": "Cliente"
     }
+
 
 ]
   
