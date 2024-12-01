@@ -211,3 +211,21 @@ input {
     
 }
 
+.pay-button{
+    font-size: 150%;
+    background-color: #11aa03;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 5px;
+    padding: 8px 15px;
+}
+
+
+.pay-button:hover{
+    font-size: 145%;
+    background-color: #0c6104;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 5px;
+    padding: 8px 15px;
+}
