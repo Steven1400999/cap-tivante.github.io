@@ -2,7 +2,7 @@
 <html lang="es">
 
 <head>
-    <!-- Google tag (gtag.js) -->
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-205HXP6ZKV"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -11,7 +11,6 @@
             dataLayer.push(arguments);
         }
         gtag('js', new Date());
-
         gtag('config', 'G-205HXP6ZKV');
     </script>
 
@@ -23,12 +22,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio sesión</title>
-    <meta name="description"
-        content="Gorras, sombreros, gorros perfectos para tener un estilo perfecto, para protegerte de los rayos del sol y para que seas Cap-tivante.">
-    <meta name="keywords" content="sombreros, gorras, cachuchas, gorros" />
-    <meta name="author"
-        content=" " />
-    <meta name="robots" content="index" />
+    <meta name="description" content="Gorras, sombreros, gorros perfectos para tu estilo y protección.">
+    <meta name="keywords" content="sombreros, gorras, cachuchas, gorros">
+    <meta name="author" content="Cap-tivante">
+    <meta name="robots" content="index">
 
     <link rel="stylesheet" href="estilos/login.css">
     <style>
@@ -40,14 +37,6 @@
 
 <body>
     <header>
-        <!-- Navbar -->
-        <div class="container4">
-            <nav class="navbar">
-                <ul class="menu" id="navbar-menu">
-                    <!-- Aquí se mostrará el nombre de usuario si la sesión está iniciada -->
-                </ul>
-            </nav>
-        </div>
         <div class="container3">
             <nav class="navbar">
                 <div class="logo">
@@ -66,9 +55,10 @@
             </nav>
         </div>
     </header>
+    <br><br><br><br><br>
 
     <div class="container">
-        <!-- Mostrar el formulario de inicio de sesión por defecto -->
+        <!-- Formulario de inicio de sesión -->
         <div class="formulario" id="login-formulario">
             <h1>Inicio de Sesión</h1>
             <form id="login-form">
@@ -84,31 +74,54 @@
             </form>
         </div>
 
-        <!-- Ocultar el formulario de registro al principio -->
+        <!-- Formulario de registro -->
         <div class="formulario hidden" id="registro-formulario">
             <h1>Registro</h1>
-            <form id="registro-form">
+            <form id="registro-form" action="conexion/registro.php" method="POST">
                 <div class="username">
-                    <input type="text" id="registro-email" required>
+                    <input type="text" id="registro-nombre" name="nombre" required>
+                    <label>Nombre</label>
+                </div>
+                <div class="username">
+                    <input type="text" id="registro-apellidos" name="apellidos" required>
+                    <label>Apellidos</label>
+                </div>
+                <div class="username">
+                    <input type="email" id="registro-correo" name="correo" required>
                     <label>Correo Electrónico</label>
                 </div>
                 <div class="password">
-                    <input type="password" id="registro-password" required>
+                    <input type="password" id="registro-password" name="password" required>
                     <label>Contraseña</label>
                 </div>
+                <div class="username">
+                    <input type="text" id="registro-usuario" name="usuario" required>
+                    <label>Nombre de Usuario</label>
+                </div>
+                <div class="username">
+                    <input type="text" id="registro-direccion" name="direccion" required>
+                    <label>Dirección</label>
+                </div>
+                <div class="username">
+                    <input type="text" id="registro-ciudad" name="ciudad" required>
+                    <label>Ciudad</label>
+                </div>
+                <!-- Campo de administrador oculto -->
+                <input type="hidden" id="registro-rol" name="rol" value="0">
+
                 <input type="submit" value="Registrarse">
             </form>
         </div>
-
-
     </div>
-    <!-- Enlace para cambiar entre el formulario de inicio de sesión y registro -->
-    <p id="toggleForm">
+
+    <!-- Enlace para alternar entre formularios -->
+    <p class="toggle-container" id="toggleForm">
         ¿No tienes cuenta? <a href="#" id="show-register">Registrarse</a>
     </p>
+
     <footer style="background-color: #fff; color: #a5a4a4; padding: 60px;">
-        <!-- Footer content -->
         <div style="text-align: center;">
+            <br><br><br><br><br><br>
             <h3>Contacto</h3>
             <p>¡Estamos aquí para ayudarte! Contáctanos para cualquier consulta o inquietud.</p>
             <p>Email: info@tu-tienda.com</p>
@@ -116,81 +129,119 @@
         </div>
         <div style="text-align: center; margin-top: 40px;">
             <h3>Síguenos en redes sociales</h3>
-            <a href="https://www.facebook.com/profile.php?id=61557315856153" target="_blank"
-                style="color: #a5a4a4; text-decoration: none; margin-right: 10px;">Facebook</a>
-            <a href="#" style="color: #a5a4a4; text-decoration: none; margin-right: 10px;">Instagram</a>
-            <a href="#" style="color: #a5a4a4; text-decoration: none; margin-right: 10px;">Twitter</a>
+            <a href="https://www.facebook.com/profile.php?id=61557315856153" target="_blank">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
         </div>
-        <div style="text-align: center; margin-top: 40px;">
-            <p>&copy; 2024 Tu Tienda de Sombreros. Todos los derechos reservados.</p>
-        </div>
+        <p>&copy; 2024 Tu Tienda de Sombreros. Todos los derechos reservados.</p>
     </footer>
 
     <script>
-        // Manejar el envío del formulario de registro
-        document.getElementById("registro-form").addEventListener("submit", function (event) {
-            event.preventDefault();
-
-            // Obtener los valores del formulario de registro
-            var registroEmail = document.getElementById("registro-email").value;
-            var registroPassword = document.getElementById("registro-password").value;
-
-            alert("Registro exitoso. Por favor inicia sesión.");
-
-            // Aquí iría el código para el proceso de registro, como enviar los datos al servidor
-
-            // Después de un registro exitoso, ocultar el formulario de registro y mostrar el formulario de inicio de sesión
-            document.getElementById("registro-formulario").classList.add("hidden");
-            document.getElementById("login-formulario").classList.remove("hidden");
-            document.getElementById("toggleForm").innerHTML = '¿Ya tienes cuenta? <a href="#" id="show-login">Iniciar sesión</a>';
-        });
-
-        // Manejar el envío del formulario de inicio de sesión
-        document.getElementById("login-form").addEventListener("submit", function (event) {
-            event.preventDefault();
-
-            // Obtener los valores del formulario de inicio de sesión
-            var email = document.getElementById("email").value;
-            var password = document.getElementById("password").value;
-
-            // Leer el archivo JSON de usuarios
-            fetch('usuario.json')
-                .then(response => response.json())
-                .then(data => {
-                    // Verificar si las credenciales coinciden con algún usuario en el JSON
-                    const user = data.find(user => user.correo === email && user.contraseña === password);
-                    if (user) {
-                        // Almacenar el nombre de usuario en el localStorage
-                        localStorage.setItem("usuario", user.usuario);
-                        localStorage.setItem("rol", user.rol);
-                        alert("Inicio de sesión exitoso!");
-                        // Redireccionar al usuario a la página de inicio
-                        window.location.href = "index.html";
-                    } else {
-                        // Mostrar un mensaje de error si las credenciales no coinciden
-                        alert("Error: Usuario no encontrado.");
-                    }
-                })
-                .catch(error => console.error('Error al cargar los datos de los usuarios:', error));
-        });
-
-        // Delegar el evento en el contenedor toggleForm
-        document.getElementById("toggleForm").addEventListener("click", function (event) {
-            event.preventDefault();
-
-            if (event.target && event.target.id === "show-register") {
-                document.getElementById("login-formulario").classList.add("hidden");
-                document.getElementById("registro-formulario").classList.remove("hidden");
-                document.getElementById("toggleForm").innerHTML = '¿Ya tienes cuenta? <a href="#" id="show-login">Iniciar sesión</a>';
-            }
-
-            if (event.target && event.target.id === "show-login") {
-                document.getElementById("registro-formulario").classList.add("hidden");
-                document.getElementById("login-formulario").classList.remove("hidden");
-                document.getElementById("toggleForm").innerHTML = '¿No tienes cuenta? <a href="#" id="show-register">Registrarse</a>';
-            }
+        document.addEventListener("DOMContentLoaded", function () {
+            // Código del formulario: gestión de alternancia entre registro e inicio de sesión
+            document.getElementById("toggleForm").addEventListener("click", function (event) {
+                event.preventDefault();
+                if (event.target.id === "show-register") {
+                    document.getElementById("login-formulario").classList.add("hidden");
+                    document.getElementById("registro-formulario").classList.remove("hidden");
+                    event.target.id = "show-login";
+                    event.target.innerText = "Iniciar sesión";
+                    document.getElementById("toggleForm").innerHTML = '¿Ya tienes cuenta? <a href="#" id="show-login">Iniciar sesión</a>';
+                } else {
+                    document.getElementById("registro-formulario").classList.add("hidden");
+                    document.getElementById("login-formulario").classList.remove("hidden");
+                    event.target.id = "show-register";
+                    document.getElementById("toggleForm").innerHTML = '¿No tienes cuenta? <a href="#" id="show-register">Registrarse</a>';
+                }
+            });
         });
     </script>
+    <script>
+        document.getElementById("login-form").addEventListener("submit", function (event) {
+            event.preventDefault();  // Previene el envío por defecto del formulario
+
+            // Captura los datos del formulario
+            const loginData = {
+                correo: document.getElementById("email").value,
+                contraseña: document.getElementById("password").value
+            };
+
+            // Enviar los datos al servidor usando fetch
+            fetch("conexion/login.php", {  // Aquí, debes crear el archivo login.php en tu servidor
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(loginData)
+            })
+                .then(response => response.json())  // Asegúrate de que la respuesta se convierte en JSON
+                .then(data => {
+                    console.log(data);  // Log del resultado
+                    if (data.success) {
+                        localStorage.setItem('usuario', data.usuario.usuario);
+                        localStorage.setItem('rol', JSON.stringify(data.usuario.rol)); 
+                        alert("¡Inicio de sesión exitoso,bienvenido!");
+                        window.location.href = "index.html";  // O la página que desees
+                    } else {
+                        // Si ocurre un error, mostrar el mensaje
+                        alert("Error en el inicio de sesión: " + data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error("Error:", error);
+                    alert("Hubo un problema al procesar tu inicio de sesión.");
+                });
+        });
+
+    </script>
+
+
+    <script>
+        document.getElementById("registro-form").addEventListener("submit", function (event) {
+            event.preventDefault();  // Previene el envío por defecto del formulario
+
+            // Captura los datos del formulario
+            const formData = {
+                nombre: document.getElementById("registro-nombre").value,
+                apellidos: document.getElementById("registro-apellidos").value,
+                correo: document.getElementById("registro-correo").value,
+                contraseña: document.getElementById("registro-password").value,
+                usuario: document.getElementById("registro-usuario").value,
+                direccion: document.getElementById("registro-direccion").value,
+                ciudad: document.getElementById("registro-ciudad").value,
+                rol: document.getElementById("registro-rol").value // Siempre "Cliente"
+            };
+
+            // Enviar los datos al servidor usando fetch
+            fetch("conexion/registro.php", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(formData)
+            })
+                .then(response => response.json())  // Asegúrate de que la respuesta se convierte en JSON
+                .then(data => {
+                    console.log(data); // Log del resultado
+                    if (data.success) {
+                        localStorage.setItem('usuario', data.usuario.usuario);
+                        localStorage.setItem('rol', JSON.stringify(data.usuario.rol)); 
+                        alert("Registro exitoso. ¡Ahora puedes iniciar sesión!");
+                        window.location.href = "login.html";
+                    } else {
+                        alert("Error en el registro: " + data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error("Error:", error);
+                    alert("Hubo un problema al procesar tu registro.");
+                });
+        });
+
+
+    </script>
+
+
 </body>
 
 </html>
