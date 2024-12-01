@@ -181,7 +181,7 @@
             reader.readAsDataURL(imageFile);
         }
 
-        fetch('productos.json')
+        fetch('conexion/get_productos.php')
             .then(response => response.json())
             .then(data => {
                 products = data; // Asumiendo que el JSON está en el formato correcto
