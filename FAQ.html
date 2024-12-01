@@ -157,7 +157,7 @@
         document.getElementById("login-link").style.display = "none"; // Ocultar el enlace "Iniciar sesión"
     }
     
-    if (localStorage.getItem("rol") === "Administrador") {
+    if (localStorage.getItem("rol") === "1") {
         document.querySelector('a[title="Administrar productos"]').style.display = "block"; // Mostrar para administradores
     } else {
         document.querySelector('a[title="Administrar productos"]').style.display = "none"; // Ocultar para clientes

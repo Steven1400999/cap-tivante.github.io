@@ -202,7 +202,7 @@
       }
 
       // Fetch products from JSON file
-      fetch('productos.json')
+      fetch('conexion/productos.php')
         .then(response => response.json())
         .then(data => {
           // Display all products initially
@@ -214,7 +214,7 @@
         .catch(error => console.error('Error al cargar los datos de los productos:', error));
 
 
-      fetch('productos.json')
+      fetch('conexion/productos.php')
         .then(response => response.json())
         .then(data => {
           // Seleccionar 3 productos aleatorios de la lista
@@ -421,8 +421,8 @@
         document.getElementById("login-link").style.display = "none"; // Ocultar el enlace "Iniciar sesión"
       }
 
-      if (localStorage.getItem("rol") === "Administrador") {
-        document.querySelector('a[title="Administrar productos"]').style.display = "block"; // Mostrar para administradores
+      if (localStorage.getItem("rol") === "1") {
+        document.querySelector('a[title="Administrar productos"]').style.display = "block"; // Mostrar para 1es
       } else {
         document.querySelector('a[title="Administrar productos"]').style.display = "none"; // Ocultar para clientes
       }
