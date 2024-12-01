@@ -76,11 +76,6 @@
         <h3 id="total-con-impuestos"></h3>
         <br>
         <br>
-        <a class="pay-button" id="pay-now" href="metodoPago.html" onclick="guardarTotalEnLocalStorage()">Proceder al
-            pago</a>
-
-
-
     </center>
 
     <script>
@@ -114,6 +109,8 @@
             document.getElementById('impuestos').innerText = `Impuestos: $${impuestos.toFixed(2)}`;
 
             document.getElementById('total-con-impuestos').innerText = `Total: $${totalConImpuestos.toFixed(2)}`;
+            localStorage.setItem('TotalFinal', totalConImpuestos.toFixed(2));
+
         }
 
 
@@ -151,11 +148,6 @@
         // Llama a la función para calcular y mostrar los totales cuando la página se carga
         calcularTotales();
 
-        function guardarTotalEnLocalStorage() {
-            // Guarda el total calculado en localStorage
-            localStorage.setItem('TotalFinal', totalConImpuestos.toFixed(2));
-            localStorage.removeItem('cart');
-        }
 
     </script>
 
@@ -208,14 +200,15 @@
     </script>
     <!-- Script de PayPal -->
     <script
-        src="https://www.paypal.com/sdk/js?client-id=AV-n6M_PWeJUNPn96W4y6v-JJobqAmNZJXkUDEas415xyhr756USWdOJlBZkma1B7J8r5VH8irkOXm2n&currency=MXN"></script>
+        src="https://www.paypal.com/sdk/js?client-id=AT5_RdnwB7NcwyqSIZMJFYH6sE4lWgsIHXiWrjlHX1S-3VKLZWAFwg3m1gJLd_6gygTRxbUn3IKU3_zC&currency=MXN"></script>
     <script>
         function calcularPrecioTotal() {
             // Obtener la lista de productos en el carrito del localStorage
             const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
             // Calcular el precio total sumando los precios individuales de cada producto en el carrito
-            const totalPrice = cart.reduce((total, product) => total + (parseFloat(product.precio) * parseInt(product.cantidad)), 0);
+            const totalPrice = parseFloat(localStorage.getItem('TotalFinal')); // Asegúrate de que sea un número
+
 
             // Actualizar el botón de PayPal con el nuevo precio
             paypal.Buttons({
@@ -231,6 +224,20 @@
                                 value: totalPrice.toFixed(2) // Redondear el precio total a 2 decimales
                             }
                         }]
+                    });
+                },
+                onApprove: function (data, actions) {
+                    // Cuando el pago se aprueba, realiza el pago
+                    return actions.order.capture().then(function (details) {
+                        // Mostrar un mensaje de éxito (opcional)
+                        alert("Pago completado con éxito. ¡Gracias por tu compra, " + details.payer.name.given_name + "!");
+
+                        // Borrar el carrito del localStorage
+                        localStorage.removeItem('cart');
+                        localStorage.removeItem('TotalFinal');
+
+                        // Redirigir a una página de agradecimiento o a la página de inicio
+                        window.location.href = "index.html";  // O cualquier otra página de confirmación que tengas
                     });
                 }
             }).render('#paypal-button-container');
