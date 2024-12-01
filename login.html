@@ -174,20 +174,21 @@
                 .catch(error => console.error('Error al cargar los datos de los usuarios:', error));
         });
 
-        // Alternar entre los formularios de registro e inicio de sesión
-        document.getElementById("show-register").addEventListener("click", function (event) {
+        // Delegar el evento en el contenedor toggleForm
+        document.getElementById("toggleForm").addEventListener("click", function (event) {
             event.preventDefault();
-            document.getElementById("login-formulario").classList.add("hidden");
-            document.getElementById("registro-formulario").classList.remove("hidden");
-            document.getElementById("toggleForm").innerHTML = '¿Ya tienes cuenta? <a href="#" id="show-login">Iniciar sesión</a>';
-        });
 
-        // Cambiar de vuelta a iniciar sesión
-        document.getElementById("show-login")?.addEventListener("click", function (event) {
-            event.preventDefault();
-            document.getElementById("registro-formulario").classList.add("hidden");
-            document.getElementById("login-formulario").classList.remove("hidden");
-            document.getElementById("toggleForm").innerHTML = '¿No tienes cuenta? <a href="#" id="show-register">Registrarse</a>';
+            if (event.target && event.target.id === "show-register") {
+                document.getElementById("login-formulario").classList.add("hidden");
+                document.getElementById("registro-formulario").classList.remove("hidden");
+                document.getElementById("toggleForm").innerHTML = '¿Ya tienes cuenta? <a href="#" id="show-login">Iniciar sesión</a>';
+            }
+
+            if (event.target && event.target.id === "show-login") {
+                document.getElementById("registro-formulario").classList.add("hidden");
+                document.getElementById("login-formulario").classList.remove("hidden");
+                document.getElementById("toggleForm").innerHTML = '¿No tienes cuenta? <a href="#" id="show-register">Registrarse</a>';
+            }
         });
     </script>
 </body>
