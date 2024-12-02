@@ -183,12 +183,12 @@
             })
                 .then(response => response.text())
                 .then(data => {
-                    console.log('Producto agregado:', data);
-                    alert("Producto agregado correctamente.");
-                    window.location.href = "crud.html";
-                    // Opcional: Actualizar la lista de productos sin necesidad de recargar la página
-                    // Si deseas actualizar los productos visibles sin recargar, puedes hacer otro fetch para obtener la lista actualizada
-                    // fetch('conexion/get_productos.php').then(...)
+                    if (data === 'Producto agregado correctamente') {  // Esto depende de la respuesta de tu servidor
+                        window.location.href = "crud.html";
+                    } else {
+                        alert(data);  // Muestra un mensaje si hay un error
+                    }                      // O si deseas redirigir a otra página
+                    // window.location.href = "./crud.html"; // Redirige a crud.html
                 })
                 .catch(error => {
                     console.error('Error al agregar producto:', error);

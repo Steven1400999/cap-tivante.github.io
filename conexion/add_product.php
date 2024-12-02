@@ -37,7 +37,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                 // Ejecuta la consulta
                 if ($conn->query($sql)) {
-                    echo 'Producto agregado correctamente';
+                    header("Location: ../crud.html");
+                    exit();
                 } else {
                     echo 'Error al agregar el producto: ' . $conn->error;
                 }
