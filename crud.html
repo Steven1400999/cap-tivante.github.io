@@ -135,16 +135,34 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <input type="text" id="edit-product-name" placeholder="Nombre del Producto" required>
-                    <input type="text" id="edit-product-price" placeholder="Precio" required>
-                    <input type="text" id="edit-product-description" placeholder="Descripción" required>
-                    <input type="text" id="edit-product-category" placeholder="Categoría" required>
-                    <input type="text" id="edit-product-stock" placeholder="Stock" required>
+                    <div class="form-group">
+                        <label for="edit-product-name">Nombre del Producto</label>
+                        <input type="text" class="form-control" id="edit-product-name" placeholder="Nombre del Producto"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="edit-product-price">Precio</label>
+                        <input type="text" class="form-control" id="edit-product-price" placeholder="Precio" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="edit-product-description">Descripción</label>
+                        <input type="text" class="form-control" id="edit-product-description" placeholder="Descripción"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="edit-product-stock">Stock</label>
+                        <input type="text" class="form-control" id="edit-product-stock" placeholder="Stock" required>
+                    </div>
                 </div>
+
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                     <button type="button" class="btn btn-primary" onclick="saveChanges()">Guardar Cambios</button>
                 </div>
+
             </div>
         </div>
     </div>
@@ -229,52 +247,80 @@
 
 
         function deleteProduct(index) {
-    const productId = products[index].id;  // Suponiendo que cada producto tiene un ID
+            const productId = products[index].id;  // Suponiendo que cada producto tiene un ID
 
-    // Confirmar antes de eliminar
-    if (confirm("¿Estás seguro de que deseas eliminar este producto?")) {
-        fetch('conexion/delete_product.php', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded'
-            },
-            body: `id=${productId}`
-        })
-        .then(response => response.text())
-        .then(data => {
-            alert(data);
-            if (data === "Producto eliminado correctamente") {
-                products.splice(index, 1);  // Eliminar del array local
-                displayProducts();          // Actualizar la tabla
+            // Confirmar antes de eliminar
+            if (confirm("¿Estás seguro de que deseas eliminar este producto?")) {
+                fetch('conexion/delete_product.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    body: `id=${productId}`
+                })
+                    .then(response => response.text())
+                    .then(data => {
+                        alert(data);
+                        if (data === "Producto eliminado correctamente") {
+                            products.splice(index, 1);  // Eliminar del array local
+                            displayProducts();          // Actualizar la tabla
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error al eliminar producto:', error);
+                        alert('Error al eliminar producto.');
+                    });
             }
-        })
-        .catch(error => {
-            console.error('Error al eliminar producto:', error);
-            alert('Error al eliminar producto.');
-        });
-    }
-}
+        }
         function editProduct(index) {
             selectedIndex = index;
             const product = products[index];
+            console.log(product);  // Verifica las propiedades del objeto 'product'
+
             document.getElementById('edit-product-name').value = product.nombre;
             document.getElementById('edit-product-price').value = product.precio;
             document.getElementById('edit-product-description').value = product.descripcion;
-            document.getElementById('edit-product-category').value = product.categoria;
             document.getElementById('edit-product-stock').value = product.stock;
             $('#editProductModal').modal('show');
         }
 
         function saveChanges() {
             const product = products[selectedIndex];
-            product.nombre = document.getElementById('edit-product-name').value;
-            product.precio = document.getElementById('edit-product-price').value;
-            product.descripcion = document.getElementById('edit-product-description').value;
-            product.categoria = document.getElementById('edit-product-category').value;
-            product.stock = document.getElementById('edit-product-stock').value;
-            $('#editProductModal').modal('hide');
-            displayProducts();
+
+            const formData = new FormData();
+            formData.append('id', product.id);
+            formData.append('nombre', document.getElementById('edit-product-name').value);
+            formData.append('precio', document.getElementById('edit-product-price').value);
+            formData.append('descripcion', document.getElementById('edit-product-description').value);
+            formData.append('stock', document.getElementById('edit-product-stock').value);
+
+            fetch('conexion/edit_product.php', {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => response.text())
+                .then(data => {
+                    alert(data); // Mensaje de éxito o error
+                    $('#editProductModal').modal('hide'); // Cerrar el modal
+                    fetchProducts(); // Actualizar la lista de productos
+                })
+                .catch(error => {
+                    console.error('Error al actualizar el producto:', error);
+                    alert('Error al actualizar el producto.');
+                });
         }
+
+        // Función para recargar la lista de productos después de la edición
+        function fetchProducts() {
+            fetch('conexion/get_productos.php')
+                .then(response => response.json())
+                .then(data => {
+                    products = data;
+                    displayProducts();
+                })
+                .catch(error => console.error('Error al recargar los productos:', error));
+        }
+
     </script>
 
 
