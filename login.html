@@ -224,8 +224,6 @@
                 .then(data => {
                     console.log(data); // Log del resultado
                     if (data.success) {
-                        localStorage.setItem('usuario', data.usuario.usuario);
-                        localStorage.setItem('rol', JSON.stringify(data.usuario.rol)); 
                         alert("Registro exitoso. ¡Ahora puedes iniciar sesión!");
                         window.location.href = "login.html";
                     } else {
