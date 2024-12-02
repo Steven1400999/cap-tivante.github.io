@@ -85,19 +85,25 @@
         <form id="add-product-form" action="conexion/add_product.php" method="POST" enctype="multipart/form-data">
             <input type="text" id="new-product-name" name="nombre" placeholder="Nombre del Producto" required>
             <label for="new-product-image" class="custom-file-upload">
-                <input type="file" id="new-product-image" name="imagen" accept="image/jpeg, image/png" required onchange="previewImage(event)">
+                <input type="file" id="new-product-image" name="imagen" accept="image/jpeg, image/png" required
+                    onchange="previewImage(event)">
                 Subir imagen
             </label>
             <img id="image-preview" src="#" alt="Image preview" width="10%" height="10%">
             <input type="number" id="new-product-price" name="precio" placeholder="Precio" required>
             <input type="text" id="new-product-description" name="descripcion" placeholder="Descripción" required>
-            <input type="text" id="new-product-category" name="categoria_id" placeholder="Categoría" required>
-            <input type="number" id="new-product-stock" name="stock" placeholder="Stock" required>
+            <!-- Dropdown para seleccionar la categoría -->
+            <label for="new-product-category">Categoría</label>
+            <select id="new-product-category" name="categoria_id" required>
+                <option value="1">Gorra</option>
+                <option value="2">Sombrero</option>
+                <option value="3">Visera</option>
+            </select> <input type="number" id="new-product-stock" name="stock" placeholder="Stock" required>
             <button type="submit">Agregar Producto</button>
         </form>
-        
-        
-        
+
+
+
 
         <h2>Productos Actuales</h2>
         <table class="table">
