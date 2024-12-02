@@ -229,10 +229,31 @@
 
 
         function deleteProduct(index) {
-            products.splice(index, 1);
-            displayProducts();
-        }
+    const productId = products[index].id;  // Suponiendo que cada producto tiene un ID
 
+    // Confirmar antes de eliminar
+    if (confirm("¿Estás seguro de que deseas eliminar este producto?")) {
+        fetch('conexion/delete_product.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: `id=${productId}`
+        })
+        .then(response => response.text())
+        .then(data => {
+            alert(data);
+            if (data === "Producto eliminado correctamente") {
+                products.splice(index, 1);  // Eliminar del array local
+                displayProducts();          // Actualizar la tabla
+            }
+        })
+        .catch(error => {
+            console.error('Error al eliminar producto:', error);
+            alert('Error al eliminar producto.');
+        });
+    }
+}
         function editProduct(index) {
             selectedIndex = index;
             const product = products[index];

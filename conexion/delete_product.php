@@ -1,19 +1,20 @@
 <?php
-header('Content-Type: application/json');
-include 'conexion.php'; // Incluye la conexión a la base de datos
+include 'conexion.php';  // Tu archivo de conexión a la base de datos
 
-// Verifica si la solicitud es un POST
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Obtiene el ID del producto a eliminar
-    $id = $_POST['id'];
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $productId = $_POST['id'];  // Obtener el ID del producto
 
-    // Query para eliminar el producto
-    $query = "DELETE FROM productos WHERE id=$id";
+    // Preparar la consulta SQL para eliminar el producto
+    $stmt = $conn->prepare("DELETE FROM productos WHERE id = ?");
+    $stmt->bind_param("i", $productId);
 
-    if ($conn->query($query) === TRUE) {
-        echo json_encode(['message' => 'Producto eliminado correctamente.']);
+    if ($stmt->execute()) {
+        echo "Producto eliminado correctamente";
     } else {
-        echo json_encode(['message' => 'Error al eliminar el producto: ' . $conn->error]);
+        echo "Error al eliminar el producto";
     }
+
+    $stmt->close();
+    $conn->close();
 }
 ?>
