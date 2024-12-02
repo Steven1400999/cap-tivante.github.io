@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Verifica si el archivo de imagen se subió correctamente
         if ($_FILES['imagen']['error'] == 0) {
             // Define el directorio de destino para la imagen
-            $target_dir = "uploads/"; // Asegúrate de que esta carpeta exista
+            $target_dir = "../imagenes/"; // Asegúrate de que esta carpeta exista
             // Reemplaza los espacios con guiones bajos y asegura que el nombre del archivo sea seguro
             $target_file = $target_dir . basename(str_replace(" ", "_", $_FILES['imagen']['name']));
 
@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 echo "El archivo " . basename($_FILES['imagen']['name']) . " se ha subido correctamente.";
 
                 // Inserta la ruta de la imagen en la base de datos
-                $imagen = 'uploads/' . basename(str_replace(" ", "_", $_FILES['imagen']['name'])); // Guardamos la ruta del archivo
+                $imagen = 'imagenes/' . basename(str_replace(" ", "_", $_FILES['imagen']['name'])); // Guardamos la ruta del archivo
 
                 // Realiza la inserción en la base de datos
                 $sql = "INSERT INTO productos (nombre, precio, descripcion, categoria_id, stock, imagen)
