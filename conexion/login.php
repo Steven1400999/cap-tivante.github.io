@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         // Vincular los parámetros
-        $stmt->bind_param("s", $correo);  // "s" indica que el parámetro es una cadena
+        $stmt->bind_param("s", $correo);
 
         // Ejecutar la consulta
         $stmt->execute();
@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Verificar si se encontró un usuario
         if ($result->num_rows > 0) {
-            $row = $result->fetch_assoc();  // No pasa ningún parámetro aquí
+            $row = $result->fetch_assoc();
 
             // Verificar la contraseña
             if (password_verify($contraseña, $row['contraseña'])) {

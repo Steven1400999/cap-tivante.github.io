@@ -1,10 +1,10 @@
 <?php
-include 'conexion.php';  // Tu archivo de conexión a la base de datos
+include 'conexion.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $productId = $_POST['id'];  // Obtener el ID del producto
+    $productId = $_POST['id'];
 
-    // Preparar la consulta SQL para eliminar el producto
+    // Prepara la consulta SQL para eliminar el producto
     $stmt = $conn->prepare("DELETE FROM productos WHERE id = ?");
     $stmt->bind_param("i", $productId);
 

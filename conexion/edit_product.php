@@ -1,5 +1,5 @@
 <?php
-include 'conexion.php'; // Conexión a la base de datos
+include 'conexion.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $id = $_POST['id'];

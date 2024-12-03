@@ -1,8 +1,8 @@
 <?php
 $servername = "localhost";
-$username = "root"; // Por defecto en XAMPP
-$password = "";     // Contraseña vacía por defecto
-$dbname = "cap-tivanteDB"; // Nombre de tu base de datos
+$username = "root";
+$password = "";    
+$dbname = "cap-tivanteDB";
 
 // Crear conexión
 $conn = new mysqli($servername, $username, $password, $dbname);

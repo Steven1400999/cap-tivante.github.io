@@ -20,7 +20,7 @@ $contraseña = password_hash($input['contraseña'], PASSWORD_DEFAULT);
 $usuario = $conn->real_escape_string($input['usuario']);
 $direccion = $conn->real_escape_string($input['direccion']);
 $ciudad = $conn->real_escape_string($input['ciudad']);
-$rol = 0;  // Rol predeterminado (Cliente)
+$rol = 0;
 
 // Verifica si el correo ya está registrado
 $correo_check = $conn->query("SELECT id FROM usuarios WHERE correo = '$correo'");
